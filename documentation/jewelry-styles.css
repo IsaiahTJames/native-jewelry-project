@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+.navbar {
+    background: white;
+    padding: 15px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+/* Navigation Links - Center */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Adjust spacing between links */
+    align-items: center;
+    margin: 0 auto; /* Ensures links stay centered */
+    padding: 0;
+}
+/* Dropdown Parent */
+.nav-links li {
+    position: relative;
+}
+/* Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #2563eb;
+}
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 150px;
+}
+.dropdown-menu li {
+    padding: 8px 15px;
+}
+.dropdown-menu a {
+    color: black;
+    font-size: 14px;
+}
+.dropdown-menu a:hover {
+    background: #f3f4f6;
+    display: block;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/* Icons - Right Side */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between icons */
+}
+.nav-icons a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-icons a:hover {
+    color: #2563eb;
+}

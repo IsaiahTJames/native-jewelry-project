@@ -5,75 +5,76 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Milestone-3</title>
     <link rel="stylesheet" href="jewelry-styles.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">Jewelry Brand</a> <!-- Placeholder for name/logo -->
-            </div>
-            <!-- Center: Navigation Links -->
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Shop All ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Rings</a></li>
-                        <li><a href="#">Earrings</a></li>
-                        <li><a href="#">Necklaces</a></li>
-                        <li><a href="#">Bracelets</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Featured ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Best Sellers</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Gallery ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Showcase</a></li>
-                        <li><a href="#">More Photos</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">About Us ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- Right-Hand: Icons -->
-            <div class="nav-icons">
-                <a href="#"></a><img src="../images/mag-glass.png" alt="search-icon" class="icon-image">
-                <a href="#"></a><img src="../images/shopping-bag.png" alt="shopping-bag-icon" class="icon-image">
-            </div>
-        </nav>
-        <!-- Decorative Band Below Nav-Bar -->
-        <div class="decorative-band">
-            <img src="../images/zig-zag.png" alt="decorative-band">
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Jewelry Brand</a> <!-- Placeholder for name/logo -->
         </div>
-        <!-- Placeholder Image Below Decorative Band -->
-        <div class="placeholder-image">
-            <img src="../images/placeholder-image.png" alt="placeholder-image">
-            <div class="placeholder-text">
-                <h2>Placeholder-(advertisement)</h2>
-                <div class="text-button-container">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <!-- Center: Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Shop All ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Rings</a></li>
+                    <li><a href="#">Earrings</a></li>
+                    <li><a href="#">Necklaces</a></li>
+                    <li><a href="#">Bracelets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Featured ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Gallery ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Showcase</a></li>
+                    <li><a href="#">More Photos</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">About Us ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Right-Hand: Icons -->
+        <div class="nav-icons">
+            <a href="#"></a><img src="../images/mag-glass.png" alt="search-icon" class="icon-image">
+            <a href="#"></a><img src="../images/shopping-bag.png" alt="shopping-bag-icon" class="icon-image">
+        </div>
+    </nav>
+    <!-- Decorative Band Below Nav-Bar -->
+    <div class="decorative-band">
+        <img src="../images/zig-zag.png" alt="decorative-band">
+    </div>
+    <!-- Placeholder Image Below Decorative Band -->
+    <div class="placeholder-image">
+        <img src="../images/placeholder-image.png" alt="placeholder-image">
+        <div class="placeholder-text">
+            <h2>Placeholder-(advertisement)</h2>
+            <div class="text-button-container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui,
                     non pulvinar lorem felis nec erat.
-                    </p>
-                    <button class="shop-btn">Shop More</button>
-                </div>
+                </p>
+                <button class="shop-btn">Shop More</button>
             </div>
         </div>
-    </header>
+    </div>
+</header>
     <!-- Four Box Icons -->
-    <div class="xbox-container">
+    <div class="xbox-container grid grid-cols-2 md:grid-cols-4">
         <div class="xbox">
             <img src="../images/xbox-image.png" alt="Rings">
             <p>Rings</p>
@@ -101,11 +102,13 @@
     <!-- Most Popular Product Boxes -->
     <div class="popular-products">
         <button class="arrow left-arrow">←</button>
-        <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
-        <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
-        <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
-        <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
-        <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
+        <div class="popular-products-container grid grids-cols-3 sm:grid-cols-5 gap-4">
+            <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="../images/xbox-image.png" alt="product"></div>
+            <div class="product-box hidden sm:block"><img src="../images/xbox-image.png" alt="product"></div>
+            <div class="product-box hidden sm:block"><img src="../images/xbox-image.png" alt="product"></div>
+        </div>
         <button class="arrow right-arrow">→</button>
     </div>
     <!-- "Featured" Title (Centered) -->
@@ -114,14 +117,15 @@
             <h2><a href="#">Featured</a></h2>
         </div>
     </div>
-        <!-- Featured Product Boxes -->
     <div class="featured-products">
         <button class="arrow left-arrow">←</button>
-        <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
-        <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
-        <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
-        <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
-        <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
+        <div class="featured-products-container grid grids-cols-3 sm:grid-cols-5 gap-4">
+            <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
+            <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
+            <div class="featured-box"><img src="../images/xbox-image.png" alt="featured"></div>
+            <div class="featured-box hidden sm:block"><img src="../images/xbox-image.png" alt="featured"></div>
+            <div class="featured-box hidden sm:block"><img src="../images/xbox-image.png" alt="featured"></div>
+        </div>
         <button class="arrow right-arrow">→</button>
     </div>
     <!-- About Us Section -->

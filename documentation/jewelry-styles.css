@@ -179,6 +179,7 @@ body {
     background-color: var(--off-turquoise);
     color: var(--off-white);
 }
+/* 4 boxes placeholder */
 .xbox-container {
     display: flex;
     justify-content: center;
@@ -207,6 +208,7 @@ body {
 .xbox:hover {
     transform: scale(1.05);
     border-color: var(--off-blue);
+    z-index: 1;
 }
 .xbox p {
     position: absolute;
@@ -241,6 +243,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Allows absolute positioning for arrows */
+    gap: 40px;
+    padding: 2em 0;
+    max-width: 100%;
+}
+.popular-products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
     padding: 2em 0;
     max-width: 100%;
@@ -255,6 +266,7 @@ body {
     transform: scale(1.05);
     border-color: var(--off-blue);
 }
+
 /* All Arrow Behavior */
 .arrow {
     background: none;
@@ -285,6 +297,15 @@ body {
 }
 /* Placeholders for Featured Products */
 .featured-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Allows absolute positioning for arrows */
+    gap: 40px;
+    padding: 2em 0;
+    max-width: 100%;
+}
+.featured-products-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,7 +361,6 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
 }
-
 /* Footer Top Section */
 .footer-top {
     display: flex;
@@ -351,33 +371,27 @@ body {
     padding-bottom: 20px;
     border-bottom: 1px solid #cbc9c9;
 }
-
 /* Footer Columns */
 .footer-column {
     flex: 1;
     min-width: 200px;
     margin-right: 20px;
 }
-
 .footer-column h3 {
     font-size: 16px;
     margin-bottom: 10px;
 }
-
 .footer-column ul {
     list-style: none;
     padding: 0;
 }
-
 .footer-column ul li {
     margin-bottom: 5px;
 }
-
 .footer-column ul li a {
     text-decoration: none;
     color: var(--off-black);
 }
-
 /* Social Media Links */
 .social-icons {
     list-style: none;
@@ -411,7 +425,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .subscribe button:hover {
     background-color: #a37d5e;
 }
@@ -425,13 +438,11 @@ body {
     padding-top: 20px;
     font-size: 14px;
 }
-
 /* Footer Links */
 .footer-links {
     display: flex;
     gap: 10px;
 }
-
 .footer-links a {
     text-decoration: none;
     color: #333;

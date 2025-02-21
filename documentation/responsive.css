@@ -1,6 +1,6 @@
 
 /* Media query for mobile view (Decorative Band) */
-@media (max-width: 640px) {
+@media (max-width: 320px) {
     .decorative-band-container {
         padding: 20px;
     }
@@ -10,8 +10,55 @@
         object-fit: cover;
     }
 }
+/* 4 boxes (R,E,N,B) 320px */
+@media (max-width: 320px) {
+    .xbox-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+    .xbox {
+        width: 100%;
+        height: auto;
+    }
+    .xbox img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+/* Media query for mobile view (Placeholder Image / p / btn) */
+@media (max-width: 320px) {
+    .placeholder-image {
+        height: 300px;
+    }
+    .placeholder-text {
+        bottom: 10px;
+        left: 10px;
+        max-width: 60%;
+        text-align: left;
+    }
+    .placeholder-text h2 {
+        font-size: 16px;
+    }
+    .text-button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .text-button-container p {
+        font-size: 12px;
+        max-width: 100%;
+    }
+    .shop-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
 /* Media query for mobile view (Most Popular) */
-@media (max-width: 640px) {
+@media (max-width: 320px) {
     .product-box:nth-child(n+4) {
         display: none;
     }
@@ -30,8 +77,20 @@
         right: 0;
     }
 }
+@media (max-width: 320px) {
+    .product-box {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .product-box img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
 /* Media query for desktop view (Most Popular) */
-@media (min-width: 641px) {
+@media (min-width: 321px) {
     .product-box {
         display: flex;
     }
@@ -41,7 +100,7 @@
     }
 }
 /* Media query for mobile view (Featured Product) */
-@media (max-width: 640px) {
+@media (max-width: 320px) {
     .featured-box:nth-child(n+4) {
         display: none;
     }
@@ -59,9 +118,19 @@
     .right-arrow {
         right: 0;
     }
+    .featured-box {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .featured-box img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 }
 /* Media query for desktop view (Featured Product) */
-@media (min-width: 641px) {
+@media (min-width: 321px) {
     .featured-box {
         display: flex;
     }
@@ -71,14 +140,22 @@
     }
 }
 /* Media query for mobile view (About Us) */
-@media (max-width: 640px) {
+@media (max-width: 320px) {
+    .about-section {
+        padding: 20px 0;
+    }
     .about-content {
         flex-direction: column-reverse;
         gap: 20px;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+    }
+    .about-text {
+        width: 100%;
+        font-size: 16px;
     }
     .about-image img {
-        margin-left: -40px;
+        width: 100%;
+        height: auto;
+        margin-left: 0;
     }
 }

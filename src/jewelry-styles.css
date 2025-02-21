@@ -34,10 +34,10 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px; /* Adjust spacing between links */
+    gap: 25px;        /* Adjust spacing between links */
     align-items: center;
     flex: auto;
-    margin: 0 auto; /* Ensures links stay centered */
+    margin: 0 auto;   /* Ensures links stay centered */
     padding: 0;
 }
 .logo {
@@ -90,7 +90,7 @@ body {
 .nav-icons {
     display: flex;
     align-items: center;
-    gap: 15px; /* Spacing between icons */
+    gap: 15px;    /* Spacing between the icons */
     flex: auto;
 }
 .nav-icons .icon-image {
@@ -266,7 +266,6 @@ body {
     transform: scale(1.05);
     border-color: var(--off-blue);
 }
-
 /* All Arrow Behavior */
 .arrow {
     background: none;
@@ -357,7 +356,7 @@ body {
 }
 /* Main Footer */
 .main-footer {
-    background-color: #f8f9fc; /* Light background for a clean look */
+    background-color: #f8f9fc;     /* Light background for a clean look */
     padding: 40px 20px;
     font-family: Arial, sans-serif;
     color: #333;
@@ -370,7 +369,7 @@ body {
     max-width: 80%;
     margin: 0 auto;
     padding-bottom: 20px;
-    border-bottom: 1px solid #cbc9c9;
+    border-bottom: 1px solid #b0afaf;
 }
 /* Footer Columns */
 .footer-column {

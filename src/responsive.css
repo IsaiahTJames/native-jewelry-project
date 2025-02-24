@@ -159,3 +159,29 @@
         margin-left: 0;
     }
 }
+/* Media query for mobile view (Footer) */
+@media (max-width: 576px) {
+    .main-footer {
+        padding: 20px 0;
+    }
+    .footer-top {
+        gap: 20px;
+    }
+    .footer-column ul li,
+    .footer-column .social-icons li {
+        margin-bottom: 10px;
+    }
+    .footer-column.subscribe form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-column.subscribe input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .footer-bottom {
+        padding: 10px 0;
+    }
+}

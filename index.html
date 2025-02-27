@@ -7,185 +7,219 @@
 </head>
 <body>
 
-<header>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">Jewelry Brand</a> <!-- Placeholder for name/logo -->
+
+<nav class="relative border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 overflow-visible z-50">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jewelry Brand</span>
+        </a>
+        <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+            <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+                <li>
+                    <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500">Home</a>
+                </li>
+                <!-- Shop All Dropdown -->
+                <li class="relative">
+                    <div class="group inline-block">
+                        <button class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
+                            Shop All ▼
+                        </button>
+                        <ul class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-40 z-index:10">
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Rings</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Earrings</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Necklaces</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Bracelets</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Featured Dropdown -->
+                <li class="relative">
+                    <div class="group inline-block">
+                        <button class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
+                            Featured ▼
+                        </button>
+                        <ul class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-40 z-index:10">
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">New Arrivals</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Best Sellers</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Gallery Dropdown -->
+                <li class="relative">
+                    <div class="group inline-block">
+                        <button class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
+                            Gallery ▼
+                        </button>
+                        <ul class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-40 z-index:10">
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Showcase</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">More Photos</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="relative">
+                    <div class="group inline-block">
+                        <button class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
+                            About Us ▼
+                        </button>
+                        <ul class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-40 z-index:10">
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
         </div>
-        <!-- Center: Navigation Links -->
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Shop All ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Rings</a></li>
-                    <li><a href="#">Earrings</a></li>
-                    <li><a href="#">Necklaces</a></li>
-                    <li><a href="#">Bracelets</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Featured ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Gallery ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Showcase</a></li>
-                    <li><a href="#">More Photos</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">About Us ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </li>
-        </ul>
-        <!-- Right-Hand: Icons -->
-        <div class="nav-icons">
-            <a href="#"></a><img src="images/mag-glass.png" alt="search-icon" class="icon-image">
-            <a href="#"></a><img src="images/shopping-bag.png" alt="shopping-bag-icon" class="icon-image">
-        </div>
-    </nav>
-</header>
-    <!-- Decorative Band Below Nav-Bar -->
-    <div class="decorative-band">
-        <img src="images/zig-zag.png" alt="decorative-band">
     </div>
-    <!-- Placeholder Image Below Decorative Band -->
-    <div class="placeholder-image">
-        <img src="images/placeholder-image.png" alt="placeholder-image">
-        <div class="placeholder-text">
-            <h2>Placeholder-(advertisement)</h2>
-            <div class="text-button-container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui,
-                    non pulvinar lorem felis nec erat.
-                </p>
-                <button class="shop-btn">Shop More</button>
+</nav>
+
+
+
+
+
+
+<!-- Decorative Band Below Nav-Bar -->
+<div class="decorative-band">
+    <img src="images/zig-zag.png" alt="decorative-band">
+</div>
+<!-- Placeholder Image Below Decorative Band -->
+<div class="placeholder-image">
+    <img src="images/placeholder-image.png" alt="placeholder-image">
+    <div class="placeholder-text">
+        <h2>Placeholder-(advertisement)</h2>
+        <div class="text-button-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui,
+                non pulvinar lorem felis nec erat.
+            </p>
+            <button class="shop-btn">Shop More</button>
+        </div>
+    </div>
+</div>
+<!-- Four Box Icons -->
+<div class="xbox-container grid grid-cols-2 gap-0 sm:grid-cols-4">
+    <div class="xbox">
+        <img src="images/xbox-image.png" alt="Rings">
+        <p>Rings</p>
+    </div>
+    <div class="xbox">
+        <img src="images/xbox-image.png" alt="Earrings">
+        <p>Earrings</p>
+    </div>
+    <div class="xbox">
+        <img src="images/xbox-image.png" alt="Necklaces">
+        <p>Necklaces</p>
+    </div>
+    <div class="xbox">
+        <img src="images/xbox-image.png" alt="Bracelets">
+        <p>Bracelets</p>
+    </div>
+</div>
+<!-- "Shop" and "Most Popular" Title (Centered) -->
+<div class="shop-section">
+    <div class="shop-title">
+        <h2><a href="#">Shop</a></h2>
+        <p>Most Popular</p>
+    </div>
+</div>
+<!-- Most Popular Product Boxes -->
+<div class="popular-products">
+    <button class="arrow left-arrow">←</button>
+    <div class="popular-products-container grid grids-cols-3 sm:grid-cols-5">
+        <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+        <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+        <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+        <div class="product-box hidden sm:block"><img src="images/xbox-image.png" alt="product"></div>
+        <div class="product-box hidden sm:block"><img src="images/xbox-image.png" alt="product"></div>
+    </div>
+    <button class="arrow right-arrow">→</button>
+</div>
+<!-- "Featured" Title (Centered) -->
+<div class="featured-section">
+    <div class="featured-title">
+        <h2><a href="#">Featured</a></h2>
+    </div>
+</div>
+<div class="featured-products">
+    <button class="arrow left-arrow">←</button>
+    <div class="featured-products-container grid grids-cols-3 sm:grid-cols-5">
+        <div class="featured-box"><img src="images/xbox-image.png" alt="featured"></div>
+        <div class="featured-box"><img src="images/xbox-image.png" alt="featured"></div>
+        <div class="featured-box"><img src="images/xbox-image.png" alt="featured"></div>
+        <div class="featured-box hidden sm:block"><img src="images/xbox-image.png" alt="featured"></div>
+        <div class="featured-box hidden sm:block"><img src="images/xbox-image.png" alt="featured"></div>
+    </div>
+    <button class="arrow right-arrow">→</button>
+</div>
+<!-- About Us Section -->
+<div class="about-section">
+    <div class="about-content">
+        <div class="about-text">
+            <p>Learn About Us and I</p>
+        </div>
+        <div class="about-image">
+            <div class="about-picture"><img src="images/user-placeholder.png" alt="about"></div>
+        </div>
+    </div>
+</div>
+<!-- Decorative band above the footer -->
+<div class="decorative-band">
+    <img src="images/zig-zag.png" alt="decorative-band">
+</div>
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-top">
+        <div class="footer-column">
+            <h3><strong>Customer Service</strong></h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3><strong>About Us</strong></h3>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Jewelry Care</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3><strong>Connect</strong></h3>
+            <div class="social-icons">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
             </div>
         </div>
-    </div>
-    <!-- Four Box Icons -->
-    <div class="xbox-container grid grid-cols-2 gap-0 sm:grid-cols-4">
-        <div class="xbox">
-            <img src="images/xbox-image.png" alt="Rings">
-            <p>Rings</p>
-        </div>
-        <div class="xbox">
-            <img src="images/xbox-image.png" alt="Earrings">
-            <p>Earrings</p>
-        </div>
-        <div class="xbox">
-            <img src="images/xbox-image.png" alt="Necklaces">
-            <p>Necklaces</p>
-        </div>
-        <div class="xbox">
-            <img src="images/xbox-image.png" alt="Bracelets">
-            <p>Bracelets</p>
+        <div class="footer-column subscribe">
+            <h3><strong>Subscribe</strong></h3>
+            <p>Sign up for updates & new arrivals.</p>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </div>
-    <!-- "Shop" and "Most Popular" Title (Centered) -->
-    <div class="shop-section">
-        <div class="shop-title">
-            <h2><a href="#">Shop</a></h2>
-            <p>Most Popular</p>
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+        <p>© 2025 <strong>Jewelry Brand</strong>. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms & Conditions</a>
         </div>
     </div>
-    <!-- Most Popular Product Boxes -->
-    <div class="popular-products">
-        <button class="arrow left-arrow">←</button>
-        <div class="popular-products-container grid grids-cols-3 sm:grid-cols-5">
-            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
-            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
-            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
-            <div class="product-box hidden sm:block"><img src="images/xbox-image.png" alt="product"></div>
-            <div class="product-box hidden sm:block"><img src="images/xbox-image.png" alt="product"></div>
-        </div>
-        <button class="arrow right-arrow">→</button>
-    </div>
-    <!-- "Featured" Title (Centered) -->
-    <div class="featured-section">
-        <div class="featured-title">
-            <h2><a href="#">Featured</a></h2>
-        </div>
-    </div>
-    <div class="featured-products">
-        <button class="arrow left-arrow">←</button>
-        <div class="featured-products-container grid grids-cols-3 sm:grid-cols-5">
-            <div class="featured-box"><img src="images/xbox-image.png" alt="featured"></div>
-            <div class="featured-box"><img src="images/xbox-image.png" alt="featured"></div>
-            <div class="featured-box"><img src="images/xbox-image.png" alt="featured"></div>
-            <div class="featured-box hidden sm:block"><img src="images/xbox-image.png" alt="featured"></div>
-            <div class="featured-box hidden sm:block"><img src="images/xbox-image.png" alt="featured"></div>
-        </div>
-        <button class="arrow right-arrow">→</button>
-    </div>
-    <!-- About Us Section -->
-    <div class="about-section">
-        <div class="about-content">
-            <div class="about-text">
-                <p>Learn About Us and I</p>
-            </div>
-            <div class="about-image">
-                <div class="about-picture"><img src="images/user-placeholder.png" alt="about"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Decorative band above the footer -->
-    <div class="decorative-band">
-        <img src="images/zig-zag.png" alt="decorative-band">
-    </div>
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-top">
-            <div class="footer-column">
-                <h3><strong>Customer Service</strong></h3>
-                <ul>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3><strong>About Us</strong></h3>
-                <ul>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Jewelry Care</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3><strong>Connect</strong></h3>
-                <div class="social-icons">
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </div>
-            </div>
-            <div class="footer-column subscribe">
-                <h3><strong>Subscribe</strong></h3>
-                <p>Sign up for updates & new arrivals.</p>
-                <form>
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <!-- Bottom Footer -->
-        <div class="footer-bottom">
-            <p>© 2025 <strong>Jewelry Brand</strong>. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <span>|</span>
-                <a href="#">Terms & Conditions</a>
-            </div>
-        </div>
-    </footer>
-    <!-- Link JavaScript File -->
-    <script type="module" src="/src/main.js"></script>
+</footer>
+<!-- Link JavaScript File -->
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>

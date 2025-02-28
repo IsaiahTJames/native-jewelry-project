@@ -17,6 +17,13 @@ body {
 
 
 
+/* Disable hover when dropdown is open */
+.dropdown-active .dropdown-button:hover + .dropdown-menu {
+    display: none !important;
+}
+
+
+
     /* decorative stripe-band */
 .decorative-band {
     width: 100%;

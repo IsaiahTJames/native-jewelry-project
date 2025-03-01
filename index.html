@@ -139,16 +139,29 @@
 </div>
 <!-- Most Popular Product Boxes -->
 <div class="popular-products">
-    <button class="arrow left-arrow">←</button>
-    <div class="popular-products-container grid grids-cols-3 sm:grid-cols-5">
-        <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
-        <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
-        <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
-        <div class="product-box hidden sm:block"><img src="images/xbox-image.png" alt="product"></div>
-        <div class="product-box hidden sm:block"><img src="images/xbox-image.png" alt="product"></div>
+    <button class="arrow left-arrow" onclick="scrollCarousel(-1)">←</button>
+    <div class="carousel-container">
+        <div class="popular-products-container">
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+            <div class="product-box"><img src="images/xbox-image.png" alt="product"></div>
+        </div>
     </div>
-    <button class="arrow right-arrow">→</button>
+    <button class="arrow right-arrow" onclick="scrollCarousel(1)">→</button>
 </div>
+
 <!-- "Featured" Title (Centered) -->
 <div class="featured-section">
     <div class="featured-title">

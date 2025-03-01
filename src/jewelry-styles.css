@@ -168,39 +168,56 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Allows absolute positioning for arrows */
-    gap: 40px;
+    position: relative;
+    gap: 20px;
     padding: 2em 0;
     max-width: 100%;
 }
+
+/* Outer container (controls visibility) */
+.carousel-container {
+    width: 1100px; /* 5 items at a time */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Inner container (moves left/right) */
 .popular-products-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 2em 0;
-    max-width: 100%;
+    width: 3300px; /* Enough for all 15 images */
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
 }
+
+/* Ensure images don’t shrink */
 .product-box {
     width: 200px;
     height: 200px;
     border: 2px solid var(--off-black);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
+
+
 .product-box:hover {
     transform: scale(1.05);
     border-color: var(--off-blue);
 }
-/* All Arrow Behavior */
+
+/* Arrow Button Styling */
 .arrow {
     background: none;
     border: none;
     font-size: 24px;
+    cursor: pointer;
 }
 .arrow:hover {
     transform: scale(1.2);
     color: var(--off-blue);
 }
+
 /* Featured Product Section */
 .featured-section {
     padding: 1em 0;

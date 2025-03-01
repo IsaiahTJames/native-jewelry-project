@@ -64,9 +64,6 @@
 
 /* Media query for mobile view (Most Popular) */
 @media (max-width: 576px) {
-    .product-box:nth-child(n+4) {
-        display: none;
-    }
     .popular-products-container.grid {
         gap: 0;
     }

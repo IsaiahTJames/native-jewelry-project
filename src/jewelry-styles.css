@@ -187,6 +187,7 @@ body {
     width: 3300px; /* Enough for all 15 images */
     transition: transform 0.5s ease-in-out;
     gap: 20px;
+    padding: 10px 0;
 }
 
 /* Ensure images don’t shrink */

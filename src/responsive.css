@@ -64,7 +64,7 @@
 
 /* Media query for mobile view (Most Popular) */
 @media (max-width: 576px) {
-    .popular-products-container.grid {
+    .popular-products-container {
         gap: 0;
     }
     .arrow {

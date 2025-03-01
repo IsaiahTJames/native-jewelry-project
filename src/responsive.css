@@ -118,11 +118,22 @@
 }
 /* Media query for mobile view (Featured Product) */
 @media (max-width: 576px) {
-    .featured-box:nth-child(n+4) {
-        display: none;
+    .carousel-container {
+        width: calc(3 * 200px); /* Make sure it only fits 3 products */
+        margin: 0 auto; /* Centers the grid */
+        display: flex;
+        justify-content: center; /* Ensures alignment */
+    }
+    .featured-products-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        padding: 10px 5px; /* Ensure it stays centered */
+        transform: translateX(0); /* Prevent shifting */
     }
     .featured-products-container.grid {
         gap: 0;
+        margin-right: 10px;
     }
     .arrow {
         position: absolute;
@@ -146,6 +157,7 @@
         object-fit: cover;
     }
 }
+
 /* Media query for desktop view (Featured Product) */
 @media (min-width: 577px) {
     .featured-box {
@@ -156,6 +168,7 @@
         transform: none;
     }
 }
+
 /* Media query for mobile view (About Us) */
 @media (max-width: 576px) {
     .about-section {

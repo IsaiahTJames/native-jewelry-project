@@ -42,52 +42,52 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-let currentIndex = 0;
+function createCarousel(containerSelector, leftArrowSelector, rightArrowSelector) {
+    let currentIndex = 0;
 
-function getTotalItems() {
-    return document.querySelectorAll(".product-box").length; // Count total products
-}
-
-function getVisibleItems() {
-    return window.innerWidth <= 576 ? 3 : 5; // 3 on mobile, 5 on desktop
-}
-
-function getProductBoxWidth() {
-    return window.innerWidth <= 576 ? 200 : 220; // Adjust width dynamically
-}
-
-function getMaxIndex() {
-    return Math.floor((getTotalItems() - getVisibleItems()) / getVisibleItems()); // Prevent overshooting
-}
-
-function scrollCarousel(direction) {
-    const container = document.querySelector(".popular-products-container");
-    if (!container) return;
-
-    const visibleItems = getVisibleItems();
-    const maxIndex = getMaxIndex();
-
-    currentIndex += direction;
-
-    // **Looping behavior: Reset to start when reaching the end**
-    if (currentIndex < 0) {
-        currentIndex = maxIndex; // Go to the last set when scrolling left at the start
-    } else if (currentIndex > maxIndex) {
-        currentIndex = 0; // Reset to first set when scrolling right at the end
+    function getTotalItems() {
+        return document.querySelectorAll(`${containerSelector} .product-box, ${containerSelector} .featured-box`).length;
     }
 
-    // Calculate correct position
-    const productBoxWidth = getProductBoxWidth();
-    const newPosition = -(currentIndex * visibleItems * productBoxWidth);
+    function getVisibleItems() {
+        return window.innerWidth <= 576 ? 3 : 5; // 3 on mobile, 5 on desktop
+    }
 
-    // Apply transform
-    container.style.transform = `translateX(${newPosition}px)`;
-}
+    function getProductBoxWidth() {
+        return window.innerWidth <= 576 ? 200 : 220; // Adjust width dynamically
+    }
 
-// **Attach event listeners for arrows**
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".left-arrow").addEventListener("click", () => scrollCarousel(-1));
-    document.querySelector(".right-arrow").addEventListener("click", () => scrollCarousel(1));
+    function getMaxIndex() {
+        return Math.floor((getTotalItems() - getVisibleItems()) / getVisibleItems()); // Prevent overshooting
+    }
+
+    function scrollCarousel(direction) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+
+        const visibleItems = getVisibleItems();
+        const maxIndex = getMaxIndex();
+
+        currentIndex += direction;
+
+        // **Looping behavior: Reset to start when reaching the end**
+        if (currentIndex < 0) {
+            currentIndex = maxIndex; // Go to the last set when scrolling left at the start
+        } else if (currentIndex > maxIndex) {
+            currentIndex = 0; // Reset to first set when scrolling right at the end
+        }
+
+        // Calculate correct position
+        const productBoxWidth = getProductBoxWidth();
+        const newPosition = -(currentIndex * visibleItems * productBoxWidth);
+
+        // Apply transform
+        container.style.transform = `translateX(${newPosition}px)`;
+    }
+
+    // Attach event listeners for arrows
+    document.querySelector(leftArrowSelector).addEventListener("click", () => scrollCarousel(-1));
+    document.querySelector(rightArrowSelector).addEventListener("click", () => scrollCarousel(1));
 
     // Reset on window resize
     window.addEventListener("resize", () => {
@@ -97,4 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Set initial position
     scrollCarousel(0);
+}
+
+// **Initialize both carousels**
+document.addEventListener("DOMContentLoaded", () => {
+    createCarousel(".popular-products-container", ".popular-products .left-arrow", ".popular-products .right-arrow");
+    createCarousel(".featured-products-container", ".featured-products .left-arrow", ".featured-products .right-arrow");
 });

@@ -64,8 +64,23 @@
 
 /* Media query for mobile view (Most Popular) */
 @media (max-width: 576px) {
+    .carousel-container {
+        width: calc(3 * 200px); /* Make sure it only fits 3 products */
+        margin: 0 auto; /* Centers the grid */
+        display: flex;
+        justify-content: center; /* Ensures alignment */
+    }
     .popular-products-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 0;
+        padding: 10px 5px; /* Ensure it stays centered */
+        transform: translateX(0); /* Prevent shifting */
+    }
+    .popular-products-container.grid {
+        gap: 0;
+        margin-right: 10px;
+
     }
     .arrow {
         position: absolute;

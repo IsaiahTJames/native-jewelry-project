@@ -184,10 +184,10 @@ body {
 /* Inner container (moves left/right) */
 .popular-products-container {
     display: flex;
-    width: 3300px; /* Enough for all 15 images */
+    min-width: 100%;
     transition: transform 0.5s ease-in-out;
     gap: 20px;
-    padding: 10px 0;
+    padding: 10px 5px;
 }
 
 /* Ensure images don’t shrink */
@@ -218,6 +218,10 @@ body {
     transform: scale(1.2);
     color: var(--off-blue);
 }
+
+
+
+
 
 /* Featured Product Section */
 .featured-section {

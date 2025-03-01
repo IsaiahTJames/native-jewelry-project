@@ -43,46 +43,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 let currentIndex = 0;
-const totalItems = 15;
-const productBoxWidth = 220; // 200px width + 20px gap
+
+function getTotalItems() {
+    return document.querySelectorAll(".product-box").length; // Count total products
+}
 
 function getVisibleItems() {
-    return window.innerWidth <= 576 ? 3 : 5; // Show 3 on mobile, 5 on desktop
+    return window.innerWidth <= 576 ? 3 : 5; // 3 on mobile, 5 on desktop
+}
+
+function getProductBoxWidth() {
+    return window.innerWidth <= 576 ? 200 : 220; // Adjust width dynamically
 }
 
 function getMaxIndex() {
-    const visibleItems = getVisibleItems();
-    return Math.ceil(totalItems / visibleItems) - 1; // Ensures correct max index
+    return Math.floor((getTotalItems() - getVisibleItems()) / getVisibleItems()); // Prevent overshooting
 }
 
 function scrollCarousel(direction) {
     const container = document.querySelector(".popular-products-container");
+    if (!container) return;
+
     const visibleItems = getVisibleItems();
-    const maxIndex = getMaxIndex(); // Dynamically get max index
+    const maxIndex = getMaxIndex();
 
     currentIndex += direction;
 
-    // Ensure we don’t scroll past the available images
+    // **Looping behavior: Reset to start when reaching the end**
     if (currentIndex < 0) {
-        currentIndex = maxIndex; // Wrap around to last set
+        currentIndex = maxIndex; // Go to the last set when scrolling left at the start
     } else if (currentIndex > maxIndex) {
-        currentIndex = 0; // Wrap back to first set
+        currentIndex = 0; // Reset to first set when scrolling right at the end
     }
 
-    // Correct translation value calculation
+    // Calculate correct position
+    const productBoxWidth = getProductBoxWidth();
     const newPosition = -(currentIndex * visibleItems * productBoxWidth);
+
+    // Apply transform
     container.style.transform = `translateX(${newPosition}px)`;
 }
 
-// Attach event listeners
-document.querySelector(".left-arrow").addEventListener("click", () => scrollCarousel(-1));
-document.querySelector(".right-arrow").addEventListener("click", () => scrollCarousel(1));
+// **Attach event listeners for arrows**
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".left-arrow").addEventListener("click", () => scrollCarousel(-1));
+    document.querySelector(".right-arrow").addEventListener("click", () => scrollCarousel(1));
 
-// Adjust on resize
-window.addEventListener("resize", () => {
-    currentIndex = 0; // Reset position on resize
+    // Reset on window resize
+    window.addEventListener("resize", () => {
+        currentIndex = 0; // Reset position
+        scrollCarousel(0);
+    });
+
+    // Set initial position
     scrollCarousel(0);
 });
-
-
-

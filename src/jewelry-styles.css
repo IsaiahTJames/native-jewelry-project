@@ -163,7 +163,7 @@ body {
 
 
 
-/* 🎯 Popular Products Section */
+/* Popular Products Section */
 .popular-products {
     display: flex;
     justify-content: center;
@@ -173,15 +173,11 @@ body {
     padding: 2em 0;
     max-width: 100%;
 }
-
-/* 🎯 Carousel Container (Controls Visibility) */
 .carousel-container {
     width: 1100px; /* Display 5 items at a time */
     overflow: hidden;
     position: relative;
 }
-
-/* 🎯 Inner Container (Moves Left/Right) */
 .popular-products-container {
     display: flex;
     min-width: 100%;
@@ -189,8 +185,6 @@ body {
     gap: 20px;
     padding: 10px 5px;
 }
-
-/* 🎯 Individual Product Box */
 .product-box {
     width: 200px;
     display: flex;
@@ -199,8 +193,6 @@ body {
     text-align: center;
     flex-shrink: 0;
 }
-
-/* 🎯 Product Image */
 .product-box img {
     width: 100%;
     height: 200px; /* Ensures uniform size */
@@ -208,7 +200,6 @@ body {
     margin-bottom: 8px;
     border: 2px solid var(--off-black);
 }
-/* 🎯 Restore Hover Effect */
 .product-box:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
@@ -216,31 +207,21 @@ body {
 .product-box img:hover {
     border: 2px solid var(--off-blue); /* Replace with actual color */
 }
-
-
-
-/* 🎯 Product Info (Name & Price) */
 .product-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3px;
 }
-
-/* 🎯 Product Name */
 .product-name {
     font-size: 1rem;
     font-weight: bold;
     color: #333;
 }
-
-/* 🎯 Product Price */
 .product-price {
     font-size: 0.9rem;
     color: #555;
 }
-
-/* 🎯 Left and Right Arrows */
 .arrow {
     background: none;
     border: none;

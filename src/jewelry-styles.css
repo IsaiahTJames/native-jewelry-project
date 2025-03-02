@@ -163,7 +163,7 @@ body {
 
 
 
-/* Container for Most Popular Products */
+/* 🎯 Popular Products Section */
 .popular-products {
     display: flex;
     justify-content: center;
@@ -174,14 +174,14 @@ body {
     max-width: 100%;
 }
 
-/* Outer container (controls visibility) */
+/* 🎯 Carousel Container (Controls Visibility) */
 .carousel-container {
-    width: 1100px; /* 5 items at a time */
+    width: 1100px; /* Display 5 items at a time */
     overflow: hidden;
     position: relative;
 }
 
-/* Inner container (moves left/right) */
+/* 🎯 Inner Container (Moves Left/Right) */
 .popular-products-container {
     display: flex;
     min-width: 100%;
@@ -190,33 +190,73 @@ body {
     padding: 10px 5px;
 }
 
-/* Ensure images don’t shrink */
+/* 🎯 Individual Product Box */
 .product-box {
     width: 200px;
-    height: 200px;
-    border: 2px solid var(--off-black);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     flex-shrink: 0;
 }
 
-
+/* 🎯 Product Image */
+.product-box img {
+    width: 100%;
+    height: 200px; /* Ensures uniform size */
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid var(--off-black);
+}
+/* 🎯 Restore Hover Effect */
 .product-box:hover {
     transform: scale(1.05);
-    border-color: var(--off-blue);
+    transition: transform 0.3s ease-in-out;
+}
+.product-box img:hover {
+    border: 2px solid var(--off-blue); /* Replace with actual color */
 }
 
-/* Arrow Button Styling */
+
+
+/* 🎯 Product Info (Name & Price) */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+/* 🎯 Product Name */
+.product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 🎯 Product Price */
+.product-price {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* 🎯 Left and Right Arrows */
 .arrow {
     background: none;
     border: none;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 24px;
     cursor: pointer;
+    padding: 10px;
+    transition: 0.1s;
 }
+
 .arrow:hover {
-    transform: scale(1.2);
-    color: var(--off-blue);
+    transform: translateY(-50%) scale(1.2); /* Adjust for exact centering */
+}
+.left-arrow {
+    left: -5px; /* Keep inside screen */
 }
 
 

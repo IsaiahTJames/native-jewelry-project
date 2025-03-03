@@ -10,26 +10,19 @@ body {
     padding: 0;
     background-color: var(--off-white);
 }
-
 .group:hover > ul {
     display: block;
 }
-
-
-
 /* Disable hover when dropdown is open */
 .dropdown-active .dropdown-button:hover + .dropdown-menu {
     display: none !important;
 }
-
-
-
     /* decorative stripe-band */
 .decorative-band {
     width: 100%;
     text-align: center;
     position: relative;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    border: 2px var(--off-black) solid;
 }
 .decorative-band img {
     width: 100%;
@@ -98,7 +91,7 @@ body {
     white-space: nowrap;
 }
 .shop-btn:hover {
-    background-color: var(--off-turquoise);
+    background-color: var(--off-blue);
     color: var(--off-white);
 }
 /* 4 boxes placeholder */

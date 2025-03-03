@@ -4,6 +4,8 @@ import './responsive.css'
 import './jewelry-styles.css'
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownButtons = document.querySelectorAll(".dropdown-button");
 
@@ -104,3 +106,5 @@ document.addEventListener("DOMContentLoaded", () => {
     createCarousel(".popular-products-container", ".popular-products .left-arrow", ".popular-products .right-arrow");
     createCarousel(".featured-products-container", ".featured-products .left-arrow", ".featured-products .right-arrow");
 });
+
+

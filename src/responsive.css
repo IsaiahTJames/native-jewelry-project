@@ -39,13 +39,10 @@
         height: 300px;
     }
     .placeholder-text {
-        bottom: 10px;
-        left: 10px;
-        max-width: 60%;
-        text-align: left;
+        padding-right: 20px;
     }
     .placeholder-text h2 {
-        font-size: 16px;
+        font-weight: bold;
     }
     .text-button-container {
         flex-direction: column;

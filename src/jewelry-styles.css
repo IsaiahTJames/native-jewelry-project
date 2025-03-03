@@ -332,13 +332,12 @@ body {
 }
 .about-text {
     width: 400px;
-    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 20px;
-    border: 2px solid var(--off-black);
+    text-align: left;
+    font-size: 16px;
+    border: 2px solid #aaa;
     padding: 20px;
 }
 .about-image img {
@@ -347,6 +346,9 @@ body {
     margin-left: 40px;
     border: 2px solid var(--off-black);
 }
+
+
+
 /* Main Footer */
 .main-footer {
     background-color: #f8f9fc;     /* Light background for a clean look */

@@ -42,6 +42,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+// Select the cart count element
+const cartCount = document.getElementById('cart-count');
+let cartItems = 0; // Initial cart count
+
+// Function to update the cart count
+function addToCart() {
+    cartItems++; // Increase count
+    cartCount.textContent = cartItems; // Update the number in cart
+
+    // Show the count badge when there's at least one item
+    if (cartItems > 0) {
+        cartCount.classList.remove('hidden');
+    }
+}
+
+// Example: Attach this function to your "Add to Cart" buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', addToCart);
+});
+
 
 
 

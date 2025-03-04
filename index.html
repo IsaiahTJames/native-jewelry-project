@@ -162,19 +162,12 @@
     <div class="carousel-container">
         <div class="popular-products-container grid grid-cols-3 sm:grid-cols-5">
             <div class="product-box">
-                <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="openModal('Placeholder', '19.99', 'images/xbox-image.png')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/xbox-image.png" alt="Product 1" class="product-img"
+                     onclick="openModal('Product 1', '29.99', 'images/xbox-image.png')">
                 <div class="product-info">
-                    <p class="product-name">Placeholder</p>
-                    <p class="product-price">$19.99</p>
+                    <p class="product-name">Product 1</p>
+                    <p class="product-price">$29.99</p>
                 </div>
-                <!-- Add to Cart Button
-                <button class="add-to-cart bg-blue-500 text-white px-4 py-2 rounded">
-                    Add to Cart
-                </button> -->
-
             </div>
             <div class="product-box">
                 <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
@@ -322,8 +315,30 @@
 </div>
 
 
+<!-- The Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
 
+        <div class="modal-body">
+            <!-- Main Product Image -->
+            <img id="modalImage" class="main-product-image" src="" alt="Product Image">
 
+            <!-- Thumbnail Images (Small Clickable Previews) -->
+            <div class="thumbnail-container">
+                <img class="images/xbox-image.png" onclick="changeModalImage(this)" src="" alt="Thumbnail 1">
+                <img class="images/xbox-image.png" onclick="changeModalImage(this)" src="" alt="Thumbnail 2">
+                <img class="images/xbox-image.png" onclick="changeModalImage(this)" src="" alt="Thumbnail 3">
+            </div>
+        </div>
+        <!-- Product Info -->
+        <h2 id="modalTitle">Product Name</h2>
+        <p id="modalPrice">$0.00</p>
+        <button class="add-to-cart bg-blue-500 text-white px-4 py-2 rounded mt-4 w-full">
+            Add to Cart
+        </button>
+    </div>
+</div>
 
 <!-- "Featured" Title (Centered) -->
 <div class="featured-section">

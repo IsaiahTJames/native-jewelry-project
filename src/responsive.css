@@ -1,3 +1,21 @@
+@media (max-width: 576px) {
+    /* Prevents navbar from expanding when menu opens */
+    .navbar-container {
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+    /* Fix the shopping bag position */
+    .shopping-bag {
+        position: absolute;
+        top: 52px;
+        right: 40px;
+    }
+    /* Menu opens as an overlay, does not push content */
+    #mobile-menu.open {
+        display: block;
+    }
+}
 
 
 

@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dropdownButtons.forEach(button => {
         button.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent page jump
-            event.stopPropagation(); // Prevent triggering document click immediately
+            event.preventDefault(); // Prevents jumping to top of page
+            event.stopPropagation(); // Stops event from bubbling to document
 
-            const dropdownMenu = this.nextElementSibling;
+            const dropdownMenu = this.closest("li").querySelector(".dropdown-menu"); // Ensures the correct dropdown menu
             const isOpen = !dropdownMenu.classList.contains("hidden");
 
             // Close all dropdowns first
@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 menu.classList.add("hidden");
             });
 
-            // Toggle the clicked dropdown
+            // Toggle only the clicked dropdown
             if (!isOpen) {
                 dropdownMenu.classList.remove("hidden");
-                document.body.classList.add("dropdown-active"); // Disable hover effects
+                document.body.classList.add("dropdown-active"); // Disables hover effect when open
             } else {
-                document.body.classList.remove("dropdown-active"); // Restore hover
+                document.body.classList.remove("dropdown-active"); // Re-enable hover effect
             }
         });
     });
@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
 
 
 function createCarousel(containerSelector, leftArrowSelector, rightArrowSelector) {

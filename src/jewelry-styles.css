@@ -265,7 +265,7 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 400px; /* Modal width */
+    width: 450px; /* Slightly wider */
     text-align: center;
     position: relative;
     animation: fadeIn 0.3s ease-in-out; /* Smooth opening effect */
@@ -298,33 +298,27 @@ body {
     color: #000;
 }
 
-/* Product Image Inside Modal */
-.modal-content img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 2px solid var(--off-black);
-}
+/* Adjusted Layout for Main Image and Thumbnails */
 .modal-body {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 15px; /* Spacing between main image & thumbnails */
 }
 
 /* Main Product Image */
 .main-product-image {
-    width: 300px; /* Adjust size */
+    width: 250px; /* Slightly smaller */
     height: auto;
     border-radius: 8px;
+    border: 2px solid var(--off-black);
 }
 
 /* Thumbnail Container */
 .thumbnail-container {
     display: flex;
-    flex-direction: column; /* Align thumbnails vertically */
+    flex-direction: row; /* Thumbnails should be in a row */
+    justify-content: center;
     gap: 10px;
 }
 
@@ -335,13 +329,14 @@ body {
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 1px solid var(--off-black);
     transition: 0.2s ease-in-out;
 }
 
 .thumbnail:hover, .thumbnail:focus {
     border-color: #007bff; /* Highlight border on hover */
 }
+
 
 
 

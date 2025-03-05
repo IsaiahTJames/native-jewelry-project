@@ -43,40 +43,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Get modal elements
-var modal = document.getElementById("productModal");
-var closeButton = document.querySelector(".close"); // Ensure this is targeting the correct close button
 
-// Function to Open the Modal and Update Content
-window.openModal = function (title, price, image, thumbnails = []) {
-    document.getElementById('modalTitle').textContent = title;
-    document.getElementById('modalPrice').textContent = `$${price}`;
-    document.getElementById('modalImage').src = image;
-    document.getElementById("productModal").style.display = "flex";
-
-    // Get all thumbnail elements inside modal
-    var thumbnailElements = document.querySelectorAll(".thumbnail");
-
-    // Reset thumbnails (hide if not needed)
-    thumbnailElements.forEach((thumb) => {
-        thumb.style.display = "none"; // Hide all initially
-    });
-
-    // Loop through available thumbnails and assign images
-    thumbnails.forEach((thumbSrc, index) => {
-        if (thumbnailElements[index]) {
-            thumbnailElements[index].src = thumbSrc;
-            thumbnailElements[index].style.display = "block"; // Ensure visible
-        }
-    });
-
-    modal.style.display = "flex"; // Show modal
+window.updateMainImage = function (thumbnail) {
+    document.getElementById("modalImage").src = thumbnail.src;
 };
 
-// Function to Change Main Image in Modal
-window.changeModalImage = function (thumbnail) {
-    var mainImage = document.getElementById("modalImage");
-    mainImage.src = thumbnail.src;
+// Get modal elements
+const modal = document.getElementById("productModal");
+const closeButton = document.querySelector(".close");
+
+// Function to Open the Modal and Update Content
+window.openModal = function (title, price, mainImage, thumbnails = []) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalPrice').textContent = `$${price}`;
+    document.getElementById('modalImage').src = mainImage;
+    document.getElementById("productModal").style.display = "flex";
+
+    // Get all thumbnail elements
+    const thumbnailElements = document.querySelectorAll(".thumbnail");
+
+    // Loop through available thumbnails and assign images
+    thumbnailElements.forEach((thumb, index) => {
+        if (thumbnails[index]) {
+            thumb.src = thumbnails[index];  // Set the image source
+            thumb.style.display = "block";  // Ensure it's visible
+        } else {
+            thumb.style.display = "none";  // Hide any extra thumbnails
+        }
+    });
 };
 
 // Function to Close the Modal
@@ -86,15 +80,23 @@ window.closeModal = function () {
 
 // Ensure the close button has the event listener
 if (closeButton) {
-    closeButton.addEventListener("click", closeModal);
+    closeButton.addEventListener("click", window.closeModal);
 }
 
 // Close modal when clicking outside of it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target === modal) {
-        closeModal();
+        window.closeModal();
     }
 };
+
+
+
+
+
+
+
+
 
 
 
@@ -123,6 +125,11 @@ function addToCart() {
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', addToCart);
 });
+
+
+
+
+
 
 
 

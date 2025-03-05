@@ -163,7 +163,7 @@
         <div class="popular-products-container grid grid-cols-3 sm:grid-cols-5">
             <div class="product-box">
                 <img src="images/xbox-image.png" alt="Product 1" class="product-img"
-                     onclick="openModal('Product 1', '29.99', 'images/xbox-image.png')">
+                     onclick="openModal('Product 1', '29.99', 'images/xbox-image.png',['images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'])">
                 <div class="product-info">
                     <p class="product-name">Product 1</p>
                     <p class="product-price">$29.99</p>
@@ -318,7 +318,7 @@
 <!-- The Modal -->
 <div id="productModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="window.closeModal()">&times;</span>
 
         <div class="modal-body">
             <!-- Main Product Image -->
@@ -326,9 +326,9 @@
 
             <!-- Thumbnail Images (Small Clickable Previews) -->
             <div class="thumbnail-container">
-                <img class="images/xbox-image.png" onclick="changeModalImage(this)" src="" alt="Thumbnail 1">
-                <img class="images/xbox-image.png" onclick="changeModalImage(this)" src="" alt="Thumbnail 2">
-                <img class="images/xbox-image.png" onclick="changeModalImage(this)" src="" alt="Thumbnail 3">
+                <img id="thumbnail1" class="thumbnail" onclick="window.updateMainImage(this)" src="" alt="Thumbnail 1">
+                <img id="thumbnail2" class="thumbnail" onclick="window.updateMainImage(this)" src="" alt="Thumbnail 2">
+                <img id="thumbnail3" class="thumbnail" onclick="window.updateMainImage(this)" src="" alt="Thumbnail 3">
             </div>
         </div>
         <!-- Product Info -->

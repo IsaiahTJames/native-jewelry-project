@@ -75,6 +75,39 @@ setInterval(nextSlide, 6000);
 
 
 
+window.openFourBoxModal = function (title, description, images = []) {
+    document.getElementById('fourBoxModalTitle').textContent = title;
+    document.getElementById('fourBoxModalDescription').textContent = description;
+
+    // Get the modal image container
+    const imageContainer = document.getElementById("fourBoxModalImages");
+    imageContainer.innerHTML = ""; // Clear existing images
+
+    // Add images dynamically
+    images.forEach((imgSrc) => {
+        let imgElement = document.createElement("img");
+        imgElement.src = imgSrc;
+        imgElement.classList.add("four-box-product-image");
+        imageContainer.appendChild(imgElement);
+    });
+
+    document.getElementById("fourBoxModal").style.display = "flex";
+};
+
+// Function to close modal
+window.closeFourBoxModal = function () {
+    document.getElementById("fourBoxModal").style.display = "none";
+};
+
+
+
+
+
+
+
+
+
+
 
 
 

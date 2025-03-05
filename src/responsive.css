@@ -16,11 +16,6 @@
         display: block;
     }
 }
-git
-
-
-
-
 
 /* Media query for mobile view (Decorative Band) */
 @media (max-width: 576px) {
@@ -33,6 +28,32 @@ git
         object-fit: cover;
     }
 }
+
+
+
+
+@media (max-width: 576px) {
+    .spotlight-carousel-container {
+        width: 100%;
+        max-width: 100%;
+        height: auto; /* Adjusts height dynamically */
+    }
+    .carousel-slide {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .spotlight-text {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
 /* 4 boxes (R,E,N,B) 320px */
 @media (max-width: 576px) {
     .xbox-container {

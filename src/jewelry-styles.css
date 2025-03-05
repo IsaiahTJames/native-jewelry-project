@@ -39,24 +39,23 @@ body {
 /* Unique Spotlight Carousel */
 .spotlight-carousel {
     position: relative;
-    width: 100%;
     height: 600px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Spotlight Carousel Container */
 .spotlight-carousel-container {
     position: absolute;
-    width: 100%;
     height: 100%;
     width: 1100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid gray;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Individual Slide */
@@ -130,7 +129,7 @@ body {
     gap: 0;
     padding: 4em 0;
     width: 100%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .xbox {
     width: 225px;
@@ -179,6 +178,75 @@ body {
 .shop-title p {
     font-size: 16px;
     color: var(--off-black);
+}
+
+/* Four Box Modal Container */
+.four-box-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Four Box Modal Content */
+.four-box-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+.four-box-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Image Container */
+.four-box-modal-images-container {
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+/* Modal Product Images */
+.four-box-product-image {
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid var(--off-black);
+    transition: transform 0.2s ease-in-out;
+}
+.four-box-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    height: 70%;
+    text-align: center;
+    position: relative;
+    overflow-y: auto; /* Enables scrolling if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything */
+}
+.four-box-product-image:hover {
+    border-color: var(--off-blue); /* Highlight border on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
 }
 
 
@@ -279,6 +347,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Black overlay for dim effect */
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* Modal Content Box */

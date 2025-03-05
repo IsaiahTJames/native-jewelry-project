@@ -31,8 +31,25 @@
                             <span class="hidden md:inline">▼</span>  <!-- Down arrow for desktop -->
                         </button>
                         <ul class="absolute left-25 md:left-0 top-[-10px] md:top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-40 z-10 dropdown-menu">
-                        <li><a href="#" class="block px-4 py-2 text-black hover:text-blue-500">Rings</a></li>
-                            <li><a href="#" class="block px-4 py-2 text-black hover:text-blue-500">Earrings</a></li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-black hover:text-blue-500"
+                               onClick="openFourBoxModal('Best Sellers', 'Explore our best-selling products!', [
+                                          'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png',
+                                          'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+                                        ])">
+                                Best Sellers
+                            </a>
+                        </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-black hover:text-blue-500"
+                                   onClick="openFourBoxModal('Earrings', 'Discover our handcrafted earrings!', [
+                                          'images/earring1.png', 'images/earring2.png', 'images/earring3.png',
+                                          'images/earring4.png', 'images/earring5.png', 'images/earring6.png',
+                                          'images/earring7.png', 'images/earring8.png', 'images/earring9.png'
+                                        ])">
+                                    Earrings
+                                </a>
+                            </li>
                             <li><a href="#" class="block px-4 py-2 text-black hover:text-blue-500">Necklaces</a></li>
                             <li><a href="#" class="block px-4 py-2 text-black hover:text-blue-500">Stickers</a></li>
                         </ul>
@@ -53,22 +70,6 @@
                         </ul>
                     </div>
                 </li>
-
-                <!-- Gallery Dropdown -->
-                <li class="relative">
-                    <div class="group inline-block">
-                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
-                            Gallery
-                            <span class="inline md:hidden">▶</span>
-                            <span class="hidden md:inline">▼</span>
-                        </button>
-                        <ul class="absolute left-20 md:left-0 top-[-10px] md:top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-40 z-10 dropdown-menu">
-                            <li><a href="#" class="block px-4 py-2 text-black hover:text-blue-500">Showcase</a></li>
-                            <li><a href="#" class="block px-4 py-2 text-black hover:text-blue-500">More Photos</a></li>
-                        </ul>
-                    </div>
-                </li>
-
                 <!-- About Us Dropdown -->
                 <li class="relative">
                     <div class="group inline-block">
@@ -90,7 +91,6 @@
             <img src="images/shopping-bag.png" alt="Shopping Bag" class="h-8 w-8">
             <span id="cart-count" class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full hidden">0</span>
         </a>
-
     </div>
 </nav>
 <!-- Decorative Band Below Nav-Bar -->
@@ -106,7 +106,6 @@
         <div class="carousel-slide active" style="background-image: url('images/placeholder-image.png');"></div>
         <div class="carousel-slide" style="background-image: url('images/xbox-image.png');"></div>
         <div class="carousel-slide" style="background-image: url('images/placeholder-image.png');"></div>
-
         <!-- Navigation Buttons -->
         <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
         <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
@@ -124,34 +123,73 @@
 <!-- Four Box Icons -->
 <div class="xbox-container grid grid-cols-2 gap-0 sm:grid-cols-4">
     <div class="xbox">
-        <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                onClick="alert('Best Sellers Popup')">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onClick="openFourBoxModal('Best Sellers', 'Explore our best-selling products!', [
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png',
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+            ])">
             <img src="images/xbox-image.png" alt="Best Sellers">
         </button>
         <p>Best Sellers</p>
     </div>
     <div class="xbox">
-        <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                onClick="alert('Earring Popups')">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onClick="openFourBoxModal('Earrings', 'Discover our handcrafted earrings!', [
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png',
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png',
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png',
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+            ])">
             <img src="images/xbox-image.png" alt="Earrings">
         </button>
         <p>Earrings</p>
     </div>
     <div class="xbox">
-        <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                onClick="alert('Book Popups')">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onClick="openFourBoxModal('Books', 'Browse our selection of books!', ['images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'])">
             <img src="images/xbox-image.png" alt="Books">
         </button>
         <p>Books</p>
     </div>
     <div class="xbox">
-        <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                onClick="alert('Sticker Popups')">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onClick="openFourBoxModal('Stickers', 'Check out our unique sticker collection!', ['images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'])">
             <img src="images/xbox-image.png" alt="Stickers">
         </button>
         <p>Stickers</p>
     </div>
 </div>
+
+<!-- Four Box Modal -->
+<div id="fourBoxModal" class="four-box-modal">
+    <div class="four-box-modal-content">
+        <span class="four-box-close" onclick="window.closeFourBoxModal()">&times;</span>
+
+        <div class="four-box-modal-body">
+            <h2 id="fourBoxModalTitle">Category Name</h2>
+            <p id="fourBoxModalDescription">Category Description</p>
+            <!-- Dynamic Image Container -->
+            <div id="fourBoxModalImages" class="four-box-modal-images-container"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- "Shop" and "Most Popular" Title (Centered) -->
 <div class="shop-section">
     <div class="shop-title">

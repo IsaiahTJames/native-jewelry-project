@@ -43,6 +43,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+let slideIndex = 0;
+const slides = document.querySelectorAll(".carousel-slide");
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+            slide.classList.add("active");
+        }
+    });
+}
+
+// Show the first slide initially
+showSlide(slideIndex);
+
+// Function to move to the next slide
+window.nextSlide = function () {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+};
+
+// Function to move to the previous slide
+window.prevSlide = function () {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+};
+
+// Auto-slide every 6 seconds
+setInterval(nextSlide, 6000);
+
+
+
+
+
+
+
+
+
 
 window.updateMainImage = function (thumbnail) {
     document.getElementById("modalImage").src = thumbnail.src;

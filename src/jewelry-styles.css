@@ -296,6 +296,8 @@ body {
 
 .close:hover {
     color: #000;
+    transform: scale(1.1);
+
 }
 
 /* Adjusted Layout for Main Image and Thumbnails */
@@ -311,7 +313,11 @@ body {
     width: 250px; /* Slightly smaller */
     height: auto;
     border-radius: 8px;
-    border: 2px solid var(--off-black);
+    border: 1px solid var(--off-black);
+}
+.main-product-image:hover {
+    border-color: var(--off-blue); /* Highlight border on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
 }
 
 /* Thumbnail Container */
@@ -334,8 +340,13 @@ body {
 }
 
 .thumbnail:hover, .thumbnail:focus {
-    border-color: #007bff; /* Highlight border on hover */
+    border-color: var(--off-blue); /* Highlight border on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
 }
+.add-to-cart:hover {
+     transform: scale(1.01); /* Slightly enlarges button on hover */
+ }
+
 
 
 

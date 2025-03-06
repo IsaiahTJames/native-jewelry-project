@@ -75,48 +75,39 @@ setInterval(nextSlide, 8000);
 
 
 
-// Function to Open the Four Box Modal
-window.openFourBoxModal = function (title, description, images) {
-    document.getElementById('fourBoxModalTitle').textContent = title;
-    document.getElementById('fourBoxModalDescription').textContent = description;
+// Function to Open Four Box Modal
+window.openFourBoxModal = function (title, description, images = []) {
+    const modal = document.getElementById("fourBoxModal");
+    const titleElement = document.getElementById("fourBoxModalTitle");
+    const descriptionElement = document.getElementById("fourBoxModalDescription");
+    const imageContainer = document.getElementById("fourBoxModalImages");
 
-    const modalImagesContainer = document.getElementById("fourBoxModalImages");
-    modalImagesContainer.innerHTML = ""; // Clear previous images
+    if (!modal || !titleElement || !descriptionElement || !imageContainer) {
+        console.error("Modal elements not found!");
+        return;
+    }
 
-    // Loop through images and create clickable product boxes
-    images.forEach((imageSrc, index) => {
-        const productBox = document.createElement("div");
-        productBox.classList.add("four-box-product");
-        productBox.innerHTML = `<img src="${imageSrc}" alt="Product Image ${index + 1}" class="four-box-product-image">`;
+    titleElement.textContent = title;
+    descriptionElement.textContent = description;
+    imageContainer.innerHTML = ""; // Clear previous images
 
-        // Click event: Opens the product modal without names or prices
-        productBox.addEventListener("click", function () {
-            window.openProductModal(
-                "", // No title
-                "", // No price
-                imageSrc, // Main image is the clicked image
-                images.filter(img => img !== imageSrc).slice(0, 2) // Pick 2 other images as thumbnails
-            );
-        });
-
-        modalImagesContainer.appendChild(productBox);
+    // Add images dynamically
+    images.forEach((imgSrc) => {
+        let imgElement = document.createElement("img");
+        imgElement.src = imgSrc;
+        imgElement.classList.add("four-box-product-image");
+        imageContainer.appendChild(imgElement);
     });
 
-    document.getElementById("fourBoxModal").style.display = "flex";
+    modal.style.display = "flex";
 };
 
-// Function to Close the Four Box Modal
+// Function to Close Four Box Modal
 window.closeFourBoxModal = function () {
     document.getElementById("fourBoxModal").style.display = "none";
 };
 
-// Ensure clicking outside the modal closes it
-window.onclick = function (event) {
-    const fourBoxModal = document.getElementById("fourBoxModal");
-    if (event.target === fourBoxModal) {
-        window.closeFourBoxModal();
-    }
-};
+
 
 
 

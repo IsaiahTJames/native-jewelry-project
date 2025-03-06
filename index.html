@@ -107,32 +107,67 @@
 
 
 
-<!-- 4 Boxes Container -->
-<div class="xbox-container grid grid-cols-2 gap-4 sm:grid-cols-4 p-6">
+<div class="xbox-container grid grid-cols-2 gap-4 sm:grid-cols-4">
     <!-- Best Sellers -->
-    <div class="xbox text-center cursor-pointer" onclick="openModal('Best Sellers', 'Explore our top-rated products!', 'images/xbox-image.png')">
-        <img src="images/xbox-image.png" alt="Best Sellers" class="rounded-lg w-full">
-        <p class="mt-2 font-semibold">Best Sellers</p>
+    <div class="xbox">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onclick="openFourBoxModal('Best Sellers', 'Explore our best-selling products!', [
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+            ])">
+            <img src="images/xbox-image.png" alt="Best Sellers">
+        </button>
+        <p class="text-center mt-2 font-semibold">Best Sellers</p>
     </div>
 
     <!-- Earrings -->
-    <div class="xbox text-center cursor-pointer" onclick="openModal('Earrings', 'Discover handcrafted Native earrings.', 'images/xbox-image.png')">
-        <img src="images/xbox-image.png" alt="Earrings" class="rounded-lg w-full">
-        <p class="mt-2 font-semibold">Earrings</p>
+    <div class="xbox">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onclick="openFourBoxModal('Earrings', 'Discover our handcrafted earrings!', [
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+            ])">
+            <img src="images/xbox-image.png" alt="Earrings">
+        </button>
+        <p class="text-center mt-2 font-semibold">Earrings</p>
     </div>
 
     <!-- Books -->
-    <div class="xbox text-center cursor-pointer" onclick="openModal('Books', 'Browse our collection of Indigenous literature.', 'images/xbox-image.png')">
-        <img src="images/xbox-image.png" alt="Books" class="rounded-lg w-full">
-        <p class="mt-2 font-semibold">Books</p>
+    <div class="xbox">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onclick="openFourBoxModal('Books', 'Browse our selection of books!', [
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+            ])">
+            <img src="images/xbox-image.png" alt="Books">
+        </button>
+        <p class="text-center mt-2 font-semibold">Books</p>
     </div>
 
     <!-- Stickers -->
-    <div class="xbox text-center cursor-pointer" onclick="openModal('Stickers', 'Shop unique Native-inspired stickers.', 'images/xbox-image.png')">
-        <img src="images/xbox-image.png" alt="Stickers" class="rounded-lg w-full">
-        <p class="mt-2 font-semibold">Stickers</p>
+    <div class="xbox">
+        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                onclick="openFourBoxModal('Stickers', 'Check out our unique sticker collection!', [
+                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
+            ])">
+            <img src="images/xbox-image.png" alt="Stickers">
+        </button>
+        <p class="text-center mt-2 font-semibold">Stickers</p>
     </div>
 </div>
+
+<!-- Four Box Modal -->
+<div id="fourBoxModal" class="four-box-modal">
+    <div class="four-box-modal-content">
+        <span class="four-box-close" onclick="closeFourBoxModal()">&times;</span>
+        <div class="four-box-modal-body">
+            <h2 id="fourBoxModalTitle">Category Name</h2>
+            <p id="fourBoxModalDescription">Category Description</p>
+            <div id="fourBoxModalImages" class="four-box-modal-images-container"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 

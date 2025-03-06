@@ -88,7 +88,7 @@ window.openFourBoxModal = function (button) {
 
     // Set Title and Description dynamically
     modalTitle.textContent = parentDiv.querySelector("p").textContent;
-    modalDescription.textContent = parentDiv.getAttribute("data-description"); // Get from HTML
+    modalDescription.textContent = parentDiv.getAttribute("data-description"); // from HTML
 
     // Clear previous content in modal
     imageContainer.innerHTML = "";
@@ -113,16 +113,25 @@ window.openFourBoxModal = function (button) {
         priceElement.textContent = product.getAttribute("data-price");
         priceElement.classList.add("product-price");
 
-        // Add to Cart Button
+        // Add to Cart Button (THIS WAS MISSING)
         let addToCartButton = document.createElement("button");
         addToCartButton.textContent = "Add to Cart";
         addToCartButton.classList.add("add-to-cart-btn");
+
+        // Fix: Now add event listener to the button
+        addToCartButton.addEventListener("click", function () {
+            addToCart({
+                name: nameElement.textContent,
+                price: priceElement.textContent,
+                image: imgElement.src, // Optional: Add image
+            });
+        });
 
         // Append Elements
         productDiv.appendChild(imgElement);
         productDiv.appendChild(nameElement);
         productDiv.appendChild(priceElement);
-        productDiv.appendChild(addToCartButton);
+        productDiv.appendChild(addToCartButton); // Now it's properly appended
         imageContainer.appendChild(productDiv);
     });
 
@@ -132,10 +141,66 @@ window.openFourBoxModal = function (button) {
 
 // Function to Close the Modal
 window.closeFourBoxModal = function () {
-    document.getElementById("fourBoxModal").style.display = "none";
-};
+    document.getElementById("fourBoxModal").style.display = "none"
+}
 
+// Select the cart count element
+const cartCount = document.getElementById('cart-count')
+let cartItems = JSON.parse(localStorage.getItem("cart"))?.length || 0 // Initialize from storage
 
+// Function to update the cart count in the UI
+function updateCartCount() {
+    cartCount.textContent = cartItems
+
+    // Show the count badge when there's at least one item
+    if (cartItems > 0) {
+        cartCount.classList.remove('hidden')
+    } else {
+        cartCount.classList.add('hidden')
+    }
+}
+
+// Function to handle adding a product to the cart (now unified)
+function addToCart(product) {
+    console.log("Adding to cart:", product)
+
+    // Get cart from localStorage or create an empty one
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart))
+
+    // Increase and update cart count
+    cartItems = cart.length; // Reflects the actual cart size
+    updateCartCount() // Update the UI
+
+    alert(`${product.name} added to cart for ${product.price}`)
+}
+
+// Attach the function to all "Add to Cart" buttons across the site
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        let productElement = this.closest(".product")
+
+        let product = {
+            name: productElement.querySelector(".product-name").textContent,
+            price: productElement.querySelector(".product-price").textContent,
+            image: productElement.querySelector("img").src
+        }
+        addToCart(product)
+    })
+})
+function addModalProductToCart() {
+    let product = {
+        name: document.querySelector(".modalTitle").textContent,
+        price: document.querySelector(".modalPrice").textContent,
+        image: document.querySelector(".modalImage").src
+    }
+    addToCart(product)
+}
+document.getElementById("modalAddToCart").addEventListener("click", addModalProductToCart)
+
+// Initialize cart count on page load
+updateCartCount()
 
 
 
@@ -250,25 +315,6 @@ window.onclick = function (event) {
 
 
 
-// Select the cart count element
-const cartCount = document.getElementById('cart-count');
-let cartItems = 0; // Initial cart count
-
-// Function to update the cart count
-function addToCart() {
-    cartItems++; // Increase count
-    cartCount.textContent = cartItems; // Update the number in cart
-
-    // Show the count badge when there's at least one item
-    if (cartItems > 0) {
-        cartCount.classList.remove('hidden');
-    }
-}
-
-// Example: Attach this function to your "Add to Cart" buttons
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', addToCart);
-});
 
 
 

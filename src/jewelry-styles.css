@@ -185,7 +185,9 @@ body {
     font-size: 16px;
     color: var(--off-black);
 }
-/* Four Box Modal */
+
+
+/* Four Box Modal Container */
 .four-box-modal {
     display: none;
     position: fixed;
@@ -204,41 +206,59 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 60%;
+    max-height: 80vh;
+    overflow-y: auto;
     text-align: center;
     position: relative;
 }
 
 /* Close Button */
 .four-box-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    position: sticky;
+    top: 0;
+    right: 0;
     font-size: 24px;
     cursor: pointer;
-}
-
-/* Image Container */
-.four-box-modal-images-container {
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 10; /* Ensures it stays above other elements */
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-end; /* Pushes it to the right */
+
+}
+
+/* Image Grid Container */
+.four-box-modal-images-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 25px; /* Space between images */
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    align-items: center;
+    padding: 25px;
 }
 
-/* Modal Product Images */
-.four-box-product-image {
-    height: 150px;
-    width: 150px;
+/* Modal Images */
+.four-box-modal-images-container img {
+    width: 200px;  /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
     border-radius: 5px;
-    border: 1px solid #ddd;
     transition: transform 0.2s ease-in-out;
+    border: 1px solid var(--off-black);
+}
+.four-box-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.four-box-product-image:hover {
-    transform: scale(1.05);
+.four-box-modal-images-container img:hover {
+    transform: scale(1.02);
 }
+
+
 
 
 

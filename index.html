@@ -85,9 +85,6 @@
 <div class="decorative-band">
     <img src="images/zig-zag.png" alt="decorative-band">
 </div>
-
-
-
 <!-- Placeholder Image Below Decorative Band -->
 <div class="spotlight-carousel">
     <div class="spotlight-carousel-container">
@@ -109,52 +106,159 @@
 
 <div class="xbox-container grid grid-cols-2 gap-4 sm:grid-cols-4">
     <!-- Best Sellers -->
-    <div class="xbox">
+    <div class="xbox" data-description="Explore our top-rated and best-selling products loved by our customers!">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
-                onclick="openFourBoxModal('Best Sellers', 'Explore our best-selling products!', [
-                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
-            ])">
+                onclick="openFourBoxModal(this)">
             <img src="images/xbox-image.png" alt="Best Sellers">
         </button>
         <p class="text-center mt-2 font-semibold">Best Sellers</p>
+        <!-- Product Details Inside HTML -->
+        <div class="product-details hidden">
+            <div class="product" data-name="Product A" data-price="$29.99">
+                <img src="images/xbox-image.png" alt="Product A">
+                <p class="product-name">Product A</p>
+                <p class="product-price">$29.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Product B" data-price="$39.99">
+                <img src="images/xbox-image.png" alt="Product B">
+                <p class="product-name">Product B</p>
+                <p class="product-price">$39.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Product C" data-price="$24.99">
+                <img src="images/xbox-image.png" alt="Product C">
+                <p class="product-name">Product C</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
     </div>
-
     <!-- Earrings -->
-    <div class="xbox">
+    <div class="xbox" data-description="Discover our handcrafted earrings, designed with elegance and tradition.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
-                onclick="openFourBoxModal('Earrings', 'Discover our handcrafted earrings!', [
-                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png',
-                'images/xbox-image.png', 'images/xbox-image.png','images/xbox-image.png',
-                'images/xbox-image.png', 'images/xbox-image.png','images/xbox-image.png'
-            ])">
+                onclick="openFourBoxModal(this)">
             <img src="images/xbox-image.png" alt="Earrings">
         </button>
         <p class="text-center mt-2 font-semibold">Earrings</p>
+        <!-- Product Details  -->
+        <div class="product-details hidden">
+            <div class="product" data-name="Turquoise Earrings" data-price="$29.99">
+                <img src="images/xbox-image.png" alt="Turquoise Earrings">
+                <p class="product-name">Turquoise Earrings</p>
+                <p class="product-price">$29.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Silver Hoops" data-price="$39.99">
+                <img src="images/xbox-image.png" alt="Silver Hoops">
+                <p class="product-name">Silver Hoops</p>
+                <p class="product-price">$39.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/xbox-image.png" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
     </div>
-
     <!-- Books -->
-    <div class="xbox">
+    <div class="xbox" data-description="Browse our selection of books showcasing Native culture and history.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
-                onclick="openFourBoxModal('Books', 'Browse our selection of books!', [
-                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
-            ])">
+                onclick="openFourBoxModal(this)">
             <img src="images/xbox-image.png" alt="Books">
         </button>
         <p class="text-center mt-2 font-semibold">Books</p>
+        <!-- Product Details Inside HTML -->
+        <div class="product-details hidden">
+            <div class="product" data-name="Book 1" data-price="$19.99">
+                <img src="images/xbox-image.png" alt="Book 1">
+                <p class="product-name">Book 1</p>
+                <p class="product-price">$19.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 2" data-price="$22.99">
+                <img src="images/xbox-image.png" alt="Book 2">
+                <p class="product-name">Book 2</p>
+                <p class="product-price">$22.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 3" data-price="$25.99">
+                <img src="images/xbox-image.png" alt="Book 3">
+                <p class="product-name">Book 3</p>
+                <p class="product-price">$25.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 1" data-price="$19.99">
+                <img src="images/xbox-image.png" alt="Book 1">
+                <p class="product-name">Book 1</p>
+                <p class="product-price">$19.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 2" data-price="$22.99">
+                <img src="images/xbox-image.png" alt="Book 2">
+                <p class="product-name">Book 2</p>
+                <p class="product-price">$22.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 3" data-price="$25.99">
+                <img src="images/xbox-image.png" alt="Book 3">
+                <p class="product-name">Book 3</p>
+                <p class="product-price">$25.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 1" data-price="$19.99">
+                <img src="images/xbox-image.png" alt="Book 1">
+                <p class="product-name">Book 1</p>
+                <p class="product-price">$19.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 2" data-price="$22.99">
+                <img src="images/xbox-image.png" alt="Book 2">
+                <p class="product-name">Book 2</p>
+                <p class="product-price">$22.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Book 3" data-price="$25.99">
+                <img src="images/xbox-image.png" alt="Book 3">
+                <p class="product-name">Book 3</p>
+                <p class="product-price">$25.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
     </div>
 
     <!-- Stickers -->
-    <div class="xbox">
+    <div class="xbox" data-description="Check out our unique sticker collection inspired by Indigenous art.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
-                onclick="openFourBoxModal('Stickers', 'Check out our unique sticker collection!', [
-                'images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'
-            ])">
+                onclick="openFourBoxModal(this)">
             <img src="images/xbox-image.png" alt="Stickers">
         </button>
         <p class="text-center mt-2 font-semibold">Stickers</p>
+        <!-- Product Details Inside HTML -->
+        <div class="product-details hidden">
+            <div class="product" data-name="Sticker Pack 1" data-price="$9.99">
+                <img src="images/xbox-image.png" alt="Sticker Pack 1">
+                <p class="product-name">Sticker Pack 1</p>
+                <p class="product-price">$9.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Sticker Pack 2" data-price="$12.99">
+                <img src="images/xbox-image.png" alt="Sticker Pack 2">
+                <p class="product-name">Sticker Pack 2</p>
+                <p class="product-price">$12.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Sticker Pack 3" data-price="$15.99">
+                <img src="images/xbox-image.png" alt="Sticker Pack 3">
+                <p class="product-name">Sticker Pack 3</p>
+                <p class="product-price">$15.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
     </div>
 </div>
-
 <!-- Four Box Modal -->
 <div id="fourBoxModal" class="four-box-modal">
     <div class="four-box-modal-content">

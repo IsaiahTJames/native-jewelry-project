@@ -75,37 +75,67 @@ setInterval(nextSlide, 8000);
 
 
 
-// Function to Open Four Box Modal
-window.openFourBoxModal = function (title, description, images = []) {
+window.openFourBoxModal = function (button) {
+    // Modal elements
     const modal = document.getElementById("fourBoxModal");
-    const titleElement = document.getElementById("fourBoxModalTitle");
-    const descriptionElement = document.getElementById("fourBoxModalDescription");
+    const modalTitle = document.getElementById("fourBoxModalTitle");
+    const modalDescription = document.getElementById("fourBoxModalDescription");
     const imageContainer = document.getElementById("fourBoxModalImages");
 
-    if (!modal || !titleElement || !descriptionElement || !imageContainer) {
-        console.error("Modal elements not found!");
-        return;
-    }
+    // Get parent container of the clicked button
+    const parentDiv = button.closest(".xbox");
+    const productDetails = parentDiv.querySelector(".product-details");
 
-    titleElement.textContent = title;
-    descriptionElement.textContent = description;
-    imageContainer.innerHTML = ""; // Clear previous images
+    // Set Title and Description dynamically
+    modalTitle.textContent = parentDiv.querySelector("p").textContent;
+    modalDescription.textContent = parentDiv.getAttribute("data-description"); // Get from HTML
 
-    // Add images dynamically
-    images.forEach((imgSrc) => {
+    // Clear previous content in modal
+    imageContainer.innerHTML = "";
+
+    // Loop through each product inside `.product-details`
+    productDetails.querySelectorAll(".product").forEach((product) => {
+        let productDiv = document.createElement("div");
+        productDiv.classList.add("modal-product");
+
+        // Image Element
         let imgElement = document.createElement("img");
-        imgElement.src = imgSrc;
+        imgElement.src = product.querySelector("img").src;
         imgElement.classList.add("four-box-product-image");
-        imageContainer.appendChild(imgElement);
+
+        // Name Element
+        let nameElement = document.createElement("p");
+        nameElement.textContent = product.getAttribute("data-name");
+        nameElement.classList.add("product-name");
+
+        // Price Element
+        let priceElement = document.createElement("p");
+        priceElement.textContent = product.getAttribute("data-price");
+        priceElement.classList.add("product-price");
+
+        // Add to Cart Button
+        let addToCartButton = document.createElement("button");
+        addToCartButton.textContent = "Add to Cart";
+        addToCartButton.classList.add("add-to-cart-btn");
+
+        // Append Elements
+        productDiv.appendChild(imgElement);
+        productDiv.appendChild(nameElement);
+        productDiv.appendChild(priceElement);
+        productDiv.appendChild(addToCartButton);
+        imageContainer.appendChild(productDiv);
     });
 
+    // Show modal
     modal.style.display = "flex";
 };
 
-// Function to Close Four Box Modal
+// Function to Close the Modal
 window.closeFourBoxModal = function () {
     document.getElementById("fourBoxModal").style.display = "none";
 };
+
+
 
 
 

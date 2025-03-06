@@ -104,32 +104,50 @@
         object-fit: cover;
     }
 }
-
-/* Media query for mobile view (Placeholder Image / p / btn) */
 @media (max-width: 576px) {
-    .placeholder-image {
-        height: 300px;
+    .four-box-modal {
+        width: 100%;
     }
-    .placeholder-text {
-        padding-right: 20px;
+    .four-box-modal-content {
+        width: 90% !important; /* Force a wider modal */
     }
-    .placeholder-text h2 {
-        font-weight: bold;
-    }
-    .text-button-container {
-        flex-direction: column;
+    .four-box-modal-images-container {
+        grid-template-columns: repeat(2, 1fr) !important; /* Switch to 2 columns */
+        justify-items: center;
         align-items: center;
         gap: 10px;
     }
-    .text-button-container p {
-        font-size: 12px;
-        max-width: 100%;
+
+    .four-box-product-image {
+        width: 100px; /* Reduce image size */
+        height: 100px;
     }
-    .shop-btn {
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .product-price {
         font-size: 12px;
-        padding: 8px 12px;
+    }
+
+    .add-to-cart-btn {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Media query for mobile view (Most Popular) */
 @media (max-width: 576px) {

@@ -187,7 +187,7 @@ body {
 }
 
 
-/* Four Box Modal Container */
+/* Modal Container */
 .four-box-modal {
     display: none;
     position: fixed;
@@ -201,9 +201,11 @@ body {
     justify-content: center;
 }
 
-/* Four Box Modal Content */
+/* Modal Content */
 .four-box-modal-content {
+    display: flex;
     background-color: white;
+    flex-direction: column;
     padding: 20px;
     border-radius: 10px;
     width: 60%;
@@ -212,7 +214,6 @@ body {
     text-align: center;
     position: relative;
 }
-
 /* Close Button */
 .four-box-close {
     position: sticky;
@@ -220,43 +221,73 @@ body {
     right: 0;
     font-size: 24px;
     cursor: pointer;
-    background: none;
-    border: none;
-    padding: 10px;
-    z-index: 10; /* Ensures it stays above other elements */
-    display: flex;
-    justify-content: flex-end; /* Pushes it to the right */
+    font-weight: bold;
+    z-index: 10;
+    align-self: flex-end;
 
 }
 
-/* Image Grid Container */
+/* Grid Layout */
 .four-box-modal-images-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-    gap: 25px; /* Space between images */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
 }
 
-/* Modal Images */
-.four-box-modal-images-container img {
-    width: 200px;  /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.2s ease-in-out;
-    border: 1px solid var(--off-black);
-}
-.four-box-modal-body {
+/* Product Styling */
+.modal-product {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
-.four-box-modal-images-container img:hover {
-    transform: scale(1.02);
+/* Product Image */
+.four-box-product-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid #000;
 }
+
+.four-box-product-image:hover {
+    transform: scale(1.05);
+}
+
+/* Product Name */
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Product Price */
+.product-price {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+
 
 
 

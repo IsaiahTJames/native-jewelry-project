@@ -1,5 +1,15 @@
 @media (max-width: 576px) {
     /* Prevents navbar from expanding when menu opens */
+    .dropdown-menu {
+        position: absolute;
+
+        top: -5px; /* Move the dropdown up */
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 8px 0;
+        border-radius: 5px;
+        z-index: 50;
+    }
     .navbar-container {
         align-items: center;
         width: 100%;
@@ -16,7 +26,6 @@
         display: block;
     }
 }
-
 /* Media query for mobile view (Decorative Band) */
 @media (max-width: 576px) {
     .decorative-band-container {
@@ -33,15 +42,39 @@
 
 
 @media (max-width: 576px) {
-    .spotlight-carousel-container {
+    /* Spotlight Carousel */
+    .spotlight-carousel {
+        position: relative;
+        overflow: hidden;
+        display: flex;
         width: 100%;
-        max-width: 100%;
-        height: auto; /* Adjusts height dynamically */
+        height: auto; /* Allows the height to adjust dynamically */
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+
+    /* Spotlight Carousel Container */
+    .spotlight-carousel-container {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Individual Slide - Fix Image Sizing */
     .carousel-slide {
-        width: 100%;
-        background-size: cover;
+        width: 100%; /* Adjust to fit container */
+        max-width: 576px; /* Force a smaller maximum width */
+        height: auto; /* Allow height to adjust dynamically */
         background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .spotlight-text {
         width: 100%;

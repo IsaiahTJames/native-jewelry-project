@@ -70,34 +70,61 @@ window.prevSlide = function () {
     showSlide(slideIndex);
 };
 
-// Auto-slide every 6 seconds
-setInterval(nextSlide, 6000);
+// Auto-slide every 8 seconds
+setInterval(nextSlide, 8000);
 
 
 
-window.openFourBoxModal = function (title, description, images = []) {
+// Function to Open the Four Box Modal
+window.openFourBoxModal = function (title, description, images) {
     document.getElementById('fourBoxModalTitle').textContent = title;
     document.getElementById('fourBoxModalDescription').textContent = description;
 
-    // Get the modal image container
-    const imageContainer = document.getElementById("fourBoxModalImages");
-    imageContainer.innerHTML = ""; // Clear existing images
+    const modalImagesContainer = document.getElementById("fourBoxModalImages");
+    modalImagesContainer.innerHTML = ""; // Clear previous images
 
-    // Add images dynamically
-    images.forEach((imgSrc) => {
-        let imgElement = document.createElement("img");
-        imgElement.src = imgSrc;
-        imgElement.classList.add("four-box-product-image");
-        imageContainer.appendChild(imgElement);
+    // Loop through images and create clickable product boxes
+    images.forEach((imageSrc, index) => {
+        const productBox = document.createElement("div");
+        productBox.classList.add("four-box-product");
+        productBox.innerHTML = `<img src="${imageSrc}" alt="Product Image ${index + 1}" class="four-box-product-image">`;
+
+        // Click event: Opens the product modal without names or prices
+        productBox.addEventListener("click", function () {
+            window.openProductModal(
+                "", // No title
+                "", // No price
+                imageSrc, // Main image is the clicked image
+                images.filter(img => img !== imageSrc).slice(0, 2) // Pick 2 other images as thumbnails
+            );
+        });
+
+        modalImagesContainer.appendChild(productBox);
     });
 
     document.getElementById("fourBoxModal").style.display = "flex";
 };
 
-// Function to close modal
+// Function to Close the Four Box Modal
 window.closeFourBoxModal = function () {
     document.getElementById("fourBoxModal").style.display = "none";
 };
+
+// Ensure clicking outside the modal closes it
+window.onclick = function (event) {
+    const fourBoxModal = document.getElementById("fourBoxModal");
+    if (event.target === fourBoxModal) {
+        window.closeFourBoxModal();
+    }
+};
+
+
+
+
+
+
+
+
 
 
 
@@ -116,7 +143,24 @@ window.closeFourBoxModal = function () {
 
 
 window.updateMainImage = function (thumbnail) {
-    document.getElementById("modalImage").src = thumbnail.src;
+    const mainImage = document.getElementById("modalImage");
+    const thumbnailsContainer = document.getElementById("modalThumbnails");
+
+    // Store current main image source
+    const currentMainImage = mainImage.src;
+
+    // Swap the clicked thumbnail with the main image
+    mainImage.src = thumbnail.src;
+    thumbnail.src = currentMainImage;
+};
+
+window.updateMainImage = function (thumbnail) {
+    const mainImage = document.getElementById("modalImage");
+
+    // Swap the clicked thumbnail with the main image
+    const tempSrc = mainImage.src;
+    mainImage.src = thumbnail.src;
+    thumbnail.src = tempSrc;
 };
 
 // Get modal elements
@@ -130,16 +174,22 @@ window.openModal = function (title, price, mainImage, thumbnails = []) {
     document.getElementById('modalImage').src = mainImage;
     document.getElementById("productModal").style.display = "flex";
 
-    // Get all thumbnail elements
+    // Ensure exactly two thumbnails (if more provided, limit to 2)
+    let updatedThumbnails = thumbnails.slice(0, 2);
+
+    // Get thumbnail elements
     const thumbnailElements = document.querySelectorAll(".thumbnail");
 
-    // Loop through available thumbnails and assign images
+    // Loop through two available thumbnails and assign images
     thumbnailElements.forEach((thumb, index) => {
-        if (thumbnails[index]) {
-            thumb.src = thumbnails[index];  // Set the image source
+        if (updatedThumbnails[index]) {
+            thumb.src = updatedThumbnails[index];  // Set the image source
             thumb.style.display = "block";  // Ensure it's visible
+            thumb.onclick = function () {
+                window.updateMainImage(thumb); // Swap with main image
+            };
         } else {
-            thumb.style.display = "none";  // Hide any extra thumbnails
+            thumb.style.display = "none";  // Hide extra thumbnails if not available
         }
     });
 };
@@ -160,6 +210,8 @@ window.onclick = function (event) {
         window.closeModal();
     }
 };
+
+
 
 
 

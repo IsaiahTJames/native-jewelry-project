@@ -215,14 +215,14 @@ function updateCartDropdown() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartList = document.getElementById("cartItemsList");
 
-    cartList.innerHTML = ""; // Clear previous items
+    cartList.innerHTML = "" // Clear previous items
 
     if (cart.length === 0) {
-        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`;
+        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`
     } else {
         cart.forEach((item, index) => {
-            let listItem = document.createElement("li");
-            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2");
+            let listItem = document.createElement("li")
+            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2")
 
             listItem.innerHTML = `
                 <div class="flex items-center">
@@ -266,13 +266,11 @@ function updateCartDropdown() {
 // Function to swap the main image with the clicked thumbnail
 window.updateMainImage = function (thumbnail) {
     const mainImage = document.getElementById("modalImage");
-
     // Swap the clicked thumbnail with the main image
     const tempSrc = mainImage.src;
     mainImage.src = thumbnail.src;
     thumbnail.src = tempSrc;
 };
-
 // Get modal elements
 const modal = document.getElementById("productModal");
 const closeButton = document.querySelector(".close");

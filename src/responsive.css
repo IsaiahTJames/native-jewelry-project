@@ -2,7 +2,6 @@
     /* Prevents navbar from expanding when menu opens */
     .dropdown-menu {
         position: absolute;
-
         top: -5px; /* Move the dropdown up */
         background-color: white;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -21,6 +20,7 @@
         top: 52px;
         right: 40px;
     }
+
     /* Menu opens as an overlay, does not push content */
     #mobile-menu.open {
         display: block;
@@ -176,22 +176,22 @@
 
     }
     .arrow {
-        top: 35% !important; /* Moves arrows up */
+        top: 39% !important; /* Moves arrows up */
         transform: translateY(-50%); /* Center relative to images */
-        font-size: 20px; /* Adjust arrow size */
-        width: 35px;
-        height: 35px;
+        color: var(--off-turquoise);
+        border-radius: 5px;
+        font-size: 40px !important;
     }
     .arrow:hover {
         transform: translateY(-50%) scale(1.2); /* Slightly enlarge on hover */
     }
 
     .left-arrow {
-        left: -5px !important; /* Keep inside screen */
+        left: -4px !important; /* Keep inside screen */
     }
 
     .right-arrow {
-        right: 5px !important; /* Keep inside screen */
+        right: -4px !important; /* Keep inside screen */
     }
 }
 @media (max-width: 576px) {

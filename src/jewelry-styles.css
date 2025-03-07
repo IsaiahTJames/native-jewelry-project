@@ -3,6 +3,7 @@
     --off-white: #ffffff;
     --off-blue: #0000ff;
     --off-turquoise: #40E0D0;
+    --off-light-gray: #aaa
 }
 body {
     font-family: Arial, sans-serif;
@@ -10,26 +11,7 @@ body {
     padding: 0;
     background-color: var(--off-white);
 }
-
-.dropdown {
-    display: none;
-}
-
-
-.group:hover > ul {
-    display: block;
-}
-/* Disable hover when dropdown is open */
-.dropdown-active .dropdown-button:hover + .dropdown-menu {
-    display: none !important;
-}
-
-
-
-
-
-
-    /* decorative stripe-band */
+/* decorative stripe-band */
 .decorative-band {
     width: 100%;
     text-align: center;
@@ -52,7 +34,6 @@ body {
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 /* Spotlight Carousel Container */
 .spotlight-carousel-container {
     position: absolute;
@@ -63,7 +44,6 @@ body {
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 /* Individual Slide */
 .carousel-slide {
     position: absolute;
@@ -74,12 +54,10 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-
 /* Show Active Slide */
 .carousel-slide.active {
     opacity: 1;
 }
-
 /* Navigation Buttons */
 .carousel-btn {
     position: absolute;
@@ -94,11 +72,9 @@ body {
     z-index: 10;
     transition: 0.3s;
 }
-
 .carousel-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .prev {
     left: 20px;
 }
@@ -106,7 +82,6 @@ body {
 .next {
     right: 20px;
 }
-
 /* Spotlight Text */
 .spotlight-text {
     position: absolute;
@@ -120,13 +95,7 @@ body {
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-
-
-
-
-
-/* 4 boxes placeholder */
+/* 4 boxes  */
 .xbox-container {
     display: flex;
     justify-content: center;
@@ -185,8 +154,6 @@ body {
     font-size: 16px;
     color: var(--off-black);
 }
-
-
 /* Modal Container */
 .four-box-modal {
     display: none;
@@ -226,7 +193,6 @@ body {
     align-self: flex-end;
 
 }
-
 /* Grid Layout */
 .four-box-modal-images-container {
     display: grid;
@@ -236,7 +202,6 @@ body {
     align-items: center;
     padding: 20px;
 }
-
 /* Product Styling */
 .modal-product {
     display: flex;
@@ -244,7 +209,6 @@ body {
     align-items: center;
     text-align: center;
 }
-
 /* Product Image */
 .four-box-product-image {
     width: 180px;
@@ -254,24 +218,20 @@ body {
     transition: transform 0.2s ease-in-out;
     border: 1px solid #000;
 }
-
 .four-box-product-image:hover {
     transform: scale(1.05);
 }
-
 /* Product Name */
 .product-name {
     font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
 }
-
 /* Product Price */
 .product-price {
     font-size: 14px;
     color: #333;
 }
-
 /* Add to Cart Button */
 .add-to-cart-btn {
     background-color: #007bff;
@@ -282,23 +242,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .add-to-cart-btn:hover {
     background-color: #0056b3;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Popular Products Section */
 .popular-products {
     display: flex;
@@ -368,16 +314,12 @@ body {
     padding: 10px;
     transition: 0.1s;
 }
-
 .arrow:hover {
     transform: translateY(-50%) scale(1.2); /* Adjust for exact centering */
 }
 .left-arrow {
     left: -5px; /* Keep inside screen */
 }
-
-
-
 /* The Modal (Hidden by Default) */
 .modal {
     display: none; /* Initially hidden */
@@ -392,7 +334,6 @@ body {
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
-
 /* Modal Content Box */
 .modal-content {
     background-color: white;
@@ -403,7 +344,6 @@ body {
     position: relative;
     animation: fadeIn 0.3s ease-in-out; /* Smooth opening effect */
 }
-
 /* Modal Fade-in Animation */
 @keyframes fadeIn {
     from {
@@ -415,7 +355,6 @@ body {
         transform: scale(1);
     }
 }
-
 /* Close Button (X) */
 .close {
     position: absolute;
@@ -426,13 +365,11 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-
 .close:hover {
     color: #000;
     transform: scale(1.1);
 
 }
-
 /* Adjusted Layout for Main Image and Thumbnails */
 .modal-body {
     display: flex;
@@ -440,7 +377,6 @@ body {
     align-items: center;
     gap: 15px; /* Spacing between main image & thumbnails */
 }
-
 /* Main Product Image */
 .main-product-image {
     width: 250px; /* Slightly smaller */
@@ -452,7 +388,6 @@ body {
     border-color: var(--off-blue); /* Highlight border on hover */
     transform: scale(1.03); /* Slightly larger on hover */
 }
-
 /* Thumbnail Container */
 .thumbnail-container {
     display: flex;
@@ -460,7 +395,6 @@ body {
     justify-content: center;
     gap: 10px;
 }
-
 /* Thumbnail Images */
 .thumbnail {
     width: 60px; /* Small size */
@@ -471,7 +405,6 @@ body {
     border: 1px solid var(--off-black);
     transition: 0.2s ease-in-out;
 }
-
 .thumbnail:hover, .thumbnail:focus {
     border-color: var(--off-blue); /* Highlight border on hover */
     transform: scale(1.02); /* Slightly larger on hover */
@@ -479,16 +412,6 @@ body {
 .add-to-cart:hover {
      transform: scale(1.01); /* Slightly enlarges button on hover */
  }
-
-
-
-
-
-
-
-
-
-
 /* Featured Product Section */
 .featured-section {
     padding: 1em 0;
@@ -507,10 +430,6 @@ body {
 .featured-title h2 a:hover {
     color: var(--off-blue);
 }
-
-
-
-
 /* Container for Featured Products */
 .featured-products {
     display: flex;
@@ -548,18 +467,10 @@ body {
     align-items: center;
     flex-shrink: 0;
 }
-
 .featured-box:hover {
     transform: scale(1.03);
     border-color: var(--off-blue);
 }
-
-
-
-
-
-
-
 /* About Section */
 .about-section {
     display: flex;
@@ -582,18 +493,15 @@ body {
     align-items: center;
     text-align: left;
     font-size: 16px;
-    border: 2px solid #aaa;
+    border: 2px solid var(--off-light-gray);
     padding: 20px;
 }
 .about-image img {
     width: 350px;
     height: 350px;
     margin-left: 40px;
-    border: 2px solid var(--off-black);
+    border: 2px solid var(--off-light-gray);
 }
-
-
-
 /* Main Footer */
 .main-footer {
     background-color: #f8f9fc;

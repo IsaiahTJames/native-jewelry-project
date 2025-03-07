@@ -74,10 +74,22 @@
         </div>
 
         <!-- Shopping Bag Button -->
-        <a class="shopping-bag relative">
-            <img src="images/shopping-bag.png" alt="Shopping Bag" class="h-8 w-8">
-            <span id="cart-count" class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full hidden">0</span>
-        </a>
+        <div class="relative">
+            <a id="cartButton" class="shopping-bag relative cursor-pointer">
+                <img src="images/shopping-bag.png" alt="shopping bag" class="h-8 w-8">
+                <span id="cart-count" class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full hidden">0</span>
+            </a>
+            <!-- Shopping Bag Dropdown -->
+            <div id="cartDropdown" class="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg p-4 hidden">
+                <h3 class="text-1g font-semibold mb-2">Your Cart</h3>
+                <ul id="cartItemsList" class="space-y-2">
+                    <!-- Cart Items Go Here -->
+                </ul>
+                <div class="mt-4">
+                    <button id="clearCart" class="w-full bg-red-500 text-white px-2 py-2 rounded">Clear Cart</button>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -665,18 +677,18 @@
             </ul>
         </div>
         <div class="footer-column">
-            <h3><strong>About Us</strong></h3>
+            <h3><strong>Steven Paul Judd</strong></h3>
             <ul>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Jewelry Care</a></li>
+                <li><a href="https://www.thentvs.com/steven-paul-judd">NTVS</a></li>
+                <li><a href="https://www.instagram.com/ntvsclothing">NTVS Clothing (Instagram)</a></li>
             </ul>
         </div>
         <div class="footer-column">
-            <h3><strong>Connect</strong></h3>
-            <div class="social-icons">
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Facebook</a></li>
-            </div>
+            <h3><strong>Love Adorned</strong></h3>
+            <ul>
+                <li><a href="https://www.facebook.com/LoveAdornedByLT/photos">Facebook</a></li>
+                <li><a href="https://www.instagram.com/loveadornedbyloritazbah/">Instagram</a></li>
+            </ul>
         </div>
         <div class="footer-column subscribe">
             <h3><strong>Subscribe</strong></h3>
@@ -689,7 +701,7 @@
     </div>
     <!-- Bottom Footer -->
     <div class="footer-bottom">
-        <p>© 2025 <strong>Jewelry Brand</strong>. All Rights Reserved.</p>
+        <p>© 2025 <strong>Love Adorned</strong>. All Rights Reserved.</p>
         <div class="footer-links">
             <a href="#">Privacy Policy</a>
             <span>|</span>

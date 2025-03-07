@@ -172,6 +172,7 @@ function addToCart(product) {
     // Increase and update cart count
     cartItems = cart.length; // Reflects the actual cart size
     updateCartCount() // Update the UI
+    updateCartDropdown()
 
     alert(`${product.name} added to cart for ${product.price}`)
 }
@@ -205,7 +206,38 @@ document.getElementById("modalAddToCart").addEventListener("click", addModalProd
 updateCartCount();
 
 
+document.getElementById("cartButton").addEventListener("click", function (event) {
+    event.preventDefault()
+    document.getElementById("cartDropdown").classList.toggle("hidden")
+})
+// Function to update cart dropdown with items
+function updateCartDropdown() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cartItemsList");
 
+    cartList.innerHTML = ""; // Clear previous items
+
+    if (cart.length === 0) {
+        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`;
+    } else {
+        cart.forEach((item, index) => {
+            let listItem = document.createElement("li");
+            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2");
+
+            listItem.innerHTML = `
+                <div class="flex items-center">
+                    <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">${item.name}</p>
+                        <p class="text-sm text-gray-600">${item.price}</p>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm hover:text-red-700" onclick="removeFromCart(${index})">x</button>
+            `;
+            cartList.appendChild(listItem);
+        });
+    }
+}
 
 
 

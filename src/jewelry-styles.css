@@ -596,10 +596,13 @@ body {
 
 /* Main Footer */
 .main-footer {
-    background-color: #f8f9fc;     /* Light background for a clean look */
+    background-color: #f8f9fc;
     padding: 40px 20px;
-    font-family: Arial, sans-serif;
     color: #333;
+}
+.main-footer a:hover {
+    color: var(--off-blue);
+    transform: scale(1.1);
 }
 /* Footer Top Section */
 .footer-top {
@@ -610,7 +613,9 @@ body {
     margin: 0 auto;
     padding-bottom: 20px;
     border-bottom: 1px solid #b0afaf;
+
 }
+
 /* Footer Columns */
 .footer-column {
     flex: 1;
@@ -632,19 +637,13 @@ body {
     text-decoration: none;
     color: var(--off-black);
 }
-/* Social Media Links */
-.social-icons {
-    list-style: none;
-    padding: 0;
-}
-.social-icons li {
-    margin-bottom: 5px;
-}
-.social-icons li a {
-    text-decoration: none;
-    color: var(--off-black);
-    font-size: 14px;
-}
+
+
+
+
+
+
+
 /* Subscription Box */
 .subscribe form {
     display: flex;
@@ -659,14 +658,14 @@ body {
 }
 .subscribe button {
     padding: 8px 15px;
-    background-color: #d5ad84;
+    background-color: #d07171;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 .subscribe button:hover {
-    background-color: #a37d5e;
+    background-color: #751f1f;
 }
 /* Footer Bottom Section */
 .footer-bottom {
@@ -683,7 +682,5 @@ body {
     display: flex;
     gap: 10px;
 }
-.footer-links a {
-    text-decoration: none;
-    color: #333;
-}
+
+

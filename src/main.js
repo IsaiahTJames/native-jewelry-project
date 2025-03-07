@@ -398,3 +398,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("subscribe-form");
+    const popup = document.getElementById("popup-email");
+    const closeButton = document.querySelector(".close-btn");
+    const emailInput = document.getElementById("email-input");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if(emailInput.value.trim() !== "") {
+            popup.style.display = "block"
+            emailInput.value = ""
+        }
+    })
+    closeButton.addEventListener("click", function () {
+        popup.style.display = "none"
+    })
+     window.addEventListener("click", function (event) {
+         if (event.target === popup) {
+             popup.style.display = "none"
+         }
+     })
+})

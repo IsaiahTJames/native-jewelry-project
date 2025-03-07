@@ -670,10 +670,10 @@
 <footer class="main-footer">
     <div class="footer-top">
         <div class="footer-column">
-            <h3><strong>Customer Service</strong></h3>
+            <h3><strong>Connect</strong></h3>
             <ul>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Collaborations</a></li>
             </ul>
         </div>
         <div class="footer-column">
@@ -690,13 +690,22 @@
                 <li><a href="https://www.instagram.com/loveadornedbyloritazbah/">Instagram</a></li>
             </ul>
         </div>
+        <!-- Subscription Form in Footer -->
         <div class="footer-column subscribe">
             <h3><strong>Subscribe</strong></h3>
             <p>Sign up for updates & new arrivals.</p>
-            <form>
-                <input type="email" placeholder="Enter your email">
+            <form id="subscribe-form"> <!-- Added id for JavaScript to target -->
+                <input type="email" id="email-input" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
+        </div>
+    </div>
+    <!-- SignUp Popup Modal -->
+    <div id="popup-email" class="popup-signup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p>Thank you!</p>
+            <p>Please check your email!</p>
         </div>
     </div>
     <!-- Bottom Footer -->

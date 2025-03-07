@@ -637,13 +637,6 @@ body {
     text-decoration: none;
     color: var(--off-black);
 }
-
-
-
-
-
-
-
 /* Subscription Box */
 .subscribe form {
     display: flex;
@@ -658,14 +651,42 @@ body {
 }
 .subscribe button {
     padding: 8px 15px;
-    background-color: #d07171;
+    background-color: #e73838;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 .subscribe button:hover {
-    background-color: #751f1f;
+    background-color: #9a1e1e;
+}
+.popup-signup {
+    display: none;
+    background-color: #f6f6f6;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 250px;
+    height: 125px;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.popup-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.popup-signup .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }
 /* Footer Bottom Section */
 .footer-bottom {

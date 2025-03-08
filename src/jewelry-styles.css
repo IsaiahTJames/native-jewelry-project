@@ -246,6 +246,25 @@ body {
     font-size: 14px;
     color: #333;
 }
+#fourBoxModal .modal-product img {
+    width: 250px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Add to Cart Button */
 .add-to-cart-btn {
     background-color: #007bff;

@@ -144,83 +144,35 @@ window.closeFourBoxModal = function () {
     document.getElementById("fourBoxModal").style.display = "none"
 }
 
+
 // Select the cart count element
-const cartCount = document.getElementById('cart-count')
-let cartItems = JSON.parse(localStorage.getItem("cart"))?.length || 0 // Initialize from storage
+const cartCount = document.getElementById("cart-count")
+const cartDropdown = document.getElementById("cartDropdown")
+const cartList = document.getElementById("cartItemsList")
+const clearCartButton = document.getElementById("clearCart")
+
+let cartItems = JSON.parse(localStorage.getItem("cart")) || [] // Initialize from storage
 
 // Function to update the cart count in the UI
 function updateCartCount() {
-    cartCount.textContent = cartItems
+    cartCount.textContent = cartItems.length
 
     // Show the count badge when there's at least one item
-    if (cartItems > 0) {
-        cartCount.classList.remove('hidden')
+    if (cartItems.length > 0) {
+        cartCount.classList.remove("hidden")
     } else {
-        cartCount.classList.add('hidden')
+        cartCount.classList.add("hidden")
     }
 }
 
-// Function to handle adding a product to the cart (now unified)
-function addToCart(product) {
-    console.log("Adding to cart:", product)
-
-    // Get cart from localStorage or create an empty one
-    let cart = JSON.parse(localStorage.getItem("cart")) || []
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart))
-
-    // Increase and update cart count
-    cartItems = cart.length; // Reflects the actual cart size
-    updateCartCount() // Update the UI
-    updateCartDropdown()
-
-    alert(`${product.name} added to cart for ${product.price}`)
-}
-
-// Attach the function to all "Add to Cart" buttons across the site
-document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        let productElement = this.closest(".product")
-
-        let product = {
-            name: productElement.querySelector(".product-name").textContent,
-            price: productElement.querySelector(".product-price").textContent,
-            image: productElement.querySelector("img").src
-        }
-        addToCart(product)
-    })
-})
-function addModalProductToCart() {
-    let product = {
-        name: document.getElementById("modalTitle").textContent,
-        price: document.getElementById("modalPrice").textContent,
-        image: document.getElementById("modalImage").src
-    };
-    addToCart(product); // Call the addToCart function
-}
-
-// Attach the event listener to the modal "Add to Cart" button
-document.getElementById("modalAddToCart").addEventListener("click", addModalProductToCart);
-
-// Initialize cart count on page load
-updateCartCount();
-
-
-document.getElementById("cartButton").addEventListener("click", function (event) {
-    event.preventDefault()
-    document.getElementById("cartDropdown").classList.toggle("hidden")
-})
 // Function to update cart dropdown with items
 function updateCartDropdown() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartList = document.getElementById("cartItemsList");
+    cartList.innerHTML = ""; // Clear previous items
 
-    cartList.innerHTML = "" // Clear previous items
-
-    if (cart.length === 0) {
-        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`
+    if (cartItems.length === 0) {
+        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`;
     } else {
-        cart.forEach((item, index) => {
+        cartItems.forEach((item, index) => {
             let listItem = document.createElement("li")
             listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2")
 
@@ -232,12 +184,78 @@ function updateCartDropdown() {
                         <p class="text-sm text-gray-600">${item.price}</p>
                     </div>
                 </div>
-                <button class="text-red-500 text-sm hover:text-red-700" onclick="removeFromCart(${index})">x</button>
+                <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>
             `;
-            cartList.appendChild(listItem);
+            cartList.appendChild(listItem)
+        })
+        // Attach event listeners to all remove buttons
+        document.querySelectorAll(".remove-item").forEach(button => {
+            button.addEventListener("click", function () {
+                removeFromCart(this.dataset.index)
+            });
         });
     }
 }
+// Function to add an item to the cart
+function addToCart(product) {
+    cartItems.push(product)
+    localStorage.setItem("cart", JSON.stringify(cartItems)) // Save updated cart
+    updateCartCount()
+    updateCartDropdown()
+    alert(`${product.name} added to cart for ${product.price}`)
+}
+
+// Attach "Add to Cart" functionality to all buttons
+document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        let productElement = this.closest(".product")
+        let product = {
+            name: productElement.querySelector(".product-name").textContent,
+            price: productElement.querySelector(".product-price").textContent,
+            image: productElement.querySelector("img").src
+        }
+        addToCart(product)
+    })
+})
+
+// Function to add a product from the modal
+function addModalProductToCart() {
+    let product = {
+        name: document.getElementById("modalTitle").textContent,
+        price: document.getElementById("modalPrice").textContent,
+        image: document.getElementById("modalImage").src
+    }
+    addToCart(product)
+}
+// Attach event listener to modal "Add to Cart" button
+document.getElementById("modalAddToCart").addEventListener("click", addModalProductToCart)
+// Remove item from cart
+function removeFromCart(index) {
+    cartItems.splice(index, 1) // Remove item from array
+    localStorage.setItem("cart", JSON.stringify(cartItems)) // Save updated cart
+    updateCartCount()
+    updateCartDropdown()
+}
+// Clear entire cart
+clearCartButton.addEventListener("click", function () {
+    cartItems = [] // Reset array
+    localStorage.removeItem("cart") // Remove from storage
+    updateCartCount()
+    updateCartDropdown()
+})
+// Toggle cart dropdown visibility
+document.getElementById("cartButton").addEventListener("click", function (event) {
+    event.preventDefault()
+    cartDropdown.classList.toggle("hidden")
+})
+document.getElementById("checkoutButton").addEventListener("click", function () {
+    console.log("Proceeding to checkout...")
+    alert("Checkout functionality coming soon!")
+})
+
+// Initialize UI on page load
+updateCartCount()
+updateCartDropdown()
 
 
 

@@ -309,7 +309,7 @@ body {
     border: none;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
+    font-size: 35px;
     cursor: pointer;
     padding: 10px;
     transition: 0.1s;
@@ -318,7 +318,10 @@ body {
     transform: translateY(-50%) scale(1.2); /* Adjust for exact centering */
 }
 .left-arrow {
-    left: -5px; /* Keep inside screen */
+    left: -5px;
+}
+.right-arrow{
+    right: -5px;
 }
 /* The Modal (Hidden by Default) */
 .modal {

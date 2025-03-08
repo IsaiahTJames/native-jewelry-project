@@ -32,13 +32,39 @@
                             <span class="hidden md:inline">▼</span>
                         </button>
                         <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-40 z-10 dropdown-menu">
-                            <li><a href="src/best-sellers.html" class="block px-4 py-2 text-black hover:text-blue-500">Best Sellers</a></li>
-                            <li><a href="Pages/earrings.html" class="block px-4 py-2 text-black hover:text-blue-500">Earrings</a></li>
-                            <li><a href="src/books.html" class="block px-4 py-2 text-black hover:text-blue-500">Books</a></li>
-                            <li><a href="src/stickers.html" class="block px-4 py-2 text-black hover:text-blue-500">Stickers</a></li>
+                            <li>
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'New Arrivals\')) button'))"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                    New Arrivals
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'Earrings\')) button'))"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                    Earrings
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'Books\')) button'))"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                    Books
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'Stickers\')) button'))"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                    Stickers
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </li>
+
+
+
+
+
+
                 <!-- Featured Dropdown -->
                 <li class="relative">
                     <div class="group inline-block">
@@ -114,13 +140,13 @@
 
 
 <div class="xbox-container grid grid-cols-2 gap-4 sm:grid-cols-4">
-    <!-- Best Sellers -->
-    <div class="xbox" data-description="Explore our top-rated and best-selling products loved by our customers!">
+    <!-- New Arrivals -->
+    <div class="xbox" data-description="Discover the latest additions to our collection! Shop our newest arrivals, featuring fresh designs and unique finds handpicked just for you.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
-            <img src="images/xbox-image.png" alt="Best Sellers">
+            <img src="images/xbox-image.png" alt="New Arrivals">
         </button>
-        <p class="text-center mt-2 font-semibold">Best Sellers</p>
+        <p class="text-center mt-2 font-semibold">New Arrivals</p>
         <!-- Product Details Inside HTML -->
         <div class="product-details hidden">
             <div class="product" data-name="Product A" data-price="$29.99">
@@ -143,6 +169,9 @@
             </div>
         </div>
     </div>
+
+
+
     <!-- Earrings -->
     <div class="xbox" data-description="Discover our handcrafted earrings, designed with elegance and tradition.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
@@ -153,19 +182,145 @@
         <!-- Product Details  -->
         <div class="product-details hidden">
             <div class="product" data-name="Turquoise Earrings" data-price="$29.99">
-                <img src="images/xbox-image.png" alt="Turquoise Earrings">
+                <img src="images/jewelry-photos/122817237_211310427020280_3078555597729541947_n.jpg" alt="Turquoise Earrings">
                 <p class="product-name">Turquoise Earrings</p>
                 <p class="product-price">$29.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
             <div class="product" data-name="Silver Hoops" data-price="$39.99">
-                <img src="images/xbox-image.png" alt="Silver Hoops">
+                <img src="images/jewelry-photos/4tdanglingearrings.jpg" alt="Silver Hoops">
                 <p class="product-name">Silver Hoops</p>
                 <p class="product-price">$39.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
             <div class="product" data-name="Beaded Drops" data-price="$24.99">
-                <img src="images/xbox-image.png" alt="Beaded Drops">
+                <img src="images/jewelry-photos/danglingsilvertearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/goldhoopearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/hooptstack.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/rectangleearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/redhoopearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/silverdrop.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/silverscales.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/squareearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/thinsilver.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/trianglebronzesilver.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/twocircle.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/whitehoopearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/squareswirl.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/thoopearrings2.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/whitecorral.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/longearrings1.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/corraldanglingearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/blackcrackedearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/branchearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/heartearrings.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/pinkearrings2.jpg" alt="Beaded Drops">
+                <p class="product-name">Beaded Drops</p>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Beaded Drops" data-price="$24.99">
+                <img src="images/jewelry-photos/searrings2.jpg" alt="Beaded Drops">
                 <p class="product-name">Beaded Drops</p>
                 <p class="product-price">$24.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
@@ -196,32 +351,68 @@
         </div>
     </div>
     <!-- Stickers -->
-    <div class="xbox xbox-stickers" data-description="Check out our unique sticker collection inspired by Indigenous art.">
-        <button class=" xbox-stickers-button block relative overflow-hidden rounded-lg w-full focus:outline-none"
-                onclick="openFourBoxModal(this)">
-            <img src="images/sticker-photos/groupsticker1.png" alt="Stickers">
-        </button>
-        <p class="text-center mt-2 font-semibold">Stickers</p>
-        <!-- Product Details Inside HTML -->
-        <div class="product-details hidden">
-            <div class="product" data-name="Sticker Pack 1" data-price="$9.99">
-                <img src="images/xbox-image.png" alt="Sticker Pack 1">
-                <p class="product-name">Sticker Pack 1</p>
-                <p class="product-price">$9.99</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product" data-name="Sticker Pack 2" data-price="$12.99">
-                <img src="images/xbox-image.png" alt="Sticker Pack 2">
-                <p class="product-name">Sticker Pack 2</p>
-                <p class="product-price">$12.99</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product" data-name="Sticker Pack 3" data-price="$15.99">
-                <img src="images/xbox-image.png" alt="Sticker Pack 3">
-                <p class="product-name">Sticker Pack 3</p>
-                <p class="product-price">$15.99</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+    <div class="xbox xbox-stickers" data-description="Explore our one-of-a-kind sticker collection inspired by Indigenous art, created by Steven Paul Judd in collaboration with his NTVS brand.">
+            <button class=" xbox-stickers-button block relative overflow-hidden rounded-lg w-full focus:outline-none"
+                    onclick="openFourBoxModal(this)">
+                <img src="images/sticker-photos/groupsticker1.png" alt="Stickers">
+            </button>
+            <p class="text-center mt-2 font-semibold">Stickers</p>
+            <!-- Product Details Inside -->
+            <div class="product-details hidden">
+                <div class="product" data-name="Invaders (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/groupsticker2galactia.png" alt="Invaders">
+                    <p class="product-name">Invaders (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Fancy Dancer (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/groupsticker2grl.png" alt="Fancy Dancer">
+                    <p class="product-name">Fancy Dancer (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Magua (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/groupsticker2magua.png" alt="Magua">
+                    <p class="product-name">Magua (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Rockem' Sockem' (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/groupsticker2rockemsockem.png" alt="rockem' sockem'">
+                    <p class="product-name">Rockem' Sockem' (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Star Wars (Sticker Pack)" data-price="$19.99">
+                    <img src="images/sticker-photos/starwarssticker1.png" alt="Star Wars (Sticker Pack)">
+                    <p class="product-name">Star Wars (Sticker Pack)</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Original (Sticker Pack)" data-price="$19.99">
+                    <img src="images/sticker-photos/groupsticker1.png" alt="Original (Sticker Pack)">
+                    <p class="product-name">Original (Sticker Pack)</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Chief Head (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/ChiefHead.png" alt="Chief Head (Sticker)">
+                    <p class="product-name">Chief Head (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Robohontas (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/Robohontas.png" alt="Robohontas (Sticker)">
+                    <p class="product-name">Robohontas (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Tribe Trooper (Sticker)" data-price="$4.99">
+                    <img src="images/sticker-photos/tribetrooper.png" alt="Tribe Trooper (Sticker)">
+                    <p class="product-name">Tribe Trooper (Sticker)</p>
+                    <p class="product-price">$4.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
         </div>
     </div>
 </div>

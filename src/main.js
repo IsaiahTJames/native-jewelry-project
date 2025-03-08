@@ -145,6 +145,12 @@ window.closeFourBoxModal = function () {
 }
 
 
+
+
+
+
+
+
 // Select the cart count element
 const cartCount = document.getElementById("cart-count")
 const cartDropdown = document.getElementById("cartDropdown")

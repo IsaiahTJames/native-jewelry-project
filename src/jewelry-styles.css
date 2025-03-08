@@ -115,11 +115,13 @@ body {
     border: 2px solid var(--off-black);
     font-size: 14px;
     position: relative;
+    overflow: hidden;
 }
 .xbox img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 }
 .xbox:hover {
     transform: scale(1.05);
@@ -131,6 +133,18 @@ body {
     text-align: center;
     background: var(--off-white);
     padding: 4px 8px;
+}
+.xbox-books img {
+    margin-top: 55px;
+    margin-bottom: -55px;
+}
+.xbox-books:hover {
+    transform: scale(1.05);
+    border-color: var(--off-blue);
+    z-index: 1;
+}
+.xbox-stickers-button {
+    transform: scale(1.3);
 }
 /* Shop and Most Popular headings */
 .shop-section {

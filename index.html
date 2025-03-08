@@ -147,7 +147,7 @@
     <div class="xbox" data-description="Discover our handcrafted earrings, designed with elegance and tradition.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
-            <img src="images/xbox-image.png" alt="Earrings">
+            <img src="images/jewelry-photos/goldhoopearrings2.jpg" alt="Earrings">
         </button>
         <p class="text-center mt-2 font-semibold">Earrings</p>
         <!-- Product Details  -->
@@ -173,10 +173,10 @@
         </div>
     </div>
     <!-- Books -->
-    <div class="xbox" data-description="Browse our selection of books showcasing Native culture and history.">
-        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+    <div class="xbox xbox-books" data-description="Browse our selection of books showcasing Native culture and history.">
+        <button class="xbox-books-button block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
-            <img src="images/xbox-image.png" alt="Books">
+            <img src="images/book-photos/RezDetectives.jpg" alt="Books" class="xbox-books-img">
         </button>
         <p class="text-center mt-2 font-semibold">Books</p>
         <!-- Book Details-->
@@ -196,10 +196,10 @@
         </div>
     </div>
     <!-- Stickers -->
-    <div class="xbox" data-description="Check out our unique sticker collection inspired by Indigenous art.">
-        <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
+    <div class="xbox xbox-stickers" data-description="Check out our unique sticker collection inspired by Indigenous art.">
+        <button class=" xbox-stickers-button block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
-            <img src="images/xbox-image.png" alt="Stickers">
+            <img src="images/sticker-photos/groupsticker1.png" alt="Stickers">
         </button>
         <p class="text-center mt-2 font-semibold">Stickers</p>
         <!-- Product Details Inside HTML -->
@@ -269,11 +269,11 @@
     <div class="carousel-container">
         <div class="popular-products-container grid grid-cols-3 sm:grid-cols-5">
             <div class="product-box">
-                <img src="images/jewelry-photos/122817237_211310427020280_3078555597729541947_n.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Product 1', '29.99', 'images/jewelry-photos/122817237_211310427020280_3078555597729541947_n.jpg',['images/jewelry-photos/123030875_133492591477670_6637478833033802426_n.jpg', 'images/jewelry-photos/123141093_1260321784332603_2686289566166306888_n.jpg'])">
+                <img src="images/jewelry-photos/redgoldswirl.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Red Sky Whirl', '59.99', 'images/jewelry-photos/redgoldswirl.jpg',['images/jewelry-photos/redgoldswirl2.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Product 1</p>
-                    <p class="product-price">$29.99</p>
+                    <p class="product-name">Red Sky Whirl</p>
+                    <p class="product-price">$59.99</p>
                 </div>
             </div>
             <div class="product-box">
@@ -293,119 +293,99 @@
                 </div>
             </div>
             <div class="product-box">
-                <img src="images/xbox-image.png" alt="Product 1" class="product-img"
-                     onclick="openModal('Product 4', '23.99', 'images/xbox-image.png',)">
+                <img src="images/jewelry-photos/goldsquared.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Turquoise Cascade-Gold Earrings', '39.99', 'images/jewelry-photos/goldsquared.jpg',['images/jewelry-photos/goldsquared2.jpg', 'images/jewelry-photos/goldsquared3.jpg', 'images/jewelry-photos/goldsquared4.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Product 4</p>
-                    <p class="product-price">$23.99</p>
+                    <p class="product-name">Turquoise Cascade-Gold Earrings</p>
+                    <p class="product-price">$39.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <img src="images/xbox-image.png" alt="Product 1" class="product-img"
-                     onclick="openModal('Product 5', '40.99', 'images/xbox-image.png',['images/xbox-image.png', 'images/xbox-image.png', 'images/xbox-image.png'])">
+                <img src="images/jewelry-photos/pinkearrings2.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Turquoise Blossom Dangles', '49.99', 'images/jewelry-photos/pinkearrings2.jpg',['images/jewelry-photos/pinkearrings.jpg', 'images/jewelry-photos/pinkearrings3.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Product 5</p>
-                    <p class="product-price">$40.99</p>
+                    <p class="product-name">Turquoise Blossom Dangles</p>
+                    <p class="product-price">$49.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/searrings.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Lunar Reflection', '44.99', 'images/jewelry-photos/searrings.jpg',['images/jewelry-photos/searrings2.jpg', 'images/jewelry-photos/searrings3.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Lunar Reflection</p>
+                    <p class="product-price">$44.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/silverblack.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Late Night', '24.99', 'images/jewelry-photos/silverblack.jpg',['images/jewelry-photos/silverblack2.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Late Night</p>
+                    <p class="product-price">$24.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/blackcrackedearrings.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/blackcrackedearrings.jpg',['images/jewelry-photos/blackcrackedearrings2.jpg', 'images/jewelry-photos/blackcrackedearrings3.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/4bead.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/4bead.jpg',['images/jewelry-photos/4bead2.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/arrowearrings.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/arrowearrings.jpg',['images/jewelry-photos/arrowearrings2.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/corralhoops.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/corralhoops.jpg',['images/jewelry-photos/corralhoops2.jpg', 'images/jewelry-photos/corralhoops3.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/dropdanglingearrings.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/dropdanglingearrings.jpg',['images/jewelry-photos/dropdanglingearrings2.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/goldhoopearrings2.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/goldhoopearrings2.jpg',['images/jewelry-photos/goldhoopearrings.jpg', 'images/jewelry-photos/goldhoopearrings3.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/longearrings1.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/longearrings1.jpg',['images/jewelry-photos/longearrings2.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <button class="block relative-overflow-hidden rounded-lg w-full focus:outline-none"
-                        onClick="alert('Show product details..')">
-                    <img src="images/xbox-image.png" alt="product">
-                </button>
+                <img src="images/jewelry-photos/pinkflowerearrings.jpg" alt="Product 1" class="product-img"
+                     onclick="openModal('Midnight Earrings', '29.99', 'images/jewelry-photos/pinkflowerearrings.jpg',['images/jewelry-photos/pinkflowerearrings2.jpg', 'images/jewelry-photos/pinkflowerearrings3.jpg'])">
                 <div class="product-info">
-                    <p class="product-name">Name</p>
-                    <p class="product-price">Price</p>
+                    <p class="product-name">Midnight Earrings</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
         </div>

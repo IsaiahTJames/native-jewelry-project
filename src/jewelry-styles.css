@@ -6,10 +6,11 @@
     --off-light-gray: #aaa
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Crimson', serif;
     margin: 0;
     padding: 0;
     background-color: var(--off-white);
+    background-image: url("images/background/bg-whitepattern4.jpg");
 }
 /* decorative stripe-band */
 .decorative-band {
@@ -26,6 +27,8 @@ body {
 }
 /* Unique Spotlight Carousel */
 .spotlight-carousel {
+    background-image: url("images/background/bg-pattern2.jpg");
+    background-size: 40%;
     position: relative;
     height: 750px;
     overflow: hidden;
@@ -85,19 +88,26 @@ body {
 /* Spotlight Text */
 .spotlight-text {
     position: absolute;
-    bottom: 30px;
-    left: 50px;
-    color: var(--off-black);
-    max-width: 400px;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0.5, 0, 0)); /* Fade effect */
+    color: white;
+    padding: 20px;
 }
+
+
 .spotlight-text h2 {
-    font-size: 24px;
+    font-size: 26px; /* Slightly larger for emphasis */
     font-weight: bold;
-    margin-bottom: 5px;
-}.spotlight-carousel-container {
-     background-color: #333; /* Change to your preferred color */
-     padding: 20px 0; /* Adds some spacing around */
- }
+    margin-bottom: 10px;
+}
+
+.spotlight-text p {
+    font-size: 17px;
+    line-height: 1.5; /* Better readability */
+}
+
 
 /* 4 boxes  */
 .xbox-container {
@@ -108,7 +118,6 @@ body {
     gap: 0;
     padding: 4em 0;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .xbox {
     width: 225px;
@@ -120,12 +129,12 @@ body {
     font-size: 14px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 .xbox img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 .xbox:hover {
     transform: scale(1.05);
@@ -152,24 +161,21 @@ body {
 }
 /* Shop and Most Popular headings */
 .shop-section {
-    padding: 1em 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 100%;
 }
 .shop-title {
     text-align: center;
-    margin-top: 2em;
 }
 .shop-title h2 a {
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--off-black);
 }
 .shop-title h2 a:hover {
     color: var(--off-blue);
 }
 .shop-title p {
-    font-size: 16px;
+    font-size: 20px;
     color: var(--off-black);
 }
 /* Modal Container */
@@ -185,7 +191,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 /* Modal Content */
 .four-box-modal-content {
     display: flex;
@@ -199,6 +204,19 @@ body {
     text-align: center;
     position: relative;
 }
+#fourBoxModalTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--off-black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#fourBoxModalDescription {
+    font-size: 18px;
+    color: var(--off-black);
+    margin-bottom: 20px;
+}
 /* Close Button */
 .four-box-close {
     position: sticky;
@@ -209,7 +227,6 @@ body {
     font-weight: bold;
     z-index: 10;
     align-self: flex-end;
-
 }
 /* Grid Layout */
 .four-box-modal-images-container {
@@ -232,9 +249,8 @@ body {
     width: 180px;
     height: 180px;
     object-fit: cover;
-    border-radius: 5px;
     transition: transform 0.2s ease-in-out;
-    border: 1px solid #000;
+    border: 1px solid var(--off-black);
 }
 .four-box-product-image:hover {
     transform: scale(1.02);
@@ -256,19 +272,8 @@ body {
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 /* Add to Cart Button */
 .add-to-cart-btn {
     background-color: #007bff;
@@ -288,9 +293,8 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 20px;
-    padding: 2em 0;
     max-width: 100%;
+
 }
 .carousel-container {
     width: 1100px; /* Display 5 items at a time */
@@ -318,6 +322,9 @@ body {
     object-fit: cover;
     margin-bottom: 8px;
     border: 2px solid var(--off-black);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 .product-box:hover {
     transform: scale(1.03);
@@ -454,17 +461,14 @@ body {
  }
 /* Featured Product Section */
 .featured-section {
-    padding: 1em 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 100%;
 }
 .featured-title {
     text-align: center;
-    margin-top: 2em;
 }
 .featured-title h2 a {
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--off-black);
 }
 .featured-title h2 a:hover {
@@ -513,6 +517,8 @@ body {
 }
 /* About Section */
 .about-section {
+    background-image: url('images/background/bg-pattern2.jpg');
+    background-size: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -534,13 +540,16 @@ body {
     text-align: left;
     font-size: 16px;
     border: 2px solid var(--off-light-gray);
+    background-color: var(--off-white);
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 .about-image img {
     width: 350px;
     height: 350px;
     margin-left: 40px;
     border: 2px solid var(--off-light-gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 /* Main Footer */
 .main-footer {

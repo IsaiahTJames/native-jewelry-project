@@ -37,10 +37,6 @@
         object-fit: cover;
     }
 }
-
-
-
-
 @media (max-width: 576px) {
     /* Spotlight Carousel */
     .spotlight-carousel {
@@ -53,7 +49,6 @@
         align-items: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-
     /* Spotlight Carousel Container */
     .spotlight-carousel-container {
         position: relative;
@@ -64,7 +59,6 @@
         align-items: center;
         overflow: hidden;
     }
-
     /* Individual Slide - Fix Image Sizing */
     .carousel-slide {
         width: 100%; /* Adjust to fit container */
@@ -80,13 +74,6 @@
         width: 100%;
     }
 }
-
-
-
-
-
-
-
 /* 4 boxes (R,E,N,B) 320px */
 @media (max-width: 576px) {
     .xbox-container {
@@ -136,19 +123,6 @@
         padding: 6px 12px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Media query for mobile view (Most Popular) */
 @media (max-width: 576px) {
     .carousel-container {
@@ -268,7 +242,6 @@
         transform: none;
     }
 }
-
 /* Media query for mobile view (About Us) */
 @media (max-width: 576px) {
     .about-section {

@@ -77,16 +77,23 @@
                 <li class="relative">
                     <div class="group inline-block">
                         <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
-                            About Us
+                            Contact Us
                             <span class="inline md:hidden">▶</span>
                             <span class="hidden md:inline">▼</span>
                         </button>
-                        <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-40 z-10 dropdown-menu">
-                            <li><a class="block px-4 py-2 text-black hover:text-blue-500">Our Story</a></li>
-                            <li><a class="block px-4 py-2 text-black hover:text-blue-500">Contact</a></li>
+                        <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-52 z-10 dropdown-menu">
+                            <li class="border-t my-1"></li> <!-- Divider -->
+                            <li><strong class="block px-4 py-1 text-black">Steven Paul Judd</strong></li>
+                            <li><a href="https://www.thentvs.com/steven-paul-judd" target="_blank" class="block px-4 py-2 text-black hover:text-blue-500">NTVS</a></li>
+                            <li><a href="https://www.instagram.com/ntvsclothing" target="_blank" class="block px-4 py-2 text-black hover:text-blue-500">NTVS Clothing (Instagram)</a></li>
+                            <li class="border-t my-1"></li>
+                            <li><strong class="block px-4 py-1 text-black">Love Adorned</strong></li>
+                            <li><a href="https://www.facebook.com/LoveAdornedByLT/photos" target="_blank" class="block px-4 py-2 text-black hover:text-blue-500">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/loveadornedbyloritazbah/" target="_blank" class="block px-4 py-2 text-black hover:text-blue-500">Instagram</a></li>
                         </ul>
                     </div>
                 </li>
+
             </ul>
         </div>
         <!-- Shopping Bag Icon -->
@@ -138,27 +145,45 @@
     <div class="xbox" data-description="Discover the latest additions to our collection! Shop our newest arrivals, featuring fresh designs and unique finds handpicked just for you.">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
-            <img src="images/xbox-image.png" alt="New Arrivals">
+            <img src="images/jewelry-photos/20200823_115653.jpg" alt="New Arrivals">
         </button>
         <p class="text-center mt-2 font-semibold">New Arrivals</p>
         <!-- Product Details Inside HTML -->
         <div class="product-details hidden">
-            <div class="product" data-name="Product A" data-price="$29.99">
-                <img src="images/xbox-image.png" alt="Product A">
-                <p class="product-name">Product A</p>
-                <p class="product-price">$29.99</p>
+            <div class="product" data-name="Midnight Ocean Earrings" data-price="$29.99">
+                <img src="images/jewelry-photos/20200823_115653.jpg" alt="Midnight Ocean Earrings">
+                <p class="product-name">Midnight Ocean Earrings</p>
+                <p class="product-price">$34.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-            <div class="product" data-name="Product B" data-price="$39.99">
-                <img src="images/xbox-image.png" alt="Product B">
-                <p class="product-name">Product B</p>
+            <div class="product" data-name="Fancy Dancer (Sticker)" data-price="$4.99">
+                <img src="images/sticker-photos/groupsticker2grl.png" alt="Fancy Dancer">
+                <p class="product-name">Fancy Dancer (Sticker)</p>
+                <p class="product-price">$4.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Stud Earrings Bundle" data-price="$19.99">
+                <img src="images/jewelry-photos/studearrings.jpg" alt="Product C">
+                <p class="product-name">Stud Earrings Bundle</p>
+                <p class="product-price">$19.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="White Corral" data-price="$49.99">
+                <img src="images/jewelry-photos/whitecorral.jpg" alt="White Corral">
+                <p class="product-name">White Corral</p>
+                <p class="product-price">$49.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Tribe Trooper (Sticker)" data-price="$4.99">
+                <img src="images/sticker-photos/tribetrooper.png" alt="Tribe Trooper">
+                <p class="product-name">Tribe Trooper (Sticker)</p>
+                <p class="product-price">$4.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Black Onyx & Turquoise" data-price="$39.99">
+                <img src="images/jewelry-photos/bt-necklace1.jpg" alt="Black Onyx & Turquoise">
+                <p class="product-name">Black Onyx & Turquoise</p>
                 <p class="product-price">$39.99</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product" data-name="Product C" data-price="$24.99">
-                <img src="images/xbox-image.png" alt="Product C">
-                <p class="product-name">Product C</p>
-                <p class="product-price">$24.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
@@ -336,7 +361,7 @@
                 <p class="product-price">$12.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-            <div class="product" data-name="A Radiant Curve by Luci Tapahonso" data-price="$12.99" data-description="A thrilling mystery set in a Native American community.">
+            <div class="product" data-name="A Radiant Curve by Luci Tapahonso" data-price="$18.00" data-description="A thrilling mystery set in a Native American community.">
                 <img src="images/book-photos/radiantcurve.png" alt="A Radiant Curve">
                 <p class="product-name">A Radiant Curve</p>
                 <p class="product-price">$18.00</p>

@@ -94,7 +94,11 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
-}
+}.spotlight-carousel-container {
+     background-color: #333; /* Change to your preferred color */
+     padding: 20px 0; /* Adds some spacing around */
+ }
+
 /* 4 boxes  */
 .xbox-container {
     display: flex;
@@ -233,7 +237,7 @@ body {
     border: 1px solid #000;
 }
 .four-box-product-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 /* Product Name */
 .product-name {
@@ -248,7 +252,7 @@ body {
 }
 #fourBoxModal .modal-product img {
     width: 250px;
-    height: 380px;
+    height: 350px;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #000;

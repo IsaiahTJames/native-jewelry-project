@@ -2,7 +2,7 @@
     /* Prevents navbar from expanding when menu opens */
     .dropdown-menu {
         position: absolute;
-        top: -5px; /* Move the dropdown up */
+        top: -5px;
         background-color: white;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         padding: 8px 0;
@@ -64,7 +64,7 @@
     /* Individual Slide - Fix Image Sizing */
     .carousel-slide {
         width: 576px !important;
-        height: auto; /* Allow height to adjust dynamically */
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -101,7 +101,7 @@
         width: 100%;
     }
     .four-box-modal-content {
-        width: 90% !important; /* Force a wider modal */
+        width: 90% !important;
     }
     .four-box-modal-images-container {
         grid-template-columns: repeat(2, 1fr) !important; /* Switch to 2 columns */
@@ -111,7 +111,7 @@
     }
 
     .four-box-product-image {
-        width: 100px; /* Reduce image size */
+        width: 100px;
         height: 100px;
     }
 
@@ -131,10 +131,10 @@
 /* Media query for mobile view (Most Popular) */
 @media (max-width: 576px) {
     .carousel-container {
-        width: calc(3 * 200px); /* Make sure it only fits 3 products */
-        margin: 0 auto; /* Centers the grid */
+        width: calc(3 * 200px);
+        margin: 0 auto;
         display: flex;
-        justify-content: center; /* Ensures alignment */
+        justify-content: center;
     }
     .popular-products {
         position: relative; /* Needed for arrow positioning */
@@ -146,8 +146,8 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0;
-        padding: 10px 5px; /* Ensure it stays centered */
-        transform: translateX(0); /* Prevent shifting */
+        padding: 10px 5px;
+        transform: translateX(0);
     }
     .popular-products-container.grid {
         gap: 0;
@@ -162,15 +162,15 @@
         font-size: 40px !important;
     }
     .arrow:hover {
-        transform: translateY(-50%) scale(1.2); /* Slightly enlarge on hover */
+        transform: translateY(-50%) scale(1.2);
     }
 
     .left-arrow {
-        left: -4px !important; /* Keep inside screen */
+        left: -4px !important;
     }
 
     .right-arrow {
-        right: -4px !important; /* Keep inside screen */
+        right: -4px !important;
     }
 }
 @media (max-width: 576px) {
@@ -198,8 +198,8 @@
 /* Media query for mobile view (Featured Product) */
 @media (max-width: 576px) {
     .carousel-container {
-        width: calc(3 * 200px); /* Make sure it only fits 3 products */
-        margin: 0 auto; /* Centers the grid */
+        width: calc(3 * 200px);
+        margin: 0 auto;
         display: flex;
         justify-content: center; /* Ensures alignment */
     }
@@ -207,8 +207,8 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0;
-        padding: 10px 5px; /* Ensure it stays centered */
-        transform: translateX(0); /* Prevent shifting */
+        padding: 10px 5px;
+        transform: translateX(0);
     }
     .featured-products-container.grid {
         gap: 0;
@@ -236,7 +236,6 @@
         object-fit: cover;
     }
 }
-
 /* Media query for desktop view (Featured Product) */
 @media (min-width: 577px) {
     .featured-box {

@@ -9,7 +9,7 @@
 <nav class="relative border bg-white dark:border-gray-700 overflow-visible z-50">
     <div class="navbar-container max-w-screen-xl flex flex-wrap items-center justify-between mx-auto relative">
         <a href="index.html" class="relative">
-            <img src="images/PrimaryLogo.png" alt="Jewelry Brand Logo" class="h-35 w-auto">
+            <img src="images/PrimaryLogo.png" alt="Love Adorned" class="h-35 w-auto">
         </a>
         <button data-collapse-toggle="mobile-view" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-white dark:focus:ring-blue-500"
                 aria-controls="navbar-solid-bg" aria-expanded="false">
@@ -21,37 +21,35 @@
         <div class="hidden w-full md:block md:w-auto" id="mobile-view">
             <ul class="flex flex-col font-medium mt-4 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:border-gray-700">
                 <li>
-                    <a href="index.html" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500">Home</a>
+                    <a href="index.html" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 text-xl">Home</a>
                 </li>
                 <!-- Shop All Dropdown -->
                 <li class="relative">
                     <div class="group inline-block">
-                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
+                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none text-xl">
                             Shop All
-                            <span class="inline md:hidden">▶</span>
-                            <span class="hidden md:inline">▼</span>
                         </button>
                         <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-40 z-10 dropdown-menu">
                             <li>
-                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'New Arrivals\')) button'))"
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox-newarrivals'))"
                                         class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
                                     New Arrivals
                                 </button>
                             </li>
                             <li>
-                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'Earrings\')) button'))"
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox-earrings'))"
                                         class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
                                     Earrings
                                 </button>
                             </li>
                             <li>
-                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'Books\')) button'))"
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox-books'))"
                                         class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
                                     Books
                                 </button>
                             </li>
                             <li>
-                                <button onclick="openFourBoxModal(document.querySelector('.xbox:has(p:contains(\'Stickers\')) button'))"
+                                <button onclick="openFourBoxModal(document.querySelector('.xbox-stickers'))"
                                         class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
                                     Stickers
                                 </button>
@@ -59,27 +57,61 @@
                         </ul>
                     </div>
                 </li>
-                <!-- Featured Dropdown -->
+                <!-- Consultations Dropdown -->
                 <li class="relative">
                     <div class="group inline-block">
-                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
-                            Featured
-                            <span class="inline md:hidden">▶</span>
-                            <span class="hidden md:inline">▼</span>
+                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none text-xl">
+                            Consultations
                         </button>
-                        <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-40 z-10 dropdown-menu">
-                            <li><a href="src/new-arrivals.html" class="block px-4 py-2 text-black hover:text-blue-500">New Arrivals</a></li>
-                            <li><a href="src/best-sellers.html" class="block px-4 py-2 text-black hover:text-blue-500">Best Sellers</a></li>
+                        <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-56 z-10 dropdown-menu">
+                            <li>
+                                <button onclick="alert('Future plans for scheduling and viewing upcoming events.')"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                    Future Events
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="alert('Future plans for booking public speaking engagements.')"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                    Public Speaking Engagements
+                                </button>
+                            </li>
+                            <li class="border-t my-1"></li>
+                            <!-- Schedule a Meeting Dropdown -->
+                            <li class="relative">
+                                <button onclick="toggleMeetingDropdown()"
+                                        class="block w-full text-left px-4 py-2 text-black hover:text-blue-500 focus:outline-none">
+                                    Schedule a Meeting
+                                </button>
+                                <ul id="meetingDropdown" class="absolute left-full top-0 hidden bg-white shadow-lg rounded-md p-2 w-56 z-10">
+                                    <li>
+                                        <button onclick="alert('Future plans for booking a 30-minute consultation.')"
+                                                class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                            30-Minute Meeting
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button onclick="alert('Future plans for booking a 60-minute consultation.')"
+                                                class="block w-full text-left px-4 py-2 text-black hover:text-blue-500">
+                                            60-Minute Meeting
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </li>
-                <!-- About Us Dropdown -->
+                <script>
+                    function toggleMeetingDropdown() {
+                        const dropdown = document.getElementById("meetingDropdown")
+                        dropdown.classList.toggle("hidden")
+                    }
+                </script>
+                <!-- Contact Us Dropdown -->
                 <li class="relative">
                     <div class="group inline-block">
-                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none">
+                        <button class="dropdown-button block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-500 focus:outline-none text-xl">
                             Contact Us
-                            <span class="inline md:hidden">▶</span>
-                            <span class="hidden md:inline">▼</span>
                         </button>
                         <ul class="absolute left-25 md:left-0 top-[23px] hidden bg-white shadow-lg rounded-md p-2 w-52 z-10 dropdown-menu">
                             <li class="border-t my-1"></li> <!-- Divider -->
@@ -119,7 +151,7 @@
 <div class="decorative-band">
     <img src="images/zig-zag.png" alt="decorative-band">
 </div>
-<!-- Placeholder Image Below Decorative Band -->
+<!-- Spotlight Carousel -->
 <div class="spotlight-carousel">
     <div class="spotlight-carousel-container">
         <div class="carousel-slide active" style="background-image: url('images/background/LoveAdorned-Background.jpg');"></div>
@@ -129,15 +161,15 @@
         <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
         <div class="spotlight-text">
             <h2>Love Adorned</h2>
-            <div class="text-button-container">
                 <p><strong>Love Adorned</strong> by <strong>Lori Tazbah (Diné/Acoma)</strong> offers handmade, contemporary Indigenized jewelry crafted from antiques, recycled materials, and natural stones. Lori blends Native culture with modern fashion, creating unique, one-of-a-kind pieces of art. Love Adorned also features custom decals and prints by Native pop artist <strong>Steven Paul Judd (Choctaw/Kiowa)</strong> celebrating Indigenous artistry and creativity.</p>
             </div>
         </div>
     </div>
 </div>
+<!-- Four Box Section -->
 <div class="xbox-container grid grid-cols-2 gap-4 sm:grid-cols-4">
     <!-- New Arrivals -->
-    <div class="xbox" data-description="Discover the latest additions to our collection!">
+    <div class="xbox xbox-newarrivals" data-description="Discover the latest additions to our collection!">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
             <img src="images/jewelry-photos/20200823_115653.jpg" alt="New Arrivals">
@@ -184,7 +216,7 @@
         </div>
     </div>
     <!-- Earrings -->
-    <div class="xbox" data-description="Discover our handcrafted earrings, designed with elegance and tradition!">
+    <div class="xbox xbox-earrings" data-description="Discover our handcrafted earrings, designed with elegance and tradition!">
         <button class="block relative overflow-hidden rounded-lg w-full focus:outline-none"
                 onclick="openFourBoxModal(this)">
             <img src="images/jewelry-photos/goldhoopearrings2.jpg" alt="Earrings">
@@ -605,7 +637,7 @@
         <!-- Product Info -->
         <h2 id="modalTitle" class="product-name">Product Name</h2>
         <p id="modalPrice" class="product-price">$0.00</p>
-        <button id="modalAddToCart" class="add-to-cart-btn bg-blue-500 text-white px-4 py-2 rounded mt-4 w-full">
+        <button id="modalAddToCart" class="add-to-cart-btn">
             Add to Cart
         </button>
     </div>

@@ -12,6 +12,16 @@ body {
     background-color: var(--off-white);
     background-image: url("images/background/bg-whitepattern4.jpg");
 }
+#cartDropdown {
+    position: absolute;
+    right: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
 /* decorative stripe-band */
 .decorative-band {
     width: 100%;
@@ -27,7 +37,6 @@ body {
 }
 /* Unique Spotlight Carousel */
 .spotlight-carousel {
-    background-image: url("images/background/bg-pattern2.jpg");
     background-size: 40%;
     position: relative;
     height: 750px;
@@ -413,9 +422,8 @@ body {
     cursor: pointer;
 }
 .close:hover {
-    color: #000;
+    color: var(--off-black);
     transform: scale(1.1);
-
 }
 /* Adjusted Layout for Main Image and Thumbnails */
 .modal-body {
@@ -501,7 +509,7 @@ body {
     padding: 10px 5px;
 }
 
-/* Ensure images don’t shrink */
+/* product boxes for featured carousel */
 .featured-box {
     width: 200px;
     height: 200px;
@@ -517,7 +525,6 @@ body {
 }
 /* About Section */
 .about-section {
-    background-image: url('images/background/bg-pattern2.jpg');
     background-size: 50%;
     display: flex;
     justify-content: center;

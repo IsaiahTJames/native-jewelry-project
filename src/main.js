@@ -235,52 +235,71 @@ document.getElementById("checkoutButton").addEventListener("click", function () 
 // Initialize UI on page load
 updateCartCount()
 updateCartDropdown()
+
+
+
 // Function to swap the main image with the clicked thumbnail
 window.updateMainImage = function (thumbnail) {
     const mainImage = document.getElementById("modalImage");
     // Swap the clicked thumbnail with the main image
-    const tempSrc = mainImage.src
-    mainImage.src = thumbnail.src
-    thumbnail.src = tempSrc
+    const tempSrc = mainImage.src;
+    mainImage.src = thumbnail.src;
+    thumbnail.src = tempSrc;
 };
+
+// Function to resolve image paths dynamically
+function resolveImagePath(imageSrc) {
+    if (imageSrc.startsWith("images/")) {
+        return "/assets/" + imageSrc.split("images/")[1];  // Convert to /assets/
+    }
+    return imageSrc;
+}
+
 // Get modal elements
-const modal = document.getElementById("productModal")
-const closeButton = document.querySelector(".close")
-const thumbnailContainer = document.querySelector(".thumbnail-container")
+const modal = document.getElementById("productModal");
+const closeButton = document.querySelector(".close");
+const thumbnailContainer = document.querySelector(".thumbnail-container");
+
 // Function to Open the Modal and Update Content
 window.openModal = function (title, price, mainImage, thumbnails = []) {
-    document.getElementById("modalTitle").textContent = title
-    document.getElementById("modalPrice").textContent = `$${price}`
-    document.getElementById("modalImage").src = mainImage
-    document.getElementById("productModal").style.display = "flex"
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalPrice").textContent = `$${price}`;
+
+    // Convert main image path if necessary
+    document.getElementById("modalImage").src = resolveImagePath(mainImage);
+    document.getElementById("productModal").style.display = "flex";
+
     // Clear previous thumbnails
-    thumbnailContainer.innerHTML = ""
+    thumbnailContainer.innerHTML = "";
 
     // Dynamically add thumbnails (if available)
     thumbnails.forEach((thumbSrc) => {
-        let thumb = document.createElement("img")
-        thumb.src = thumbSrc
-        thumb.classList.add("thumbnail")
+        let thumb = document.createElement("img");
+        thumb.src = resolveImagePath(thumbSrc);  // Convert to /assets/
+        thumb.classList.add("thumbnail");
         thumb.onclick = function () {
-            window.updateMainImage(thumb) // Swap with main image
-        }
-        thumbnailContainer.appendChild(thumb)
-    })
-}
+            window.updateMainImage(thumb);  // Swap with main image
+        };
+        thumbnailContainer.appendChild(thumb);
+    });
+};
+
 // Function to Close the Modal
 window.closeModal = function () {
-    modal.style.display = "none"
-}
+    modal.style.display = "none";
+};
+
 // Ensure the close button has the event listener
 if (closeButton) {
-    closeButton.addEventListener("click", window.closeModal)
+    closeButton.addEventListener("click", window.closeModal);
 }
+
 // Close modal when clicking outside of it
 window.onclick = function (event) {
     if (event.target === modal) {
-        window.closeModal()
+        window.closeModal();
     }
-}
+};
 // Carousel Functionality for the popular and featured products
 function createCarousel(containerSelector, leftArrowSelector, rightArrowSelector) {
     let currentIndex = 0

@@ -370,7 +370,11 @@ document.addEventListener("DOMContentLoaded", () => {
      })
 })
 window.openCarouselModal = function (button) {
-    const productBox = button.closest(".product-box"); // Get the clicked product box
+    if (!button) return; // Stop function if no button is passed
+
+    const productBox = button.closest(".product-box");
+    if (!productBox) return; // Stop function if no product box is found
+
     const modal = document.getElementById("carouselModal");
     const modalTitle = document.getElementById("carouselModalTitle");
     const modalImage = document.getElementById("carouselModalImage");
@@ -380,7 +384,7 @@ window.openCarouselModal = function (button) {
     // Set product details dynamically
     modalTitle.textContent = productBox.querySelector(".product-name").textContent;
     modalPrice.textContent = productBox.querySelector(".product-price").textContent;
-    modalImage.src = productBox.querySelector(".product-img").src; // Use only the main image
+    modalImage.src = productBox.querySelector(".product-img").src;
 
     // Set up Add to Cart Button
     addToCartButton.onclick = function () {

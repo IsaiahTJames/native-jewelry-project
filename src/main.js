@@ -247,12 +247,17 @@ window.updateMainImage = function (thumbnail) {
     thumbnail.src = tempSrc;
 };
 
-// Function to resolve image paths dynamically
+// Function to resolve image paths dynamically for built assets
 function resolveImagePath(imageSrc) {
+    if (!imageSrc) return ""; // Prevent issues with empty paths
+    if (imageSrc.includes("/assets/")) return imageSrc; // Already processed
+
+    // Handle images that are in the `images/` directory and get properly mapped to `/assets/`
     if (imageSrc.startsWith("images/")) {
-        return "/assets/" + imageSrc.split("images/")[1];  // Convert to /assets/
+        return new URL(`/assets/${imageSrc.split("images/")[1]}`, window.location.origin).href;
     }
-    return imageSrc;
+
+    return imageSrc; // Return unchanged if not an image needing conversion
 }
 
 // Get modal elements
@@ -265,8 +270,11 @@ window.openModal = function (title, price, mainImage, thumbnails = []) {
     document.getElementById("modalTitle").textContent = title;
     document.getElementById("modalPrice").textContent = `$${price}`;
 
-    // Convert main image path if necessary
-    document.getElementById("modalImage").src = resolveImagePath(mainImage);
+    // Resolve paths dynamically so they match `/assets/...` in the build
+    const resolvedMainImage = resolveImagePath(mainImage);
+    document.getElementById("modalImage").src = resolvedMainImage;
+
+    // Show the modal
     document.getElementById("productModal").style.display = "flex";
 
     // Clear previous thumbnails
@@ -274,13 +282,20 @@ window.openModal = function (title, price, mainImage, thumbnails = []) {
 
     // Dynamically add thumbnails (if available)
     thumbnails.forEach((thumbSrc) => {
+        const resolvedThumb = resolveImagePath(thumbSrc);
         let thumb = document.createElement("img");
-        thumb.src = resolveImagePath(thumbSrc);  // Convert to /assets/
+        thumb.src = resolvedThumb;
         thumb.classList.add("thumbnail");
         thumb.onclick = function () {
             window.updateMainImage(thumb);  // Swap with main image
         };
         thumbnailContainer.appendChild(thumb);
+    });
+
+    // Debugging: Log resolved paths to ensure correct asset references
+    console.log("Resolved Main Image Path:", resolvedMainImage);
+    thumbnails.forEach((thumbSrc, index) => {
+        console.log(`Resolved Thumbnail ${index + 1} Path:`, resolveImagePath(thumbSrc));
     });
 };
 

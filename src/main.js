@@ -248,25 +248,40 @@ const modal = document.getElementById("productModal")
 const closeButton = document.querySelector(".close")
 const thumbnailContainer = document.querySelector(".thumbnail-container")
 // Function to Open the Modal and Update Content
-window.openModal = function (title, price, mainImage, thumbnails = []) {
-    document.getElementById("modalTitle").textContent = title
-    document.getElementById("modalPrice").textContent = `$${price}`
-    document.getElementById("modalImage").src = mainImage
-    document.getElementById("productModal").style.display = "flex"
-    // Clear previous thumbnails
-    thumbnailContainer.innerHTML = ""
+window.openModal = function (button) {
+    // Get parent product-box container
+    const productBox = button.closest(".product-box");
 
-    // Dynamically add thumbnails (if available)
+    // Get product details
+    const title = productBox.querySelector(".product-name").textContent;
+    const price = productBox.querySelector(".product-price").textContent;
+    const mainImage = productBox.querySelector(".product-img").src; // Get actual displayed image
+
+    // Update modal content
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalPrice").textContent = price;
+    document.getElementById("modalImage").src = mainImage;
+
+    // Get thumbnails from data attributes or existing elements
+    const thumbnailContainer = document.querySelector(".thumbnail-container");
+    thumbnailContainer.innerHTML = ""; // Clear previous thumbnails
+
+    // Check if there are additional images stored in data attributes
+    const thumbnails = productBox.getAttribute("data-thumbnails")?.split(",") || [];
+
     thumbnails.forEach((thumbSrc) => {
-        let thumb = document.createElement("img")
-        thumb.src = thumbSrc
-        thumb.classList.add("thumbnail")
+        let thumb = document.createElement("img");
+        thumb.src = thumbSrc.trim();
+        thumb.classList.add("thumbnail");
         thumb.onclick = function () {
-            window.updateMainImage(thumb) // Swap with main image
-        }
-        thumbnailContainer.appendChild(thumb)
-    })
-}
+            window.updateMainImage(thumb);
+        };
+        thumbnailContainer.appendChild(thumb);
+    });
+
+    // Open the modal
+    document.getElementById("productModal").style.display = "flex";
+};
 // Function to Close the Modal
 window.closeModal = function () {
     modal.style.display = "none"

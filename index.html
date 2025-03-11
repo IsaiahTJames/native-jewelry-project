@@ -495,11 +495,20 @@
     <div class="carousel-container">
         <div class="popular-products-container grid grid-cols-3 sm:grid-cols-5">
             <div class="product-box">
-                <img src="images/jewelry-photos/redgoldswirl.jpg" alt="Product 1" class="product-img shadow-2xl"
-                     onclick="openModal('Red Sky Whirl', '59.99', 'images/jewelry-photos/redgoldswirl.jpg',['images/jewelry-photos/redgoldswirl2.jpg'])">
+                <img src="images/jewelry-photos/redgoldswirl.jpg" alt="Red Sky Whirl" class="product-img shadow-2xl"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Red Sky Whirl</p>
                     <p class="product-price">$59.99</p>
+                </div>
+                <!-- Product Details Hidden -->
+                <div class="product-details hidden">
+                    <div class="product" data-name="Red Sky Whirl" data-price="$59.99">
+                        <img src="images/jewelry-photos/redgoldswirl.jpg" alt="Red Sky Whirl">
+                    </div>
+                    <div class="product" data-name="Additional View" data-price="$59.99">
+                        <img src="images/jewelry-photos/redgoldswirl2.jpg" alt="Red Sky Whirl Extra View">
+                    </div>
                 </div>
             </div>
             <div class="product-box">
@@ -618,6 +627,20 @@
     </div>
     <button class="arrow right-arrow">&#10095;</button>
 </div>
+
+<!-- Carousel Jewelry Modal -->
+<div id="carouselModal" class="carousel-modal">
+    <div class="carousel-modal-content">
+        <span class="carousel-close" onclick="closeCarouselModal()">&times;</span>
+        <div class="carousel-modal-body">
+            <h2 id="carouselModalTitle">Category Name</h2>
+            <p id="carouselModalDescription">Category Description</p>
+            <div id="carouselModalImages" class="carousel-modal-images-container"></div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Carousel Popup Modal -->
 <div id="productModal" class="modal">
     <div class="modal-content">

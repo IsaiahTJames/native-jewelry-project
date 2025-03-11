@@ -645,31 +645,6 @@
     </div>
 </div>
 
-
-<!-- Carousel Popup Modal -->
-<div id="productModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="window.closeModal()">&times;</span>
-
-        <div class="modal-body">
-            <!-- Main Product Image -->
-            <img id="modalImage" class="main-product-image" src="" alt="Product Image">
-
-            <!-- Thumbnail Images (Small Clickable Previews) -->
-            <div class="thumbnail-container">
-                <img id="thumbnail1" class="thumbnail" onclick="window.updateMainImage(this)" src="" alt="Thumbnail 1">
-                <img id="thumbnail2" class="thumbnail" onclick="window.updateMainImage(this)" src="" alt="Thumbnail 2">
-                <img id="thumbnail3" class="thumbnail" onclick="window.updateMainImage(this)" src="" alt="Thumbnail 3">
-            </div>
-        </div>
-        <!-- Product Info -->
-        <h2 id="modalTitle" class="product-name">Product Name</h2>
-        <p id="modalPrice" class="product-price">$0.00</p>
-        <button id="modalAddToCart" class="add-to-cart-btn">
-            Add to Cart
-        </button>
-    </div>
-</div>
 <!-- "Featured" Title (Centered) -->
 <div class="featured-section">
     <div class="featured-title">
@@ -682,126 +657,122 @@
     <div class="carousel-container">
         <div class="featured-products-container grid grid-cols-3 sm:grid-cols-5">
             <div class="product-box">
-                <img src="images/jewelry-photos/goldsheet.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Gold Turquoise Sheets', '79.99', 'images/jewelry-photos/goldsheet.jpg',['images/jewelry-photos/goldsheet1.jpg', 'images/jewelry-photos/goldsheet2.jpg', 'images/jewelry-photos/goldsheet3.jpg' ])">
+                <img src="images/jewelry-photos/goldsheet.jpg" alt="Gold Turquoise Sheets" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Gold Turquoise Sheets</p>
                     <p class="product-price">$79.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/danglescale.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Kingman Turquoise', '59.99', 'images/jewelry-photos/danglescale.jpg',['images/jewelry-photos/danglescale1.jpg'])">
+                <img src="images/jewelry-photos/danglescale.jpg" alt="Kingman Turquoise" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Kingman Turquoise</p>
                     <p class="product-price">$59.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/blacksea.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Antique Etched Turquoise', '69.99', 'images/jewelry-photos/blacksea.jpg',['images/jewelry-photos/blacksea2.jpg', 'images/jewelry-photos/blacksea3.jpg'])">
+                <img src="images/jewelry-photos/blacksea.jpg" alt="Antique Etched Turquoise" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Antique Etched Turquoise</p>
                     <p class="product-price">$69.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/pinkflare.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Butterfly Dangles', '59.99', 'images/jewelry-photos/pinkflare.jpg',['images/jewelry-photos/pinkflare1.jpg', 'images/jewelry-photos/pinkflare2.jpg'])">
+                <img src="images/jewelry-photos/pinkflare.jpg" alt="Butterfly Dangles" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Butterfly Dangles</p>
                     <p class="product-price">$59.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/purple.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Purple Capiz Shells', '39.99', 'images/jewelry-photos/purple.jpg',['images/jewelry-photos/purple2.jpg',])">
+                <img src="images/jewelry-photos/purple.jpg" alt="Purple Capiz Shells" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Purple Capiz Shells</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/silverlong.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Silver Turquoise Dangles', '34.99', 'images/jewelry-photos/silverlong.jpg')">
+                <img src="images/jewelry-photos/silverlong.jpg" alt="Silver Turquoise Dangles" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Silver Turquoise Dangles</p>
                     <p class="product-price">$34.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/whiteshell.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Fan Shaped Abalone', '49.99', 'images/jewelry-photos/whiteshell.jpg',['images/jewelry-photos/whiteshell2.jpg',])">
+                <img src="images/jewelry-photos/whiteshell.jpg" alt="Fan Shaped Abalone" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Fan Shaped Abalone</p>
                     <p class="product-price">$49.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/sticker-photos/Robohontas.png" alt="Product 1" class="product-img"
-                     onclick="openModal('Fan Shaped Abalone', '4.99', 'images/sticker-photos/Robohontas.png')">
+                <img src="images/sticker-photos/Robohontas.png" alt="Robohontas (Sticker)" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Robohontas (Sticker)</p>
                     <p class="product-price">$4.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/pinksphere.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Kingman Turquoise and Lavender Beads', '34.99', 'images/jewelry-photos/pinksphere.jpg')">
+                <img src="images/jewelry-photos/pinksphere.jpg" alt="Kingman Turquoise and Lavender Bead" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Kingman Turquoise and Lavender Bead</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <img src="images/jewelry-photos/irishell.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Abalone Shell', '29.99', 'images/jewelry-photos/irishell.jpg'['images/jewelry-photos/irishell2.jpg'])">
+                <img src="images/jewelry-photos/irishell.jpg" alt="Abalone Shell" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Abalone Shell</p>
                     <p class="product-price">$29.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <img src="images/sticker-photos/ChiefHead.png" alt="Product 1" class="product-img"
-                     onclick="openModal('Chief Head', '4.99', 'images/sticker-photos/ChiefHead.png')">
+                <img src="images/sticker-photos/ChiefHead.png" alt="Chief Head (Sticker)" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Chief Head (Sticker)</p>
                     <p class="product-price">$4.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <img src="images/jewelry-photos/vibrantearrings.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Iridescence Feathers', '39.99', 'images/jewelry-photos/vibrantearrings.jpg',['images/jewelry-photos/vibrantearrings2.jpg', 'images/jewelry-photos/vibrantearrings3.jpg', 'images/jewelry-photos/vibrantearrings4.jpg'])">
+                <img src="images/jewelry-photos/vibrantearrings.jpg" alt="Iridescence Feathers" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Iridescence Feathers</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
             <div class="product-box">
-                <img src="images/jewelry-photos/5beadearrings2.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Sea Abalone Buttons', '49.99', 'images/jewelry-photos/5beadearrings2.jpg',['images/jewelry-photos/5beadearrings.jpg', 'images/jewelry-photos/5beadearrings3.jpg'])">
+                <img src="images/jewelry-photos/5beadearrings2.jpg" alt="Sea Abalone Buttons" class="product-img"
+                     onclick="openCarouselModal(this)">
                 <div class="product-info">
                     <p class="product-name">Sea Abalone Buttons</p>
                     <p class="product-price">$49.99</p>
                 </div>
             </div>
+
             <div class="product-box">
-                <img src="images/jewelry-photos/ZebraPrint.png" alt="Product 1" class="product-img"
-                     onclick="openModal('Starfish Zebra', '39.99', 'images/jewelry-photos/ZebraPrint.png')">
-                <div class="product-info">
-                    <p class="product-name">Starfish Zebra</p>
-                    <p class="product-price">$39.99</p>
-                </div>
+                <img src
+
             </div>
-            <div class="product-box">
-                <img src="images/jewelry-photos/431960107_292717926961446_6843426414817941606_n.jpg" alt="Product 1" class="product-img"
-                     onclick="openModal('Mink Tufts', '29.99', 'images/jewelry-photos/431960107_292717926961446_6843426414817941606_n.jpg',['images/jewelry-photos/431960107_292717926961446_6843426414817941606_n2.jpg'])">
-                <div class="product-info">
-                    <p class="product-name">Mink Tufts</p>
-                    <p class="product-price">$29.99</p>
-                </div>
-            </div>
-        </div>
     </div>
     <button class="arrow right-arrow">&#10095;</button>
 </div>

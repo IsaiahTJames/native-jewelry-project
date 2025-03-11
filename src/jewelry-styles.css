@@ -370,8 +370,8 @@ body {
 .right-arrow{
     right: -5px;
 }
-/* The Modal (Hidden by Default) */
-.modal {
+/* The Carousel Jewelry Modal (Hidden by Default) */
+.carousel-modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -384,8 +384,9 @@ body {
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
+
 /* Modal Content Box */
-.modal-content {
+.carousel-modal-content {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -394,6 +395,7 @@ body {
     position: relative;
     animation: fadeIn 0.3s ease-in-out;
 }
+
 /* Modal Fade-in Animation */
 @keyframes fadeIn {
     from {
@@ -405,8 +407,9 @@ body {
         transform: scale(1);
     }
 }
+
 /* Close Button (X) */
-.close {
+.carousel-close {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -415,38 +418,42 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-.close:hover {
+.carousel-close:hover {
     color: var(--off-black);
     transform: scale(1.1);
 }
+
 /* Adjusted Layout for Main Image and Thumbnails */
-.modal-body {
+.carousel-modal-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-/* Main Product Image */
-.main-product-image {
+
+/* Main Jewelry Product Image */
+.carousel-product-image {
     width: 250px;
     height: auto;
     border-radius: 8px;
     border: 1px solid var(--off-black);
 }
-.main-product-image:hover {
+.carousel-product-image:hover {
     border-color: var(--off-blue);
     transform: scale(1.03);
 }
+
 /* Thumbnail Container */
-.thumbnail-container {
+.carousel-modal-images-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
 }
+
 /* Thumbnail Images */
-.thumbnail {
-    width: 60px; /* Small size */
+.carousel-thumbnail {
+    width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 5px;
@@ -454,13 +461,15 @@ body {
     border: 1px solid var(--off-black);
     transition: 0.2s ease-in-out;
 }
-.thumbnail:hover, .thumbnail:focus {
+.carousel-thumbnail:hover, .carousel-thumbnail:focus {
     border-color: var(--off-blue);
     transform: scale(1.02);
 }
-.add-to-cart:hover {
-     transform: scale(1.01);
- }
+
+/* Add to Cart Button Hover Effect */
+.carousel-add-to-cart:hover {
+    transform: scale(1.01);
+}
 /* Featured Product Section */
 .featured-section {
     max-width: 100%;

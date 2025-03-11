@@ -382,7 +382,6 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* Modal Content Box */
@@ -408,7 +407,7 @@ body {
     }
 }
 
-/* Close Button (X) */
+/* Close Button */
 .carousel-close {
     position: absolute;
     top: 10px;
@@ -423,52 +422,46 @@ body {
     transform: scale(1.1);
 }
 
-/* Adjusted Layout for Main Image and Thumbnails */
-.carousel-modal-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
 /* Main Jewelry Product Image */
-.carousel-product-image {
-    width: 250px;
+.carousel-main-image {
+    width: 100%;
+    max-width: 350px;
     height: auto;
     border-radius: 8px;
     border: 1px solid var(--off-black);
 }
-.carousel-product-image:hover {
+.carousel-main-image:hover {
     border-color: var(--off-blue);
     transform: scale(1.03);
 }
 
-/* Thumbnail Container */
-.carousel-modal-images-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+/* Product Name */
+#carouselModalTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-/* Thumbnail Images */
-.carousel-thumbnail {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+/* Price */
+#carouselModalPrice {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: var(--off-blue);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid var(--off-black);
     transition: 0.2s ease-in-out;
 }
-.carousel-thumbnail:hover, .carousel-thumbnail:focus {
-    border-color: var(--off-blue);
-    transform: scale(1.02);
-}
-
-/* Add to Cart Button Hover Effect */
-.carousel-add-to-cart:hover {
-    transform: scale(1.01);
+.add-to-cart-btn:hover {
+    transform: scale(1.05);
 }
 /* Featured Product Section */
 .featured-section {

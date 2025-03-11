@@ -373,60 +373,29 @@ window.openCarouselModal = function (button) {
     const productBox = button.closest(".product-box"); // Get the clicked product box
     const modal = document.getElementById("carouselModal");
     const modalTitle = document.getElementById("carouselModalTitle");
-    const modalDescription = document.getElementById("carouselModalDescription");
-    const imageContainer = document.getElementById("carouselModalImages");
+    const modalImage = document.getElementById("carouselModalImage");
+    const modalPrice = document.getElementById("carouselModalPrice");
+    const addToCartButton = document.getElementById("carouselAddToCart");
 
-    // Set the title dynamically
+    // Set product details dynamically
     modalTitle.textContent = productBox.querySelector(".product-name").textContent;
-    modalDescription.textContent = "Explore more details about this jewelry piece.";
+    modalPrice.textContent = productBox.querySelector(".product-price").textContent;
+    modalImage.src = productBox.querySelector(".product-img").src; // Use only the main image
 
-    // Clear previous content
-    imageContainer.innerHTML = "";
-
-    // Retrieve product details from `.product-details`
-    const productDetails = productBox.querySelector(".product-details");
-    productDetails.querySelectorAll(".product").forEach((product) => {
-        let productDiv = document.createElement("div");
-        productDiv.classList.add("modal-product");
-
-        // Image Element
-        let imgElement = document.createElement("img");
-        imgElement.src = product.querySelector("img").src;
-        imgElement.classList.add("carousel-product-image");
-
-        // Name Element
-        let nameElement = document.createElement("p");
-        nameElement.textContent = product.getAttribute("data-name");
-        nameElement.classList.add("product-name");
-
-        // Price Element
-        let priceElement = document.createElement("p");
-        priceElement.textContent = product.getAttribute("data-price");
-        priceElement.classList.add("product-price");
-
-        // Add to Cart Button
-        let addToCartButton = document.createElement("button");
-        addToCartButton.textContent = "Add to Cart";
-        addToCartButton.classList.add("add-to-cart-btn");
-
-        addToCartButton.addEventListener("click", function () {
-            addToCart({
-                name: nameElement.textContent,
-                price: priceElement.textContent,
-                image: imgElement.src, // Optional: Add image
-            });
+    // Set up Add to Cart Button
+    addToCartButton.onclick = function () {
+        addToCart({
+            name: modalTitle.textContent,
+            price: modalPrice.textContent,
+            image: modalImage.src
         });
-
-        productDiv.appendChild(imgElement);
-        productDiv.appendChild(nameElement);
-        productDiv.appendChild(priceElement);
-        productDiv.appendChild(addToCartButton);
-        imageContainer.appendChild(productDiv);
-    });
+    };
 
     // Show modal
     modal.style.display = "flex";
 };
+
+// Function to Close the Modal
 window.closeCarouselModal = function () {
     document.getElementById("carouselModal").style.display = "none";
 };

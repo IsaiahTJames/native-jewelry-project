@@ -90,6 +90,7 @@ body {
 .prev {
     left: 20px;
 }
+
 .next {
     right: 20px;
 }
@@ -103,15 +104,20 @@ body {
     color: white;
     padding: 20px;
 }
+
+
 .spotlight-text h2 {
-    font-size: 26px;
+    font-size: 26px; /* Slightly larger for emphasis */
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .spotlight-text p {
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.5; /* Better readability */
 }
+
+
 /* 4 boxes  */
 .xbox-container {
     display: flex;
@@ -297,6 +303,7 @@ body {
     align-items: center;
     position: relative;
     max-width: 100%;
+
 }
 .carousel-container {
     width: 1100px; /* Display 5 items at a time */
@@ -320,7 +327,7 @@ body {
 }
 .product-box img {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Ensures uniform size */
     object-fit: cover;
     margin-bottom: 8px;
     border: 2px solid var(--off-black);
@@ -333,7 +340,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 .product-box img:hover {
-    border: 2px solid var(--off-blue);
+    border: 2px solid var(--off-blue); /* Replace with actual color */
 }
 .product-info {
     display: flex;
@@ -361,7 +368,7 @@ body {
     transition: 0.1s;
 }
 .arrow:hover {
-    transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.2); /* Adjust for exact centering */
 }
 .left-arrow {
     left: -5px;
@@ -369,34 +376,29 @@ body {
 .right-arrow{
     right: -5px;
 }
-/* The Carousel Jewelry Modal (Hidden by Default) */
-.carousel-modal {
-    display: none;
+/* The Modal (Hidden by Default) */
+.modal {
+    display: none; /* Initially hidden */
     position: fixed;
-    z-index: 1000;
+    z-index: 1000; /* Ensures modal appears above everything */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay for dim effect */
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
-
 /* Modal Content Box */
-.carousel-modal-content {
+.modal-content {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 450px; /* Slightly wider */
     text-align: center;
     position: relative;
-    animation: fadeIn 0.3s ease-in-out;
-
-    /* Fix centering issue */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    animation: fadeIn 0.3s ease-in-out; /* Smooth opening effect */
 }
 /* Modal Fade-in Animation */
 @keyframes fadeIn {
@@ -409,9 +411,8 @@ body {
         transform: scale(1);
     }
 }
-
-/* Close Button */
-.carousel-close {
+/* Close Button (X) */
+.close {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -420,51 +421,52 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-.carousel-close:hover {
+.close:hover {
     color: var(--off-black);
     transform: scale(1.1);
-}
 
-/* Main Jewelry Product Image */
-.carousel-main-image {
-    width: 100%;
-    max-width: 350px;
+}
+/* Adjusted Layout for Main Image and Thumbnails */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Spacing between main image & thumbnails */
+}
+/* Main Product Image */
+.main-product-image {
+    width: 250px; /* Slightly smaller */
     height: auto;
     border-radius: 8px;
     border: 1px solid var(--off-black);
 }
-.carousel-main-image:hover {
-    border-color: var(--off-blue);
-    transform: scale(1.03);
+.main-product-image:hover {
+    border-color: var(--off-blue); /* Highlight border on hover */
+    transform: scale(1.03); /* Slightly larger on hover */
 }
-
-/* Product Name */
-#carouselModalTitle {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 10px;
+/* Thumbnail Container */
+.thumbnail-container {
+    display: flex;
+    flex-direction: row; /* Thumbnails should be in a row */
+    justify-content: center;
+    gap: 10px;
 }
-
-/* Price */
-#carouselModalPrice {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 10px 0;
-}
-
-/* Add to Cart Button */
-.add-to-cart-btn {
-    background-color: var(--off-blue);
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
+/* Thumbnail Images */
+.thumbnail {
+    width: 60px; /* Small size */
+    height: 60px;
+    object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
+    border: 1px solid var(--off-black);
     transition: 0.2s ease-in-out;
 }
-.add-to-cart-btn:hover {
-    transform: scale(1.05);
+.thumbnail:hover, .thumbnail:focus {
+    border-color: var(--off-blue); /* Highlight border on hover */
+    transform: scale(1.02); /* Slightly larger on hover */
+}
+.add-to-cart:hover {
+    transform: scale(1.01); /* Slightly enlarges button on hover */
 }
 /* Featured Product Section */
 .featured-section {
@@ -481,23 +483,25 @@ body {
 .featured-title h2 a:hover {
     color: var(--off-blue);
 }
-/* Featured Products Section */
+/* Container for Featured Products */
 .featured-products {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    gap: 20px;
+    padding: 2em 0;
     max-width: 100%;
 }
 
-/* Carousel Wrapper */
+/* Outer container (controls visibility) */
 .carousel-container {
-    width: 1100px; /* Display 5 items at a time */
+    width: 1100px; /* 5 items at a time */
     overflow: hidden;
     position: relative;
 }
 
-/* Inner Scrolling Container */
+/* Inner container (moves left/right) */
 .featured-products-container {
     display: flex;
     min-width: 100%;
@@ -506,47 +510,20 @@ body {
     padding: 10px 5px;
 }
 
-/* Product Box for Featured Products */
+/* Ensure images don’t shrink */
+/* product boxes for featured carousel */
 .featured-box {
     width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex-shrink: 0;
-}
-.featured-box img {
-    width: 100%;
     height: 200px;
-    object-fit: cover;
-    margin-bottom: 8px;
     border: 2px solid var(--off-black);
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 .featured-box:hover {
     transform: scale(1.03);
-    transition: transform 0.3s ease-in-out;
-}
-.featured-box img:hover {
-    border: 2px solid var(--off-blue);
-}
-
-/* Product Info */
-.featured-product-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-}
-.featured-product-name {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
-}
-.featured-product-price {
-    font-size: 0.9rem;
-    color: #555;
+    border-color: var(--off-blue);
 }
 /* About Section */
 .about-section {
@@ -604,6 +581,7 @@ body {
     border-bottom: 1px solid #b0afaf;
 
 }
+
 /* Footer Columns */
 .footer-column {
     flex: 1;
@@ -691,5 +669,4 @@ body {
     display: flex;
     gap: 10px;
 }
-
 

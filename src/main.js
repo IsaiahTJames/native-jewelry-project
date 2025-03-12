@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 })
+
 let slideIndex = 0
 const slides = document.querySelectorAll(".carousel-slide")
 
@@ -161,13 +162,13 @@ function updateCartDropdown() {
 
             listItem.innerHTML =
                 `<div class="flex items-center">
-                    <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
-                    <div>
-                        <p class="text-sm font-medium text-gray-800">${item.name}</p>
-                        <p class="text-sm text-gray-600">${item.price}</p>
-                    </div>
-                </div>
-                <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>`
+                     <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
+                     <div>
+                         <p class="text-sm font-medium text-gray-800">${item.name}</p>
+                         <p class="text-sm text-gray-600">${item.price}</p>
+                     </div>
+                 </div>
+                 <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>`
             cartList.appendChild(listItem)
         })
         // Attach event listeners to remove buttons
@@ -248,40 +249,25 @@ const modal = document.getElementById("productModal")
 const closeButton = document.querySelector(".close")
 const thumbnailContainer = document.querySelector(".thumbnail-container")
 // Function to Open the Modal and Update Content
-window.openModal = function (button) {
-    // Get parent product-box container
-    const productBox = button.closest(".product-box");
+window.openModal = function (title, price, mainImage, thumbnails = []) {
+    document.getElementById("modalTitle").textContent = title
+    document.getElementById("modalPrice").textContent = `$${price}`
+    document.getElementById("modalImage").src = mainImage
+    document.getElementById("productModal").style.display = "flex"
+    // Clear previous thumbnails
+    thumbnailContainer.innerHTML = ""
 
-    // Get product details
-    const title = productBox.querySelector(".product-name").textContent;
-    const price = productBox.querySelector(".product-price").textContent;
-    const mainImage = productBox.querySelector(".product-img").src; // Get actual displayed image
-
-    // Update modal content
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalPrice").textContent = price;
-    document.getElementById("modalImage").src = mainImage;
-
-    // Get thumbnails from data attributes or existing elements
-    const thumbnailContainer = document.querySelector(".thumbnail-container");
-    thumbnailContainer.innerHTML = ""; // Clear previous thumbnails
-
-    // Check if there are additional images stored in data attributes
-    const thumbnails = productBox.getAttribute("data-thumbnails")?.split(",") || [];
-
+    // Dynamically add thumbnails (if available)
     thumbnails.forEach((thumbSrc) => {
-        let thumb = document.createElement("img");
-        thumb.src = thumbSrc.trim();
-        thumb.classList.add("thumbnail");
+        let thumb = document.createElement("img")
+        thumb.src = thumbSrc
+        thumb.classList.add("thumbnail")
         thumb.onclick = function () {
-            window.updateMainImage(thumb);
-        };
-        thumbnailContainer.appendChild(thumb);
-    });
-
-    // Open the modal
-    document.getElementById("productModal").style.display = "flex";
-};
+            window.updateMainImage(thumb) // Swap with main image
+        }
+        thumbnailContainer.appendChild(thumb)
+    })
+}
 // Function to Close the Modal
 window.closeModal = function () {
     modal.style.display = "none"
@@ -363,39 +349,9 @@ document.addEventListener("DOMContentLoaded", () => {
     closeButton.addEventListener("click", function () {
         popup.style.display = "none"
     })
-     window.addEventListener("click", function (event) {
-         if (event.target === popup) {
-             popup.style.display = "none"
-         }
-     })
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none"
+        }
+    })
 })
-window.openCarouselModal = function (button) {
-    const productBox = button.closest(".product-box"); // Get the clicked product box
-    const modal = document.getElementById("carouselModal");
-    const modalTitle = document.getElementById("carouselModalTitle");
-    const modalImage = document.getElementById("carouselModalImage");
-    const modalPrice = document.getElementById("carouselModalPrice");
-    const addToCartButton = document.getElementById("carouselAddToCart");
-
-    // Set product details dynamically
-    modalTitle.textContent = productBox.querySelector(".product-name").textContent;
-    modalPrice.textContent = productBox.querySelector(".product-price").textContent;
-    modalImage.src = productBox.querySelector(".product-img").src; // Use only the main image
-
-    // Set up Add to Cart Button
-    addToCartButton.onclick = function () {
-        addToCart({
-            name: modalTitle.textContent,
-            price: modalPrice.textContent,
-            image: modalImage.src
-        });
-    };
-
-    // Show modal
-    modal.style.display = "flex";
-};
-
-// Function to Close the Modal
-window.closeCarouselModal = function () {
-    document.getElementById("carouselModal").style.display = "none";
-};

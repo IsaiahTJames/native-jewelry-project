@@ -437,6 +437,9 @@ body {
 #modalTitle {
     font-size: 24px;
 }
+#modalPrice {
+    font-size: 20px;
+}
 /* Main Product Image */
 .main-product-image {
     width: 400px; /* Slightly smaller */

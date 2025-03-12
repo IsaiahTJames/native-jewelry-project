@@ -236,7 +236,6 @@ document.getElementById("checkoutButton").addEventListener("click", function () 
 // Initialize UI on page load
 updateCartCount()
 updateCartDropdown()
-// Function to open the modal
 window.openModal = function (element) {
     const modal = document.getElementById("productModal");
     const modalImage = document.getElementById("modalImage");
@@ -258,7 +257,7 @@ window.openModal = function (element) {
 
     const title = productBox.getAttribute("data-title");
     const price = productBox.getAttribute("data-price");
-    const mainImageSrc = productBox.getAttribute("data-main-image");
+    const mainImageSrc = productBox.querySelector("img").src;
 
     // Check if the attributes exist
     if (!title || !price || !mainImageSrc) {
@@ -269,7 +268,7 @@ window.openModal = function (element) {
     // Set modal content
     modalTitle.textContent = title;
     modalPrice.textContent = `$${price}`;
-    modalImage.src = mainImageSrc;
+    modalImage.src = mainImageSrc; // 🔥 Now it should work
 
     // Show modal
     modal.style.display = "flex";

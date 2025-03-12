@@ -482,24 +482,23 @@ body {
 .featured-title h2 a:hover {
     color: var(--off-blue);
 }
-/* Container for Featured Products */
+/* Featured Products Section */
 .featured-products {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 20px;
-    padding: 2em 0;
     max-width: 100%;
 }
 
-/* Outer container (controls visibility) */
+/* Carousel Wrapper */
 .carousel-container {
-    width: 1100px; /* 5 items at a time */
+    width: 1100px; /* Display 5 items at a time */
     overflow: hidden;
     position: relative;
 }
-/* Inner container (moves left/right) */
+
+/* Inner Scrolling Container */
 .featured-products-container {
     display: flex;
     min-width: 100%;
@@ -507,19 +506,48 @@ body {
     gap: 20px;
     padding: 10px 5px;
 }
-/* product boxes for featured carousel */
+
+/* Product Box for Featured Products */
 .featured-box {
     width: 200px;
-    height: 200px;
-    border: 2px solid var(--off-black);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     flex-shrink: 0;
+}
+.featured-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid var(--off-black);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 .featured-box:hover {
     transform: scale(1.03);
-    border-color: var(--off-blue);
+    transition: transform 0.3s ease-in-out;
+}
+.featured-box img:hover {
+    border: 2px solid var(--off-blue);
+}
+
+/* Product Info */
+.featured-product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+.featured-product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+.featured-product-price {
+    font-size: 0.9rem;
+    color: #555;
 }
 /* About Section */
 .about-section {

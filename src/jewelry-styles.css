@@ -451,27 +451,6 @@ body {
     border-color: var(--off-blue); /* Highlight border on hover */
     transform: scale(1.03); /* Slightly larger on hover */
 }
-/* Thumbnail Container */
-.thumbnail-container {
-    display: flex;
-    flex-direction: row; /* Thumbnails should be in a row */
-    justify-content: center;
-    gap: 10px;
-}
-/* Thumbnail Images */
-.thumbnail {
-    width: 60px; /* Small size */
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 1px solid var(--off-black);
-    transition: 0.2s ease-in-out;
-}
-.thumbnail:hover, .thumbnail:focus {
-    border-color: var(--off-blue); /* Highlight border on hover */
-    transform: scale(1.02); /* Slightly larger on hover */
-}
 .add-to-cart:hover {
     transform: scale(1.01); /* Slightly enlarges button on hover */
 }

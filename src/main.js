@@ -268,7 +268,7 @@ window.openModal = function (element) {
     // Set modal content
     modalTitle.textContent = title;
     modalPrice.textContent = `$${price}`;
-    modalImage.src = mainImageSrc; // 🔥 Now it should work
+    modalImage.src = mainImageSrc;
 
     // Show modal
     modal.style.display = "flex";

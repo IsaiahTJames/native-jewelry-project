@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--off-white);
-    background-image: url("images/background/bg-whitepattern4.jpg");
+    background-image: url("../images/bg-whitepattern4.jpg");
 }
 #cartDropdown {
     position: absolute;

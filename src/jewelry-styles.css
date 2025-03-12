@@ -371,7 +371,7 @@ body {
 }
 /* The Carousel Jewelry Modal (Hidden by Default) */
 .carousel-modal {
-    display: none !important; /* Ensure it starts hidden */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;

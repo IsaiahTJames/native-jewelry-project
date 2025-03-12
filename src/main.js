@@ -369,33 +369,40 @@ document.addEventListener("DOMContentLoaded", () => {
          }
      })
 })
-window.openCarouselModal = function (button) {
-    const productBox = button.closest(".product-box"); // Get the clicked product box
-    const modal = document.getElementById("carouselModal");
-    const modalTitle = document.getElementById("carouselModalTitle");
-    const modalImage = document.getElementById("carouselModalImage");
-    const modalPrice = document.getElementById("carouselModalPrice");
-    const addToCartButton = document.getElementById("carouselAddToCart");
+document.addEventListener("DOMContentLoaded", function () {
+    window.openCarouselModal = function (image) {
+        const productBox = image.closest(".product-box");
+        if (!productBox) return; // Exit if no product box found
 
-    // Set product details dynamically
-    modalTitle.textContent = productBox.querySelector(".product-name").textContent;
-    modalPrice.textContent = productBox.querySelector(".product-price").textContent;
-    modalImage.src = productBox.querySelector(".product-img").src; // Use only the main image
+        const modal = document.getElementById("carouselModal");
+        if (!modal) return; // Exit if modal is missing
 
-    // Set up Add to Cart Button
-    addToCartButton.onclick = function () {
-        addToCart({
-            name: modalTitle.textContent,
-            price: modalPrice.textContent,
-            image: modalImage.src
-        });
+        const modalTitle = document.getElementById("carouselModalTitle");
+        const modalImage = document.getElementById("carouselModalImage");
+        const modalPrice = document.getElementById("carouselModalPrice");
+        const addToCartButton = document.getElementById("carouselAddToCart");
+
+        // Populate modal
+        modalTitle.textContent = productBox.querySelector(".product-name").textContent;
+        modalPrice.textContent = productBox.querySelector(".product-price").textContent;
+        modalImage.src = productBox.querySelector(".product-img").src;
+
+        // Set up Add to Cart Button
+        addToCartButton.onclick = function () {
+            addToCart({
+                name: modalTitle.textContent,
+                price: modalPrice.textContent,
+                image: modalImage.src
+            });
+        };
+
+        // Show modal
+        modal.style.display = "flex";
+        modal.style.opacity = "1";
+        modal.style.zIndex = "1000";
     };
 
-    // Show modal
-    modal.style.display = "flex";
-};
-
-// Function to Close the Modal
-window.closeCarouselModal = function () {
-    document.getElementById("carouselModal").style.display = "none";
-};
+    window.closeCarouselModal = function () {
+        document.getElementById("carouselModal").style.display = "none";
+    };
+});

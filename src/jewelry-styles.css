@@ -432,10 +432,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px; /* Spacing between main image & thumbnails */
+    padding: 20px;
+}
+#modalTitle {
+    font-size: 24px;
 }
 /* Main Product Image */
 .main-product-image {
-    width: 250px; /* Slightly smaller */
+    width: 400px; /* Slightly smaller */
     height: auto;
     border-radius: 8px;
     border: 1px solid var(--off-black);

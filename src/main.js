@@ -236,56 +236,61 @@ document.getElementById("checkoutButton").addEventListener("click", function () 
 // Initialize UI on page load
 updateCartCount()
 updateCartDropdown()
-window.openModal = function (element) {
-    const modal = document.getElementById("productModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalPrice = document.getElementById("modalPrice");
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("productModal")
+    const closeButton = modal.querySelector(".close")
+    const thumbnailContainer = modal.querySelector(".thumbnail-container")
+    const modalImage = modal.querySelector("#modalImage")
+    const modalTitle = modal.querySelector("#modalTitle")
+    const modalPrice = modal.querySelector("#modalPrice")
 
-    // Ensure the modal elements exist
-    if (!modal || !modalImage || !modalTitle || !modalPrice) {
-        console.error("Modal elements not found.");
-        return;
+    // Hide modal by default (extra safety)
+    modal.style.display = "none"
+
+    // Swap main image with thumbnail
+    window.updateMainImage = function (thumbnail) {
+        const tempSrc = modalImage.src
+        modalImage.src = thumbnail.src
+        thumbnail.src = tempSrc
     }
 
-    // Extract product data from the clicked element's parent
-    const productBox = element.closest(".product-box");
-    if (!productBox) {
-        console.error("Product box not found.");
-        return;
+    // Open modal with product data
+    window.openModal = function (title, price, mainImage, thumbnails = []) {
+        modalTitle.textContent = title
+        modalPrice.textContent = `$${price}`
+        modalImage.src = mainImage
+        modal.style.display = "flex"
+
+        // Clear and repopulate thumbnails
+        thumbnailContainer.innerHTML = ""
+
+        thumbnails.forEach((thumbSrc) => {
+            const thumb = document.createElement("img")
+            thumb.src = thumbSrc
+            thumb.classList.add("thumbnail")
+            thumb.onclick = () => window.updateMainImage(thumb)
+            thumbnailContainer.appendChild(thumb)
+        })
     }
 
-    const title = productBox.getAttribute("data-title");
-    const price = productBox.getAttribute("data-price");
-    const mainImageSrc = productBox.querySelector("img").src;
-
-    // Check if the attributes exist
-    if (!title || !price || !mainImageSrc) {
-        console.error("Product data attributes missing.");
-        return;
+    // Close modal
+    window.closeModal = function () {
+        modal.style.display = "none"
     }
 
-    // Set modal content
-    modalTitle.textContent = title;
-    modalPrice.textContent = `$${price}`;
-    modalImage.src = mainImageSrc;
-
-    // Show modal
-    modal.style.display = "flex";
-};
-
-// Function to close the modal
-window.closeModal = function () {
-    document.getElementById("productModal").style.display = "none";
-};
-
-// Close modal when clicking outside of it
-window.onclick = function (event) {
-    const modal = document.getElementById("productModal");
-    if (event.target === modal) {
-        closeModal();
+    // Event listener for close button
+    if (closeButton) {
+        closeButton.addEventListener("click", window.closeModal)
     }
-};
+
+    // Close modal on outside click
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            window.closeModal()
+        }
+    })
+})
+
 // Carousel Functionality for the popular and featured products
 function createCarousel(containerSelector, leftArrowSelector, rightArrowSelector) {
     let currentIndex = 0

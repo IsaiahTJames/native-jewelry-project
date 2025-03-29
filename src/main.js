@@ -236,60 +236,55 @@ document.getElementById("checkoutButton").addEventListener("click", function () 
 // Initialize UI on page load
 updateCartCount()
 updateCartDropdown()
-document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("productModal")
-    const closeButton = modal.querySelector(".close")
-    const thumbnailContainer = modal.querySelector(".thumbnail-container")
-    const modalImage = modal.querySelector("#modalImage")
-    const modalTitle = modal.querySelector("#modalTitle")
-    const modalPrice = modal.querySelector("#modalPrice")
 
-    // Hide modal by default (extra safety)
-    modal.style.display = "none"
 
-    // Swap main image with thumbnail
-    window.updateMainImage = function (thumbnail) {
-        const tempSrc = modalImage.src
-        modalImage.src = thumbnail.src
-        thumbnail.src = tempSrc
+window.openModal = function (element) {
+    const productBox = element.closest(".product-box");
+    if (!productBox) return;
+
+    const title = productBox.dataset.title;
+    const price = productBox.dataset.price;
+    const mainImage = productBox.dataset.main;
+
+    const modal = document.getElementById("productModal");
+    const modalImage = modal.querySelector("#modalImage");
+    const modalTitle = modal.querySelector("#modalTitle");
+    const modalPrice = modal.querySelector("#modalPrice");
+    const thumbnailContainer = modal.querySelector(".thumbnail-container");
+
+    modalTitle.textContent = title;
+    modalPrice.textContent = `$${price}`;
+    modalImage.src = mainImage;
+    modal.style.display = "flex";
+
+    // Clear previous thumbnails
+    thumbnailContainer.innerHTML = "";
+
+    // Pull thumbnails from hidden container
+    const thumbnails = productBox.querySelectorAll(".thumbnails img");
+    thumbnails.forEach((img) => {
+        const thumb = img.cloneNode(true); // use clones so you don’t move them
+        thumb.classList.add("thumbnail");
+        thumb.onclick = function () {
+            const temp = modalImage.src;
+            modalImage.src = thumb.src;
+            thumb.src = temp;
+        };
+        thumbnailContainer.appendChild(thumb);
+    });
+};
+
+window.closeModal = function () {
+    document.getElementById("productModal").style.display = "none";
+};
+
+window.addEventListener("click", (event) => {
+    const modal = document.getElementById("productModal");
+    if (event.target === modal) {
+        window.closeModal();
     }
+});
 
-    // Open modal with product data
-    window.openModal = function (title, price, mainImage, thumbnails = []) {
-        modalTitle.textContent = title
-        modalPrice.textContent = `$${price}`
-        modalImage.src = mainImage
-        modal.style.display = "flex"
-
-        // Clear and repopulate thumbnails
-        thumbnailContainer.innerHTML = ""
-
-        thumbnails.forEach((thumbSrc) => {
-            const thumb = document.createElement("img")
-            thumb.src = thumbSrc
-            thumb.classList.add("thumbnail")
-            thumb.onclick = () => window.updateMainImage(thumb)
-            thumbnailContainer.appendChild(thumb)
-        })
-    }
-
-    // Close modal
-    window.closeModal = function () {
-        modal.style.display = "none"
-    }
-
-    // Event listener for close button
-    if (closeButton) {
-        closeButton.addEventListener("click", window.closeModal)
-    }
-
-    // Close modal on outside click
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            window.closeModal()
-        }
-    })
-})
 
 // Carousel Functionality for the popular and featured products
 function createCarousel(containerSelector, leftArrowSelector, rightArrowSelector) {

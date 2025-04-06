@@ -277,7 +277,7 @@ body {
 }
 #fourBoxModal .modal-product img {
     width: 250px;
-    height: 350px;
+    height: 300px;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #000;
@@ -405,6 +405,12 @@ body {
     box-sizing: border-box;
     background-color: var(--off-white);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+#modalTitle.product-name {
+    font-size: 18px;
+}
+#modalPrice.product-price {
+    font-size: 18px;
 }
 /* Modal Fade-in Animation */
 @keyframes fadeIn {

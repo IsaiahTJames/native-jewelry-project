@@ -75,7 +75,6 @@ window.openFourBoxModal = function (button) {
     const modalTitle = document.getElementById("fourBoxModalTitle")
     const modalDescription = document.getElementById("fourBoxModalDescription")
     const imageContainer = document.getElementById("fourBoxModalImages")
-
     // Get parent container of the clicked button
     const parentDiv = button.closest(".xbox")
     const productDetails = parentDiv.querySelector(".product-details")
@@ -149,34 +148,40 @@ function updateCartCount() {
         cartCount.classList.add("hidden")
     }
 }
-// Function to update cart dropdown with items
+// Function to update cart dropdown with current cart items
 function updateCartDropdown() {
-    cartList.innerHTML = "" // Clear previous items
-
+    // Clear any existing items in the cart dropdown
+    cartList.innerHTML = "";
+    // If cart is empty, show a message
     if (cartItems.length === 0) {
-        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`
+        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`;
     } else {
+        // Loops through all items in the cart
         cartItems.forEach((item, index) => {
-            let listItem = document.createElement("li")
-            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2")
-
-            listItem.innerHTML =
-                `<div class="flex items-center">
-                     <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
-                     <div>
-                         <p class="text-sm font-medium text-gray-800">${item.name}</p>
-                         <p class="text-sm text-gray-600">${item.price}</p>
-                     </div>
-                 </div>
-                 <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>`
-            cartList.appendChild(listItem)
-        })
-        // Attach event listeners to remove buttons
+            // Creates a list item container for each product
+            let listItem = document.createElement("li");
+            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2");
+            // Set the inner HTML for the product item (image, name, price, and remove button)
+            listItem.innerHTML = `
+                <div class="flex items-center">
+                    <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">${item.name}</p>
+                        <p class="text-sm text-gray-600">${item.price}</p>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>
+            `;
+            // Add the item to the cart dropdown list
+            cartList.appendChild(listItem);
+        });
+        // Add click event listeners to each remove button
         document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", function () {
-                removeFromCart(this.dataset.index)
-            })
-        })
+                // Remove the corresponding item from the cart using its index
+                removeFromCart(this.dataset.index);
+            });
+        });
     }
 }
 // Function to add an item to the cart
@@ -236,56 +241,56 @@ document.getElementById("checkoutButton").addEventListener("click", function () 
 // Initialize UI on page load
 updateCartCount()
 updateCartDropdown()
+
+
 window.openModal = function (element) {
-    const modal = document.getElementById("productModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalPrice = document.getElementById("modalPrice");
-
-    // Ensure the modal elements exist
-    if (!modal || !modalImage || !modalTitle || !modalPrice) {
-        console.error("Modal elements not found.");
-        return;
-    }
-
-    // Extract product data from the clicked element's parent
     const productBox = element.closest(".product-box");
-    if (!productBox) {
-        console.error("Product box not found.");
-        return;
-    }
+    if (!productBox) return;
 
-    const title = productBox.getAttribute("data-title");
-    const price = productBox.getAttribute("data-price");
-    const mainImageSrc = productBox.querySelector("img").src;
+    const title = productBox.dataset.title;
+    const price = productBox.dataset.price;
+    const mainImage = productBox.dataset.main;
 
-    // Check if the attributes exist
-    if (!title || !price || !mainImageSrc) {
-        console.error("Product data attributes missing.");
-        return;
-    }
+    const modal = document.getElementById("productModal");
+    const modalImage = modal.querySelector("#modalImage");
+    const modalTitle = modal.querySelector("#modalTitle");
+    const modalPrice = modal.querySelector("#modalPrice");
+    const thumbnailContainer = modal.querySelector(".thumbnail-container");
 
-    // Set modal content
     modalTitle.textContent = title;
     modalPrice.textContent = `$${price}`;
-    modalImage.src = mainImageSrc;
-
-    // Show modal
+    modalImage.src = mainImage;
     modal.style.display = "flex";
+
+    // Clear previous thumbnails
+    thumbnailContainer.innerHTML = "";
+
+    // Pull thumbnails from hidden container
+    const thumbnails = productBox.querySelectorAll(".thumbnails img");
+    thumbnails.forEach((img) => {
+        const thumb = img.cloneNode(true); // use clones so you don’t move them
+        thumb.classList.add("thumbnail");
+        thumb.onclick = function () {
+            const temp = modalImage.src;
+            modalImage.src = thumb.src;
+            thumb.src = temp;
+        };
+        thumbnailContainer.appendChild(thumb);
+    });
 };
 
-// Function to close the modal
 window.closeModal = function () {
     document.getElementById("productModal").style.display = "none";
 };
 
-// Close modal when clicking outside of it
-window.onclick = function (event) {
+window.addEventListener("click", (event) => {
     const modal = document.getElementById("productModal");
     if (event.target === modal) {
-        closeModal();
+        window.closeModal();
     }
-};
+});
+
+
 // Carousel Functionality for the popular and featured products
 function createCarousel(containerSelector, leftArrowSelector, rightArrowSelector) {
     let currentIndex = 0

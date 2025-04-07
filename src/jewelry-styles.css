@@ -20,6 +20,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url("../images/bg-whitepattern4.jpg");
     z-index: 9999;
 }
 /* decorative stripe-band */
@@ -104,20 +105,15 @@ body {
     color: white;
     padding: 20px;
 }
-
-
 .spotlight-text h2 {
     font-size: 26px; /* Slightly larger for emphasis */
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .spotlight-text p {
     font-size: 17px;
     line-height: 1.5; /* Better readability */
 }
-
-
 /* 4 boxes  */
 .xbox-container {
     display: flex;
@@ -208,6 +204,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 60%;
+    background-image: url("../images/bg-whitepattern4.jpg");
     max-height: 80vh;
     overflow-y: auto;
     text-align: center;
@@ -277,11 +274,14 @@ body {
 }
 #fourBoxModal .modal-product img {
     width: 250px;
-    height: 350px;
+    height: 300px;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+#fourBoxModal .modal-product img[src*="book-photos"] {
+    height: 370px !important;
 }
 /* Add to Cart Button */
 .add-to-cart-btn {
@@ -378,7 +378,7 @@ body {
 }
 /* The Modal (Hidden by Default) */
 .modal {
-    display: none; /* Initially hidden */
+    display: none;
     position: fixed;
     z-index: 1000; /* Ensures modal appears above everything */
     left: 0;
@@ -392,13 +392,25 @@ body {
 }
 /* Modal Content Box */
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 450px; /* Slightly wider */
-    text-align: center;
     position: relative;
-    animation: fadeIn 0.3s ease-in-out; /* Smooth opening effect */
+    width: 400px; /* consistent width */
+    min-height: 500px; /* adjust as needed */
+    max-height: 90vh; /* responsive to viewport */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background-image: url("../images/bg-whitepattern4.jpg");
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+#modalTitle.product-name {
+    font-size: 18px;
+}
+#modalPrice.product-price {
+    font-size: 18px;
 }
 /* Modal Fade-in Animation */
 @keyframes fadeIn {
@@ -428,28 +440,49 @@ body {
 }
 /* Adjusted Layout for Main Image and Thumbnails */
 .modal-body {
+    width: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Spacing between main image & thumbnails */
-    padding: 20px;
-}
-#modalTitle {
-    font-size: 24px;
-}
-#modalPrice {
-    font-size: 20px;
+    justify-content: start;
+    gap: 15px;
 }
 /* Main Product Image */
 .main-product-image {
-    width: 400px; /* Slightly smaller */
+    max-width: 100%;
+    max-height: 300px;
+    width: auto;
     height: auto;
     border-radius: 8px;
-    border: 1px solid var(--off-black);
+    border: 2px solid var(--off-black);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
 }
 .main-product-image:hover {
     border-color: var(--off-blue); /* Highlight border on hover */
     transform: scale(1.03); /* Slightly larger on hover */
+}
+/* Thumbnail Container */
+.thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+/* Thumbnail Images */
+.thumbnail {
+    width: 60px; /* Small size */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--off-black);
+    transition: 0.2s ease-in-out;
+}
+.thumbnail:hover, .thumbnail:focus {
+    border-color: var(--off-blue); /* Highlight border on hover */
+    transform: scale(1.02); /* Slightly larger on hover */
 }
 .add-to-cart:hover {
     transform: scale(1.01); /* Slightly enlarges button on hover */
@@ -495,8 +528,6 @@ body {
     gap: 20px;
     padding: 10px 5px;
 }
-
-/* Ensure images don’t shrink */
 /* product boxes for featured carousel */
 .featured-box {
     width: 200px;
@@ -517,7 +548,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 40px 0;
 }
 .about-content {
@@ -554,7 +585,6 @@ body {
 }
 .main-footer a:hover {
     color: var(--off-blue);
-    transform: scale(1.1);
 }
 /* Footer Top Section */
 .footer-top {

@@ -109,12 +109,6 @@
         align-items: center;
         gap: 10px;
     }
-
-    .four-box-product-image {
-        width: 100px;
-        height: 100px;
-    }
-
     .product-name {
         font-size: 14px;
     }
@@ -126,6 +120,16 @@
     .add-to-cart-btn {
         font-size: 12px;
         padding: 6px 12px;
+    }
+}
+@media (max-width: 576px) {
+    #fourBoxModal .modal-product img {
+        width: 250px;
+        height: 250px !important;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 1px solid #000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 }
 /* Media query for mobile view (Most Popular) */
@@ -246,6 +250,7 @@
         transform: none;
     }
 }
+
 @media (max-width: 576px) {
     #productModal {
         position: fixed; /* covers the whole screen */

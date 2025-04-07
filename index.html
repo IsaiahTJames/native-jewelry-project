@@ -248,10 +248,10 @@
                 <p class="product-price">$49.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-            <div class="product" data-name="Tidal Harmony" data-price="$74.99">
-                <img src="images/jewelry-photos/hooptstack.jpg" alt="Tidal Harmony">
-                <p class="product-name">Tidal Harmony</p>
-                <p class="product-price">$74.99</p>
+            <div class="product" data-name="Stacked Turquoise Hoops" data-price="$79.99">
+                <img src="images/jewelry-photos/hooptstack.jpg" alt="Stacked Turquoise Hoops">
+                <p class="product-name">Stacked Turquoise Hoops</p>
+                <p class="product-price">$79.99</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
             <div class="product" data-name="Ocean Moonlight" data-price="$59.99">
@@ -385,11 +385,11 @@
         <p class="text-center mt-2 font-semibold">Books</p>
         <div class="product-details hidden">
             <!-- Books -->
-            <div class="product" data-name="The Rez Detectives by SPJ" data-price="$12.99" data-description="A thrilling mystery set in a Native American community.">
+            <div class="product" data-name="The Rez Detectives by SPJ & Tvli Jacob" data-price="$12.99" data-description="A thrilling mystery set in a Native American community.">
                 <img src="images/book-photos/RezDetectives.jpg" alt="The Rez Detectives">
                 <p class="product-name">The Rez Detectives</p>
                 <p class="product-price">$12.99</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <a href="https://www.amazon.com/Rez-Detectives-Justice-Served-Cold/dp/1943988331" target="_blank" class="amazon-buy-btn">Buy on Amazon</a>
             </div>
             <div class="product" data-name="A Radiant Curve by Luci Tapahonso" data-price="$18.00" data-description="A thrilling mystery set in a Native American community.">
                 <img src="images/book-photos/radiantcurve.png" alt="A Radiant Curve">
@@ -497,181 +497,204 @@
     <button class="arrow left-arrow">&#10094;</button>
     <div class="carousel-container">
         <div class="popular-products-container grid grid-cols-3 sm:grid-cols-5">
-            <!-- Product Box -->
             <div class="product-box"
                  data-title="Red Sky Whirl"
-                 data-price="69.99"
-                 data-main-image="images/redgoldswirl.jpg">
-                <img src="images/redgoldswirl.jpg" alt="Red Sky Whirl" class="product-img shadow-2xl"
-                     onclick="openModal(this)">
-                <div class="product-info">
-                    <p class="product-name">Red Sky Swirl</p>
-                    <p class="product-price">$69.99</p>
-                </div>
-            </div>
-            <!-- Product Box -->
-            <div class="product-box"
-                 data-title="Turquoise Flower"
                  data-price="59.99"
-                 data-main-image="images/jewelry-photos/silvercastheishishell.png">
-                <img src="images/jewelry-photos/silvercastheishishell.png" alt="Turquoise Flower" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/redgoldswirl.jpg">
+                <img src="images/redgoldswirl.jpg" class="product-img" onclick="openModal(this)" alt="Red Sky Whirl">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/redgoldswirl2.jpg" alt="Red Sky Whirl Thumbnail 1">
+                </div>
                 <div class="product-info">
-                    <p class="product-name">Turquoise Flower</p>
+                    <p class="product-name">Red Sky Whirl</p>
                     <p class="product-price">$59.99</p>
                 </div>
             </div>
-
             <div class="product-box"
-                 data-title="Turquoise Tide"
-                 data-price="49.99"
-                 data-main-image="images/jewelry-photos/dropshell.jpg">
-                <img src="images/jewelry-photos/dropshell.jpg" alt="Turquoise Tide" class="product-img"
-                     onclick="openModal(this)">
+                 data-title="Stacked Turquoise Hoops"
+                 data-price="59.99"
+                 data-main="images/jewelry-photos/hooptstack.jpg">
+                <img src="images/jewelry-photos/hooptstack.jpg" class="product-img" onclick="openModal(this)" alt="Stacked Turquoise Hoops">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/hooptstack2.jpg" alt="Hoop Stack Thumbnail 1">
+                </div>
                 <div class="product-info">
-                    <p class="product-name">Turquoise Tide</p>
-                    <p class="product-price">$49.99</p>
+                    <p class="product-name">Stacked Turquoise Hoops</p>
+                    <p class="product-price">$79.99</p>
                 </div>
             </div>
-
+            <div class="product-box"
+                 data-title="Turquoise Tide"
+                 data-price="24.99"
+                 data-main="images/jewelry-photos/dropshell.jpg">
+                <img src="images/jewelry-photos/dropshell.jpg" class="product-img" onclick="openModal(this)" alt="Turquoise Tide">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/dropshell2.jpg" alt="Turquoise Tide Thumbnail 1">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Turquoise Tide</p>
+                    <p class="product-price">$24.99</p>
+                </div>
+            </div>
             <div class="product-box"
                  data-title="Turquoise Cascade-Gold Earrings"
                  data-price="39.99"
-                 data-main-image="images/jewelry-photos/goldsquared.jpg">
-                <img src="images/jewelry-photos/goldsquared.jpg" alt="Turquoise Cascade-Gold Earrings" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/goldsquared.jpg">
+                <img src="images/jewelry-photos/goldsquared.jpg" class="product-img" onclick="openModal(this)" alt="Turquoise Cascade-Gold Earrings">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/goldsquared2.jpg" alt="Turquoise Cascade-Gold Earrings Thumbnail 1">
+                    <img src="images/jewelry-photos/goldsquared3.jpg" alt="Turquoise Cascade-Gold Earrings Thumbnail 2">
+                    <img src="images/jewelry-photos/goldsquared4.jpg" alt="Turquoise Cascade-Gold Earrings Thumbnail 3">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Turquoise Cascade-Gold Earrings</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Turquoise Blossom Dangles"
                  data-price="49.99"
-                 data-main-image="images/jewelry-photos/pinkearrings2.jpg">
-                <img src="images/jewelry-photos/pinkearrings2.jpg" alt="Turquoise Blossom Dangles" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/pinkearrings2.jpg">
+                <img src="images/jewelry-photos/pinkearrings2.jpg" class="product-img" onclick="openModal(this)" alt="Turquoise Blossom Dangles">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/pinkearrings.jpg" alt="Turquoise Blossom Dangles Thumbnail 1">
+                    <img src="images/jewelry-photos/pinkearrings3.jpg" alt="Turquoise Blossom Dangles Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Turquoise Blossom Dangles</p>
                     <p class="product-price">$49.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Lunar Reflection"
                  data-price="44.99"
-                 data-main-image="images/jewelry-photos/searrings.jpg">
-                <img src="images/jewelry-photos/searrings.jpg" alt="Lunar Reflection" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/searrings.jpg">
+                <img src="images/jewelry-photos/searrings.jpg" class="product-img" onclick="openModal(this)" alt="Lunar Reflection">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/searrings2.jpg" alt="Lunar Reflection Thumbnail 1">
+                    <img src="images/jewelry-photos/searrings3.jpg" alt="Lunar Reflection Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Lunar Reflection</p>
                     <p class="product-price">$44.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Late Night"
-                 data-price="34.99"
-                 data-main-image="images/jewelry-photos/silverblack.jpg">
-                <img src="images/jewelry-photos/silverblack.jpg" alt="Late Night" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="24.99"
+                 data-main="images/jewelry-photos/silverblack.jpg">
+                <img src="images/jewelry-photos/silverblack.jpg" class="product-img" onclick="openModal(this)" alt="Late Night">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/silverblack2.jpg" alt="Late Night Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Late Night</p>
-                    <p class="product-price">$34.99</p>
+                    <p class="product-price">$24.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Midnight Earrings"
                  data-price="29.99"
-                 data-main-image="images/jewelry-photos/blackcrackedearrings.jpg">
-                <img src="images/jewelry-photos/blackcrackedearrings.jpg" alt="Midnight Earrings" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/blackcrackedearrings.jpg">
+                <img src="images/jewelry-photos/blackcrackedearrings.jpg" class="product-img" onclick="openModal(this)" alt="Midnight Earrings">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/blackcrackedearrings2.jpg" alt="Midnight Earrings Thumbnail 1">
+                    <img src="images/jewelry-photos/blackcrackedearrings3.jpg" alt="Midnight Earrings Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Midnight Earrings</p>
                     <p class="product-price">$29.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Four Drops"
-                 data-price="39.99"
-                 data-main-image="images/jewelry-photos/4bead.jpg">
-                <img src="images/jewelry-photos/4bead.jpg" alt="Four Drops" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/4bead.jpg">
+                <img src="images/jewelry-photos/4bead.jpg" class="product-img" onclick="openModal(this)" alt="Four Drops">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/4bead2.jpg" alt="Four Drops Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Four Drops</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Turquoise Arrow"
-                 data-price="44.99"
-                 data-main-image="images/jewelry-photos/arrowearrings2.jpg">
-                <img src="images/jewelry-photos/arrowearrings2.jpg" alt="Turquoise Arrow" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/arrowearrings.jpg">
+                <img src="images/jewelry-photos/arrowearrings.jpg" class="product-img" onclick="openModal(this)" alt="Turquoise Arrow">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/arrowearrings2.jpg" alt="Turquoise Arrow Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Turquoise Arrow</p>
                     <p class="product-price">$44.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Silver Corral Hoops"
-                 data-price="49.99"
-                 data-main-image="images/jewelry-photos/corralhoops.jpg">
-                <img src="images/jewelry-photos/corralhoops.jpg" alt="Silver Corral Hoops" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/corralhoops.jpg">
+                <img src="images/jewelry-photos/corralhoops.jpg" class="product-img" onclick="openModal(this)" alt="Silver Corral Hoops">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/corralhoops2.jpg" alt="Silver Corral Hoops Thumbnail 1">
+                    <img src="images/jewelry-photos/corralhoops3.jpg" alt="Silver Corral Hoops Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Silver Corral Hoops</p>
-                    <p class="product-price">$49.99</p>
+                    <p class="product-price">$29.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Turquoise Tide"
-                 data-price="39.99"
-                 data-main-image="images/jewelry-photos/dropdanglingearrings.jpg">
-                <img src="images/jewelry-photos/dropdanglingearrings.jpg" alt="Turquoise Tide" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/dropdanglingearrings.jpg">
+                <img src="images/jewelry-photos/dropdanglingearrings.jpg" class="product-img" onclick="openModal(this)" alt="Turquoise Tide">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/dropdanglingearrings2.jpg" alt="Turquoise Tide Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Turquoise Tide</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Celestial Swirls"
-                 data-price="59.99"
-                 data-main-image="images/jewelry-photos/goldhoopearrings.jpg">
-                <img src="images/jewelry-photos/goldhoopearrings.jpg" alt="Celestial Swirls" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/goldhoopearrings2.jpg">
+                <img src="images/jewelry-photos/goldhoopearrings2.jpg" class="product-img" onclick="openModal(this)" alt="Celestial Swirls Earrings">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/goldhoopearrings.jpg" alt="Celestial Swirls Thumbnail 1">
+                    <img src="images/jewelry-photos/goldhoopearrings3.jpg" alt="Celestial Swirls Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Celestial Swirls</p>
                     <p class="product-price">$59.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Turquoise Cascade"
-                 data-price="44.99"
-                 data-main-image="images/jewelry-photos/longearrings1.jpg">
-                <img src="images/jewelry-photos/longearrings1.jpg" alt="Turquoise Cascade" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/longearrings1.jpg">
+                <img src="images/jewelry-photos/longearrings1.jpg" class="product-img" onclick="openModal(this)" alt="Turquoise Cascade Earrings">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/longearrings2.jpg" alt="Turquoise Cascade Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Turquoise Cascade</p>
                     <p class="product-price">$44.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Pink Blossoms"
-                 data-price="49.99"
-                 data-main-image="images/jewelry-photos/pinkflowerearrings.jpg">
-                <img src="images/jewelry-photos/pinkflowerearrings.jpg" alt="Pink Blossoms" class="product-img"
-                     onclick="openModal(this)">
+                 data-price="29.99"
+                 data-main="images/jewelry-photos/pinkflowerearrings.jpg">
+                <img src="images/jewelry-photos/pinkflowerearrings.jpg" class="product-img" onclick="openModal(this)" alt="Pink Blossoms Earrings">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/pinkflowerearrings2.jpg" alt="Pink Blossoms Thumbnail 1">
+                    <img src="images/jewelry-photos/pinkflowerearrings3.jpg" alt="Pink Blossoms Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Pink Blossoms</p>
                     <p class="product-price">$49.99</p>
@@ -685,17 +708,18 @@
 <div id="productModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="window.closeModal()">&times;</span>
-
         <div class="modal-body">
             <!-- Main Product Image -->
             <img id="modalImage" class="main-product-image" src="" alt="Product Image">
+            <!-- Thumbnail Images (Small Clickable Previews) -->
+            <div class="thumbnail-container"></div>
         </div>
         <!-- Product Info -->
         <h2 id="modalTitle" class="product-name">Product Name</h2>
         <p id="modalPrice" class="product-price">$0.00</p>
-            <button id="modalAddToCart" class="add-to-cart-btn">
-                Add to Cart
-            </button>
+        <button id="modalAddToCart" class="add-to-cart-btn">
+            Add to Cart
+        </button>
     </div>
 </div>
 <!-- "Featured" Title (Centered) -->
@@ -712,45 +736,55 @@
             <div class="product-box"
                  data-title="Gold Turquoise Sheets"
                  data-price="79.99"
-                 data-main-image="images/jewelry-photos/goldsheet.jpg">
-                <img src="images/jewelry-photos/goldsheet.jpg" alt="Gold Turquoise Sheets" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/goldsheet.jpg">
+                <img src="images/jewelry-photos/goldsheet.jpg" class="product-img" onclick="openModal(this)" alt="Gold Turquoise Sheets">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/goldsheet1.jpg" alt="Gold Turquoise Sheets Thumbnail 1">
+                    <img src="images/jewelry-photos/goldsheet2.jpg" alt="Gold Turquoise Sheets Thumbnail 2">
+                    <img src="images/jewelry-photos/goldsheet3.jpg" alt="Gold Turquoise Sheets Thumbnail 3">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Gold Turquoise Sheets</p>
                     <p class="product-price">$79.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Kingman Turquoise"
                  data-price="59.99"
-                 data-main-image="images/jewelry-photos/danglescale.jpg">
-                <img src="images/jewelry-photos/danglescale.jpg" alt="Kingman Turquoise" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/danglescale.jpg">
+                <img src="images/jewelry-photos/danglescale.jpg" class="product-img" onclick="openModal(this)" alt="Kingman Turquoise">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/danglescale1.jpg" alt="Kingman Turquoise Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Kingman Turquoise</p>
                     <p class="product-price">$59.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Antique Etched Turquoise"
                  data-price="69.99"
-                 data-main-image="images/jewelry-photos/blacksea.jpg">
-                <img src="images/jewelry-photos/blacksea.jpg" alt="Antique Etched Turquoise" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/blacksea.jpg">
+                <img src="images/jewelry-photos/blacksea.jpg" class="product-img" onclick="openModal(this)" alt="Antique Etched Turquoise">
+                <!-- Hidden thumbnail container to pass images into modal -->
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/blacksea2.jpg" alt="Antique Etched Turquoise Thumbnail 1">
+                    <img src="images/jewelry-photos/blacksea3.jpg" alt="Antique Etched Turquoise Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Antique Etched Turquoise</p>
                     <p class="product-price">$69.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Butterfly Dangles"
                  data-price="59.99"
-                 data-main-image="images/jewelry-photos/pinkflare.jpg">
-                <img src="images/jewelry-photos/pinkflare.jpg" alt="Butterfly Dangles" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/pinkflare.jpg">
+                <img src="images/jewelry-photos/pinkflare.jpg" class="product-img" onclick="openModal(this)" alt="Butterfly Dangles">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/pinkflare1.jpg" alt="Butterfly Dangles Thumbnail 1">
+                    <img src="images/jewelry-photos/pinkflare2.jpg" alt="Butterfly Dangles Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Butterfly Dangles</p>
                     <p class="product-price">$59.99</p>
@@ -759,129 +793,138 @@
             <div class="product-box"
                  data-title="Purple Capiz Shells"
                  data-price="39.99"
-                 data-main-image="images/jewelry-photos/purple.jpg">
-                <img src="images/jewelry-photos/purple.jpg" alt="Purple Capiz Shells" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/purple.jpg">
+                <img src="images/jewelry-photos/purple.jpg" class="product-img" onclick="openModal(this)" alt="Purple Capiz Shells">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/purple2.jpg" alt="Purple Capiz Shells Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Purple Capiz Shells</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Silver Turquoise Dangles"
                  data-price="34.99"
-                 data-main-image="images/jewelry-photos/silverlong.jpg">
-                <img src="images/jewelry-photos/silverlong.jpg" alt="Silver Turquoise Dangles" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/silverlong.jpg">
+                <img src="images/jewelry-photos/silverlong.jpg" class="product-img" onclick="openModal(this)" alt="Silver Turquoise Dangles">
+                <div class="thumbnails" style="display: none;">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Silver Turquoise Dangles</p>
                     <p class="product-price">$34.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Fan Shaped Abalone"
                  data-price="49.99"
-                 data-main-image="images/jewelry-photos/whiteshell.jpg">
-                <img src="images/jewelry-photos/whiteshell.jpg" alt="Fan Shaped Abalone" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/whiteshell.jpg">
+                <img src="images/jewelry-photos/whiteshell.jpg" class="product-img" onclick="openModal(this)" alt="Fan Shaped Abalone">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/whiteshell2.jpg" alt="Fan Shaped Abalone Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Fan Shaped Abalone</p>
                     <p class="product-price">$49.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Robohontas (Sticker)"
                  data-price="4.99"
-                 data-main-image="images/sticker-photos/Robohontas.png">
-                <img src="images/sticker-photos/Robohontas.png" alt="Robohontas Sticker" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/sticker-photos/Robohontas.png">
+                <img src="images/sticker-photos/Robohontas.png" class="product-img" onclick="openModal(this)" alt="Robohontas (Sticker)">
+                <div class="thumbnails" style="display: none;"></div>
                 <div class="product-info">
                     <p class="product-name">Robohontas (Sticker)</p>
                     <p class="product-price">$4.99</p>
                 </div>
             </div>
-
             <div class="product-box"
-                 data-title="Kingman Turquoise and Lavender Beads"
-                 data-price="34.99"
-                 data-main-image="images/jewelry-photos/pinksphere.jpg">
-                <img src="images/jewelry-photos/pinksphere.jpg" alt="Kingman Turquoise and Lavender Beads" class="product-img"
-                     onclick="openModal(this)">
+                 data-title="Kingman Turquoise and Lavender Bead"
+                 data-price="39.99"
+                 data-main="images/jewelry-photos/pinksphere.jpg">
+                <img src="images/jewelry-photos/pinksphere.jpg" class="product-img" onclick="openModal(this)" alt="Kingman Turquoise and Lavender Bead">
+                <div class="thumbnails" style="display: none;"></div>
                 <div class="product-info">
-                    <p class="product-name">Kingman Turquoise and Lavender Beads</p>
-                    <p class="product-price">$34.99</p>
+                    <p class="product-name">Kingman Turquoise and Lavender Bead</p>
+                    <p class="product-price">$39.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Abalone Shell"
                  data-price="29.99"
-                 data-main-image="images/jewelry-photos/irishell.jpg">
-                <img src="images/jewelry-photos/irishell.jpg" alt="Abalone Shell" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/irishell.jpg">
+                <img src="images/jewelry-photos/irishell.jpg" class="product-img" onclick="openModal(this)" alt="Abalone Shell">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/irishell2.jpg" alt="Abalone Shell Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Abalone Shell</p>
                     <p class="product-price">$29.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Chief Head (Sticker)"
                  data-price="4.99"
-                 data-main-image="images/sticker-photos/ChiefHead.png">
-                <img src="images/sticker-photos/ChiefHead.png" alt="Chief Head Sticker" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/sticker-photos/ChiefHead.png">
+                <img src="images/sticker-photos/ChiefHead.png" class="product-img" onclick="openModal(this)" alt="Chief Head (Sticker)">
+                <div class="thumbnails" style="display: none;"></div>
                 <div class="product-info">
                     <p class="product-name">Chief Head (Sticker)</p>
                     <p class="product-price">$4.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Iridescence Feathers"
                  data-price="39.99"
-                 data-main-image="images/jewelry-photos/vibrantearrings.jpg">
-                <img src="images/jewelry-photos/vibrantearrings.jpg" alt="Iridescence Feathers" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/vibrantearrings.jpg">
+                <img src="images/jewelry-photos/vibrantearrings.jpg" class="product-img" onclick="openModal(this)" alt="Iridescence Feathers">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/vibrantearrings2.jpg" alt="Iridescence Feathers Thumbnail 1">
+                    <img src="images/jewelry-photos/vibrantearrings3.jpg" alt="Iridescence Feathers Thumbnail 2">
+                    <img src="images/jewelry-photos/vibrantearrings4.jpg" alt="Iridescence Feathers Thumbnail 3">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Iridescence Feathers</p>
                     <p class="product-price">$39.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Sea Abalone Buttons"
                  data-price="49.99"
-                 data-main-image="images/jewelry-photos/5beadearrings2.jpg">
-                <img src="images/jewelry-photos/5beadearrings2.jpg" alt="Sea Abalone Buttons" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/5beadearrings2.jpg">
+                <img src="images/jewelry-photos/5beadearrings2.jpg" class="product-img" onclick="openModal(this)" alt="Sea Abalone Buttons">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/5beadearrings.jpg" alt="Sea Abalone Buttons Thumbnail 1">
+                    <img src="images/jewelry-photos/5beadearrings3.jpg" alt="Sea Abalone Buttons Thumbnail 2">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Sea Abalone Buttons</p>
                     <p class="product-price">$49.99</p>
                 </div>
             </div>
-
             <div class="product-box"
-                 data-title="Starfish Zebra"
-                 data-price="39.99"
-                 data-main-image="images/jewelry-photos/ZebraPrint.png">
-                <img src="images/jewelry-photos/ZebraPrint.png" alt="Starfish Zebra" class="product-img"
-                     onclick="openModal(this)">
+                 data-title="Sunset Drip Hoops"
+                 data-price="49.99"
+                 data-main="images/jewelry-photos/475624229_18057846085966050_2379996924057818753_n.jpg">
+                <img src="images/jewelry-photos/475624229_18057846085966050_2379996924057818753_n.jpg" class="product-img" onclick="openModal(this)" alt="Sunset Drip Hoops">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/475646456_18057846082966050_8893844082953642005_n.jpg" alt="Sunset Drip Hoops Thumbnail 1">
+                    <img src="images/jewelry-photos/475890629_18057846073966050_954935097674566929_n.jpg" alt="Sunset Drip Hoops Thumbnail 2">
+                </div>
                 <div class="product-info">
-                    <p class="product-name">Starfish Zebra</p>
-                    <p class="product-price">$39.99</p>
+                    <p class="product-name">Sunset Drip Hoops</p>
+                    <p class="product-price">$49.99</p>
                 </div>
             </div>
-
             <div class="product-box"
                  data-title="Mink Tufts"
                  data-price="29.99"
-                 data-main-image="images/jewelry-photos/431960107_292717926961446_6843426414817941606_n.jpg">
-                <img src="images/jewelry-photos/431960107_292717926961446_6843426414817941606_n.jpg" alt="Mink Tufts" class="product-img"
-                     onclick="openModal(this)">
+                 data-main="images/jewelry-photos/431960107_292717926961446_6843426414817941606_n.jpg">
+                <img src="images/jewelry-photos/431960107_292717926961446_6843426414817941606_n.jpg" class="product-img" onclick="openModal(this)" alt="Mink Tufts">
+                <div class="thumbnails" style="display: none;">
+                    <img src="images/jewelry-photos/432000500_1078402270108913_5665761524263958176_n.jpg" alt="Mink Tufts Thumbnail 1">
+                </div>
                 <div class="product-info">
                     <p class="product-name">Mink Tufts</p>
                     <p class="product-price">$29.99</p>

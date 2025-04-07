@@ -20,6 +20,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url("../images/bg-whitepattern4.jpg");
     z-index: 9999;
 }
 /* decorative stripe-band */
@@ -104,20 +105,15 @@ body {
     color: white;
     padding: 20px;
 }
-
-
 .spotlight-text h2 {
     font-size: 26px; /* Slightly larger for emphasis */
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .spotlight-text p {
     font-size: 17px;
     line-height: 1.5; /* Better readability */
 }
-
-
 /* 4 boxes  */
 .xbox-container {
     display: flex;
@@ -208,6 +204,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 60%;
+    background-image: url("../images/bg-whitepattern4.jpg");
     max-height: 80vh;
     overflow-y: auto;
     text-align: center;
@@ -282,6 +279,9 @@ body {
     border-radius: 5px;
     border: 1px solid #000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+#fourBoxModal .modal-product img[src*="book-photos"] {
+    height: 370px !important;
 }
 /* Add to Cart Button */
 .add-to-cart-btn {
@@ -403,7 +403,7 @@ body {
     padding: 20px;
     border-radius: 16px;
     box-sizing: border-box;
-    background-color: var(--off-white);
+    background-image: url("../images/bg-whitepattern4.jpg");
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 #modalTitle.product-name {
@@ -528,8 +528,6 @@ body {
     gap: 20px;
     padding: 10px 5px;
 }
-
-/* Ensure images don’t shrink */
 /* product boxes for featured carousel */
 .featured-box {
     width: 200px;
@@ -550,7 +548,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 40px 0;
 }
 .about-content {

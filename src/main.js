@@ -75,7 +75,6 @@ window.openFourBoxModal = function (button) {
     const modalTitle = document.getElementById("fourBoxModalTitle")
     const modalDescription = document.getElementById("fourBoxModalDescription")
     const imageContainer = document.getElementById("fourBoxModalImages")
-
     // Get parent container of the clicked button
     const parentDiv = button.closest(".xbox")
     const productDetails = parentDiv.querySelector(".product-details")
@@ -149,34 +148,40 @@ function updateCartCount() {
         cartCount.classList.add("hidden")
     }
 }
-// Function to update cart dropdown with items
+// Function to update cart dropdown with current cart items
 function updateCartDropdown() {
-    cartList.innerHTML = "" // Clear previous items
-
+    // Clear any existing items in the cart dropdown
+    cartList.innerHTML = "";
+    // If cart is empty, show a message
     if (cartItems.length === 0) {
-        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`
+        cartList.innerHTML = `<p class="text-gray-500 text-sm p-2">Your cart is empty.</p>`;
     } else {
+        // Loops through all items in the cart
         cartItems.forEach((item, index) => {
-            let listItem = document.createElement("li")
-            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2")
-
-            listItem.innerHTML =
-                `<div class="flex items-center">
-                     <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
-                     <div>
-                         <p class="text-sm font-medium text-gray-800">${item.name}</p>
-                         <p class="text-sm text-gray-600">${item.price}</p>
-                     </div>
-                 </div>
-                 <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>`
-            cartList.appendChild(listItem)
-        })
-        // Attach event listeners to remove buttons
+            // Creates a list item container for each product
+            let listItem = document.createElement("li");
+            listItem.classList.add("flex", "items-center", "justify-between", "border-b", "pb-2", "py-2");
+            // Set the inner HTML for the product item (image, name, price, and remove button)
+            listItem.innerHTML = `
+                <div class="flex items-center">
+                    <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">${item.name}</p>
+                        <p class="text-sm text-gray-600">${item.price}</p>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm hover:text-red-700 remove-item" data-index="${index}">x</button>
+            `;
+            // Add the item to the cart dropdown list
+            cartList.appendChild(listItem);
+        });
+        // Add click event listeners to each remove button
         document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", function () {
-                removeFromCart(this.dataset.index)
-            })
-        })
+                // Remove the corresponding item from the cart using its index
+                removeFromCart(this.dataset.index);
+            });
+        });
     }
 }
 // Function to add an item to the cart

@@ -249,7 +249,7 @@ window.openModal = function (element) {
 
     const title = productBox.dataset.title;
     const price = productBox.dataset.price;
-    const mainImage = productBox.dataset.main;
+    const mainImage = productBox.querySelector("img.product-img").getAttribute("src");
 
     const modal = document.getElementById("productModal");
     const modalImage = modal.querySelector("#modalImage");
